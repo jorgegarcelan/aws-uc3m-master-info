@@ -1,0 +1,5 @@
+.DS_Store
+*.opus
+node_modules/
+.hyperframes/
+.waveform-cache/

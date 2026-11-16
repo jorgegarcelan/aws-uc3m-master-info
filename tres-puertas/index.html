@@ -1,0 +1,1694 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Créala</title>
+<link rel="stylesheet" href="slaas/engine.css?v=1794822069112" />
+<link rel="stylesheet" href="slaas/components.css?v=1794822069112" />
+<link rel="stylesheet" href="theme/theme.css?v=1794822069112" />
+<script src="slaas/vendor/gsap.min.js"></script>
+<script src="slaas/vendor/SplitText.min.js"></script>
+<script src="slaas/vendor/DrawSVGPlugin.min.js"></script>
+<script src="slaas/vendor/MotionPathPlugin.min.js"></script>
+<script src="slaas/vendor/CustomEase.min.js"></script>
+<script>window.SLAAS_CONFIG = {"id":"tres-puertas","title":"Créala","lang":"es","sections":[{"name":"Academia","color":"#6366f1","dark":true},{"name":"Empresa","color":"#f59e0b"},{"name":"Emprender","color":"#10b981","dark":true}],"accent":"#1f7ff5","appendix":null,"number":null,"strings":null};</script>
+<script src="slaas/engine.js?v=1794822069112"></script>
+<script src="slaas/components.js?v=1794822069112"></script>
+<script src="theme/theme.js?v=1794822069112"></script>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+  
+<!-- 01-start.html -->
+<section data-file="01-start.html" class="slide" id="s01-start" data-title="Portada: Créala" data-footer="off" data-enter="fade">
+  <template class="notes">⏱ 20 s · empieza en 0:00
+━━ ACTO 1 · EL PROBLEMA ━━
+(antes: comparte pestaña con audio · S = sonido)
+«Gracias, Dani. Os lo cuento como un videojuego.»</template>
+  <style>
+    #s01-start .c1-cl { position: absolute; }
+    #s01-start .c1-cl.a { left: 90px; top: 120px; width: 300px; }
+    #s01-start .c1-cl.b { right: 150px; top: 70px; width: 230px; }
+    #s01-start .c1-cl.c { right: 110px; top: 760px; width: 360px; }
+    #s01-start .c1-cl.d { left: 1580px; top: 330px; width: 250px; }
+    #s01-start .c1-wrap { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    #s01-start .c1-hey { font-size: 30px; font-weight: 600; color: #fff; text-shadow: 0 2px 14px rgba(16,52,110,.35); }
+    #s01-start .c1-kick { margin-top: 30px; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; }
+    #s01-start .c1-title { margin-top: 48px; font-size: 220px; }
+    #s01-start .c1-sub { margin-top: 48px; max-width: 1180px; }
+    #s01-start .c1-press { margin-top: 64px; }
+    #s01-start .c1-credit { position: absolute; left: 0; right: 0; bottom: 40px; display: flex; justify-content: center; align-items: center; gap: 22px; }
+    #s01-start .c1-lg { height: 72px; width: auto; display: block; }
+    #s01-start .c1-x { font-size: 26px; color: #fff; }
+    #s01-start .c1-who { font-size: 20px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.4); margin-left: 18px; }
+    #s01-start .c1-me { position: absolute; left: 100px; top: 740px; width: 330px; }
+    #s01-start .c1-me .c1-sp { display: block; width: 120px; margin: 0 auto -16px; position: relative; z-index: 1; }
+    #s01-start .c1-me .c1-pl { display: block; width: 330px; }
+  </style>
+  <span class="c1-cl a pcloud" data-px="cloud"></span>
+  <span class="c1-cl b pcloud" data-px="cloud"></span>
+  <span class="c1-cl c pcloud" data-px="cloud"></span>
+  <span class="c1-cl d pcloud" data-px="cloud"></span>
+  <div class="c1-me"><span class="c1-sp shadow-px" data-px="jorge" data-anim="wave"></span><span class="c1-pl" data-px="cloud"></span></div>
+  <div class="c1-wrap">
+    <div class="c1-hey" data-e="01-start.html#0">👋&nbsp; Hey, soy Jorge</div>
+    <div class="sub-sky c1-kick" data-e="01-start.html#1">No esperes a tener experiencia:</div>
+    <div class="pxt-hero c1-title" data-e="01-start.html#2">Créala</div>
+    <div class="sub-sky c1-sub" data-e="01-start.html#3">Tres puertas: academia, empresa y emprender</div>
+    <button class="px-btn c1-press" type="button" data-next data-e="01-start.html#4">▶ Pulsa para empezar</button>
+  </div>
+  <div class="c1-credit"><img class="c1-lg" src="assets/img/logos/uc3m.png" alt="UC3M"><span class="c1-x pxt" data-e="01-start.html#5">×</span><img class="c1-lg" src="assets/img/logos/aws.png" alt="AWS"><span class="pxt c1-who" data-e="01-start.html#6">Jorge Garcelán · Máster de Informática · 2026</span></div>
+</section>
+<script>
+Deck.slide("s01-start", function (el, tl, h) {
+  h.fade(".c1-cl", { at: 0, stagger: 0.1 });
+  h.fade(".c1-hey", { at: 0.1 });
+  h.rise(".c1-kick", { at: 0.15, y: 20 });
+  var t = h.split(".c1-title", "chars");
+  tl.fromTo(t.chars, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "steps(4)", stagger: 0.05 }, 0.25);
+  h.rise(".c1-sub", { at: 0.9, y: 20 });
+  h.rise(".c1-me", { at: 1.0, y: 60 });
+  h.pop(".c1-press", { at: 1.3 });
+  h.fade(".c1-credit", { at: 1.4 });
+  tl.call(Deck.sfx, ["start", tl], 0.3);
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c1-cl"), { x: function (i) { return i % 2 ? -40 : 40; }, duration: 6, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c1-press"), { opacity: 0.25, duration: 0.6, repeat: -1, yoyo: true, ease: "steps(1)" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c1-me"), { y: -14, duration: 1.6, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+});
+</script>
+
+<!-- 02-player.html -->
+<section data-file="02-player.html" class="slide" id="s02-player" data-title="Player 1" data-enter="push">
+  <template class="notes">⏱ 30 s · empieza en 0:20
+«Soy Jorge. Data Science y máster en IA, aquí en la UC3M.»
+«Hoy, AI Engineer en MediaRadar y cofundador de Uniwords.»
+→ «Hace 4 años no tenía ni idea. Os lo cuento de verdad.»</template>
+  <style>
+    #s02-player .c2-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 520px 1fr; gap: 80px; align-items: center; }
+    #s02-player .c2-me { display: flex; flex-direction: column; align-items: center; }
+    #s02-player .c2-sp { width: 270px; position: relative; z-index: 1; margin-bottom: -30px; }
+    #s02-player .c2-pl { width: 470px; }
+    #s02-player .c2-card { padding: 44px 48px 40px; }
+    #s02-player .c2-rows { display: grid; grid-template-columns: 200px 1fr; row-gap: 20px; column-gap: 24px; align-items: baseline; }
+    #s02-player .c2-k { font-family: var(--pixel); font-size: 22px; color: var(--faint); text-transform: uppercase; }
+    #s02-player .c2-v { font-size: 30px; font-weight: 600; line-height: 1.3; }
+    #s02-player .c2-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 38px; padding-top: 30px; border-top: 4px dashed var(--line); }
+    #s02-player .c2-stat .pxt { font-size: 20px; color: var(--muted); }
+    #s02-player .c2-stat .c2-n { font-family: var(--font); font-weight: 700; font-size: 72px; letter-spacing: -0.03em; line-height: 1; margin-top: 8px; }
+    #s02-player .c2-stat .c2-u { font-size: 22px; color: var(--muted); margin-top: 6px; }
+    #s02-player .c2-life { display: flex; align-items: center; gap: 10px; }
+    #s02-player .c2-life [data-px] { width: 42px; }
+    #s02-player .c2-life .c2-coin { width: 36px; margin-left: 18px; }
+    #s02-player .c2-life .pxt { font-size: 24px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s02-player .c2-dlg { margin-top: 40px; }
+    #s02-player .c2-team { display: flex; align-items: center; gap: 22px; margin-top: 26px; }
+    #s02-player .c2-team .pxt { font-size: 18px; color: var(--muted); }
+    #s02-player .c2-lgs { display: flex; gap: 12px; }
+    #s02-player .c2-card { padding: 36px 44px 32px; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="02-player.html#0">Player 1</span><div class="c2-life"><span data-px="heart"></span><span data-px="heart"></span><span data-px="heart"></span><span class="c2-coin" data-px="coin"></span><span class="pxt" data-e="02-player.html#1">× 0</span></div></div>
+    <div class="c2-grid">
+      <div class="c2-me"><span class="c2-sp shadow-px" data-px="jorge"></span><span class="c2-pl" data-px="cloud"></span></div>
+      <div>
+        <div class="panel c2-card">
+          <span class="tag" data-e="02-player.html#2">Ficha de personaje</span>
+          <div class="c2-rows">
+            <div class="c2-k" data-e="02-player.html#3">Nombre</div><div class="c2-v" data-e="02-player.html#4">Jorge Garcelán</div>
+            <div class="c2-k" data-e="02-player.html#5">Clase</div><div class="c2-v" data-e="02-player.html#6">AI Engineer · MediaRadar</div>
+            <div class="c2-k" data-e="02-player.html#7">Origen</div><div class="c2-v" data-e="02-player.html#8">Data Science UC3M → Máster en IA UC3M</div>
+            <div class="c2-k" data-e="02-player.html#9">Extra</div><div class="c2-v" data-e="02-player.html#10">Cofundador · Uniwords</div>
+          </div>
+          <div class="c2-stats">
+            <div class="c2-stat"><div class="pxt" data-e="02-player.html#11">Academia</div><div class="c2-n" style="color:var(--c-acad)" data-e="02-player.html#12">5</div><div class="c2-u" data-e="02-player.html#13">publicaciones</div></div>
+            <div class="c2-stat"><div class="pxt" data-e="02-player.html#14">Empresa</div><div class="c2-n" style="color:var(--c-emp)" data-e="02-player.html#15">4</div><div class="c2-u" data-e="02-player.html#16">empresas</div></div>
+            <div class="c2-stat"><div class="pxt" data-e="02-player.html#17">Emprender</div><div class="c2-n" style="color:var(--c-start)" data-e="02-player.html#18">1</div><div class="c2-u" data-e="02-player.html#19">startup</div></div>
+          </div>
+          <div class="c2-team"><span class="pxt" data-e="02-player.html#20">Mundos visitados</span><div class="c2-lgs"><span class="lg sm"><img src="assets/img/logos/uc3m.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/gatech.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/telefonica.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/aws.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/multiverse.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/mediaradar.png" alt=""></span><span class="lg sm full"><img src="assets/img/logos/uniwords.jpg" alt=""></span></div></div>
+        </div>
+        <div class="dlg c2-dlg"><span class="dlg-name" data-e="02-player.html#21">Jorge</span><p data-e="02-player.html#22">Hace cuatro años no tenía ni idea de qué quería hacer. Os lo cuento de verdad, no la versión bonita.</p><span class="dlg-next" data-e="02-player.html#23">▼</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s02-player", function (el, tl, h) {
+  h.rise(".c2-me", { at: 0, y: 60 });
+  h.pop(".c2-life > *", { at: 0.3, stagger: 0.06 });
+  h.rise(".c2-card", { at: 0.2, y: 30 });
+  h.fade(".c2-rows > div", { at: 0.4, stagger: 0.05 });
+  h.pop(".c2-stat", { at: 0.8, stagger: 0.12 });
+  h.pop(".c2-lgs .lg", { at: 1.0, stagger: 0.06 });
+  var t = h.step();
+  h.rise(".c2-dlg", { at: t, y: 24 });
+});
+</script>
+
+<!-- 03-poll.html -->
+<section data-file="03-poll.html" class="slide" id="s03-poll" data-title="Encuesta: dónde en 5 años" data-enter="fade">
+  <template class="notes">⏱ 50 s · empieza en 0:50
+💬 «Contestad en el chat: A, B, C o D.» (espera 20 s, lee 2-3)
+→ «Yo en 3º habría marcado la D… y he hecho A, B y C.»
+«Pero todos tenemos el mismo final boss delante.»</template>
+  <style>
+    #s03-poll .c3-wrap { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 760px; gap: 80px; align-items: center; }
+    #s03-poll .c3-hint { margin-top: 26px; }
+    #s03-poll .c3-q { display: block; width: 96px; margin-bottom: 26px; filter: drop-shadow(0 8px 0 rgba(16,52,110,.25)); }
+    #s03-poll .c3-menu { padding: 40px 44px; }
+    #s03-poll .c3-opt { display: grid; grid-template-columns: 50px 64px 1fr; align-items: center; gap: 18px; padding: 14px 0; }
+    #s03-poll .c3-cur { font-family: var(--pixel); font-size: 34px; color: var(--accent); opacity: 0; }
+    #s03-poll .c3-l { width: 60px; height: 60px; display: grid; place-items: center; font-family: var(--pixel); font-weight: 700; font-size: 30px; border: 4px solid var(--ink); background: var(--accent-soft); }
+    #s03-poll .c3-t { font-size: 32px; font-weight: 600; }
+    #s03-poll .c3-dlg { margin-top: 48px; }
+    #s03-poll .c3-opt { cursor: pointer; }
+    #s03-poll .c3-opt:hover .c3-t { color: var(--accent); }
+    #s03-poll .c3-opt.picked .c3-cur { opacity: 1 !important; }
+    #s03-poll .c3-opt.picked .c3-l { background: #fbbf24 !important; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="03-poll.html#0">Antes de empezar</span></div>
+    <div class="c3-wrap">
+      <div>
+        <span class="c3-q" data-px="qblock"></span>
+        <div class="h-sky c3-h" data-e="03-poll.html#1">¿Dónde os veis dentro de 5 años?</div>
+        <div class="sub-sky c3-hint" data-e="03-poll.html#2">Contestad en el chat: <b style="color:#fff">A, B, C o D</b></div>
+        <div class="dlg c3-dlg"><span class="dlg-name" data-e="03-poll.html#3">Jorge</span><p data-e="03-poll.html#4">Yo en 3º habría marcado la D. Y he acabado haciendo A, B y C a la vez.</p></div>
+      </div>
+      <div class="panel c3-menu">
+        <span class="tag" data-e="03-poll.html#5">Elige</span>
+        <div class="c3-opt" data-noclick><span class="c3-cur" data-e="03-poll.html#6">▶</span><span class="c3-l" data-e="03-poll.html#7">A</span><span class="c3-t" data-e="03-poll.html#8">En una empresa</span></div>
+        <div class="c3-opt" data-noclick><span class="c3-cur" data-e="03-poll.html#9">▶</span><span class="c3-l" data-e="03-poll.html#10">B</span><span class="c3-t" data-e="03-poll.html#11">Investigando o en un doctorado</span></div>
+        <div class="c3-opt" data-noclick><span class="c3-cur" data-e="03-poll.html#12">▶</span><span class="c3-l" data-e="03-poll.html#13">C</span><span class="c3-t" data-e="03-poll.html#14">Montando algo propio</span></div>
+        <div class="c3-opt c3-d" data-noclick><span class="c3-cur" data-e="03-poll.html#15">▶</span><span class="c3-l" data-e="03-poll.html#16">D</span><span class="c3-t" data-e="03-poll.html#17">Ni idea</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s03-poll", function (el, tl, h) {
+  h.pop(".c3-q", { at: 0 });
+  h.rise(".c3-h", { at: 0.1, y: 30 });
+  h.loop(function () { return gsap.to(el.querySelector(".c3-q"), { y: -14, duration: 0.5, repeat: -1, yoyo: true, ease: "steps(3)" }); });
+  h.fade(".c3-hint", { at: 0.3 });
+  h.rise(".c3-menu", { at: 0.2, y: 30 });
+  h.slideIn(".c3-opt", { at: 0.45, x: 40, stagger: 0.1 });
+  var t = h.step();
+  tl.fromTo(el.querySelector(".c3-d .c3-cur"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(el.querySelector(".c3-d .c3-l"), { backgroundColor: "#dbeafe" }, { backgroundColor: "#fbbf24", duration: 0.2, ease: "steps(2)" }, t + 0.1);
+  h.rise(".c3-dlg", { at: t + 0.3, y: 24 });
+  tl.call(Deck.sfx, ["select", tl], t + 0.05);
+});
+</script>
+
+<!-- 03b-rueda.html -->
+<section data-file="03b-rueda.html" class="slide" id="s03b-rueda" data-title="El final boss al que nos enfrentamos" data-enter="cut">
+  <template class="notes">⏱ 40 s · empieza en 1:40
+«Para trabajar te piden experiencia.»
+«Para tener experiencia, te piden trabajo.»
+→ «¿Os suena?» (1 segundo de silencio)
+«Os cuento cómo lo rompí yo.»</template>
+  <style>
+    #s03b-rueda .c3b-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 760px 1fr; gap: 70px; align-items: center; }
+    #s03b-rueda .c3b-arena { position: relative; width: 760px; height: 700px; }
+    #s03b-rueda .c3b-ring { position: absolute; left: 80px; top: 80px; width: 600px; height: 600px; }
+    #s03b-rueda .c3b-boss { position: absolute; left: 270px; top: 300px; width: 220px; }
+    #s03b-rueda .c3b-hp { position: absolute; left: 230px; top: 0; width: 300px; text-align: center; }
+    #s03b-rueda .c3b-hp .pxt { font-size: 20px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s03b-rueda .c3b-bar { height: 26px; border: 4px solid var(--ink); background: var(--red); margin-top: 8px; }
+    #s03b-rueda .c3b-lab { position: absolute; font-size: 22px; font-weight: 700; background: #fff; border: 4px solid var(--ink); padding: 8px 14px; white-space: nowrap; }
+    #s03b-rueda .c3b-lab.t { left: 230px; top: 64px; } #s03b-rueda .c3b-lab.r { left: 560px; top: 356px; }
+    #s03b-rueda .c3b-lab.b { left: 230px; top: 650px; } #s03b-rueda .c3b-lab.l { left: 0; top: 356px; }
+    #s03b-rueda .c3b-q { font-size: 30px; color: #fff; margin-top: 24px; text-shadow: 0 2px 16px rgba(16,52,110,.35); }
+    #s03b-rueda .c3b-dlg { margin-top: 44px; }
+    #s03b-rueda .c3b-dlg p { font-size: 32px; }
+    #s03b-rueda .hud-world { background: var(--red); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="03b-rueda.html#0">¡Cuidado! · Final boss</span></div>
+    <div class="c3b-grid">
+      <div class="c3b-arena">
+        <svg class="c3b-ring" viewBox="0 0 600 600" aria-hidden="true">
+          <circle cx="300" cy="300" r="250" fill="none" stroke="#fff" stroke-width="10" stroke-dasharray="40 22"/>
+          <polygon points="560,280 530,330 590,330" fill="#fff"/>
+          <polygon points="40,320 10,270 70,270" fill="#fff"/>
+        </svg>
+        <div class="c3b-hp"><div class="pxt" data-e="03b-rueda.html#1">La rueda · HP</div><div class="c3b-bar"></div></div>
+        <span class="c3b-lab t" data-e="03b-rueda.html#2">Necesitas experiencia</span>
+        <span class="c3b-lab r" data-e="03b-rueda.html#3">para conseguir trabajo</span>
+        <span class="c3b-lab b" data-e="03b-rueda.html#4">Necesitas trabajo</span>
+        <span class="c3b-lab l" data-e="03b-rueda.html#5">para tener experiencia</span>
+        <span class="c3b-boss" data-px="boss"></span>
+      </div>
+      <div>
+        <div class="h-sky c3b-h" data-e="03b-rueda.html#6">El final boss al que nos enfrentamos todos</div>
+        <div class="c3b-q" data-e="03b-rueda.html#7">Sin experiencia no hay trabajo. Sin trabajo no hay experiencia.</div>
+        <div class="dlg c3b-dlg"><span class="dlg-name" data-e="03b-rueda.html#8">Jorge</span><p data-e="03b-rueda.html#9">¿Os suena?</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s03b-rueda", function (el, tl, h) {
+  h.fade(".c3b-ring", { at: 0, dur: 0.4 });
+  h.pop(".c3b-boss", { at: 0.15 });
+  tl.call(Deck.sfx, ["hit", tl], 0.2);
+  h.fade(".c3b-hp", { at: 0.3 });
+  h.pop(".c3b-lab", { at: 0.4, stagger: 0.12 });
+  h.rise(".c3b-h", { at: 0.6, y: 30 });
+  h.fade(".c3b-q", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelector(".c3b-ring"), { rotation: 360, transformOrigin: "50% 50%", duration: 14, repeat: -1, ease: "none" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c3b-boss"), { y: -10, duration: 0.5, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+  var t = h.step();
+  h.rise(".c3b-dlg", { at: t, y: 24 });
+});
+</script>
+
+<!-- 04-gt.html -->
+<section data-file="04-gt.html" class="slide" id="s04-gt" data-title="Nivel 0: Madrid → Atlanta" data-enter="wipe">
+  <template class="notes">⏱ 40 s · empieza en 2:20
+«3º de carrera: me voy de movilidad a Georgia Tech.»
+«7.000 km, otro idioma… y ningún plan.»
+→ «Solo quería vivir la experiencia.»</template>
+  <style>
+    #s04-gt .c4-map { position: relative; flex: 1; min-height: 0; margin-top: 10px; }
+    #s04-gt .c4-svg { position: absolute; left: 0; top: 0; width: 1728px; height: 560px; overflow: visible; }
+    #s04-gt .c4-isle { position: absolute; top: 200px; width: 400px; }
+    #s04-gt .c4-isle.mad { left: 60px; } #s04-gt .c4-isle.atl { left: 1268px; }
+    #s04-gt .c4-sky { display: block; width: 300px; margin: 0 auto; position: relative; z-index: 1; }
+    #s04-gt .c4-isle.atl .c4-sky { margin: 0 0 0 30px; }
+    #s04-gt .c4-land { display: block; width: 400px; margin-top: -6px; }
+    #s04-gt .c4-lbl { position: absolute; top: 420px; display: flex; align-items: center; gap: 16px; }
+    #s04-gt .c4-lbl.mad { left: 90px; } #s04-gt .c4-lbl.atl { left: 1300px; }
+    #s04-gt .c4-lbl .tag { font-size: 24px; }
+    #s04-gt .c4-lbl .c4-s { font-size: 22px; color: #fff; font-weight: 600; margin-top: 6px; text-shadow: 0 2px 10px rgba(16,52,110,.45); }
+    #s04-gt .c4-plane { position: absolute; left: 0; top: 0; width: 110px; margin: -27px 0 0 -55px; z-index: 3; }
+    #s04-gt .c4-me { position: absolute; left: 1600px; top: 268px; width: 66px; z-index: 2; }
+    #s04-gt .c4-stats { position: absolute; left: 600px; top: 180px; width: 528px; padding: 30px 32px 22px; }
+    #s04-gt .c4-row { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 20px; padding: 8px 0; border-bottom: 3px dashed var(--line); }
+    #s04-gt .c4-row:last-child { border-bottom: 0; }
+    #s04-gt .c4-k { font-family: var(--pixel); font-size: 18px; color: var(--muted); text-transform: uppercase; }
+    #s04-gt .c4-v { font-size: 30px; font-weight: 700; }
+    #s04-gt .c4-v.no { color: var(--red); }
+    #s04-gt .c4-cl { position: absolute; width: 200px; opacity: .9; }
+    #s04-gt .c4-cl.a { left: 420px; top: 470px; } #s04-gt .c4-cl.b { left: 1080px; top: 500px; width: 160px; }
+    #s04-gt .c4-dlg { margin-top: auto; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="04-gt.html#0">Nivel 0 · 3º de carrera</span></div>
+    <div class="h-sky c4-h" data-e="04-gt.html#1">Una decisión que no tenía nada que ver con mi carrera</div>
+    <div class="c4-map">
+      <span class="c4-cl a pcloud" data-px="cloud"></span>
+      <span class="c4-cl b pcloud" data-px="cloud"></span>
+      <svg class="c4-svg" viewBox="0 0 1728 560" aria-hidden="true"><g class="c4-dots"></g></svg>
+      <div class="c4-isle mad"><span class="c4-sky" data-px="madrid"></span><span class="c4-land" data-px="land"></span></div>
+      <div class="c4-isle atl"><span class="c4-sky" data-px="atlanta"></span><span class="c4-land" data-px="land"></span></div>
+      <div class="c4-lbl mad"><span class="lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div><span class="tag" data-e="04-gt.html#2">Madrid</span><div class="c4-s" data-e="04-gt.html#3">UC3M · Data Science</div></div></div>
+      <div class="c4-lbl atl"><span class="lg"><img src="assets/img/logos/gatech.png" alt=""></span><div><span class="tag" data-e="04-gt.html#4">Atlanta</span><div class="c4-s" data-e="04-gt.html#5">Georgia Tech</div></div></div>
+      <div class="panel c4-stats"><span class="tag" data-e="04-gt.html#6">Datos del vuelo</span>
+        <div class="c4-row"><span class="c4-k" data-e="04-gt.html#7">Distancia</span><span class="c4-v" data-e="04-gt.html#8"><span class="c4-km">6.943</span> km</span></div>
+        <div class="c4-row"><span class="c4-k" data-e="04-gt.html#9">Diferencia horaria</span><span class="c4-v" data-e="04-gt.html#10">−6 h</span></div>
+        <div class="c4-row"><span class="c4-k" data-e="04-gt.html#11">Idioma</span><span class="c4-v" data-e="04-gt.html#12">Inglés</span></div>
+        <div class="c4-row"><span class="c4-k" data-e="04-gt.html#13">Plan</span><span class="c4-v no" data-e="04-gt.html#14">Ninguno</span></div>
+      </div>
+      <span class="c4-plane shadow-px" data-px="plane"></span>
+      <span class="c4-me shadow-px" data-px="jorge" data-anim="cheer"></span>
+    </div>
+    <div class="dlg c4-dlg"><span class="dlg-name" data-e="04-gt.html#15">Jorge</span><p data-e="04-gt.html#16">Me voy de movilidad a Georgia Tech. ¿El plan? Ninguno: vivir la experiencia.</p><span class="dlg-next" data-e="04-gt.html#17">▼</span></div>
+  </div>
+</section>
+<script>
+Deck.slide("s04-gt", function (el, tl, h) {
+  /* arco del vuelo: curva cuadrática de Madrid a Atlanta, con puntos en pixel */
+  var P0 = [260, 200], C = [864, -120], P2 = [1468, 200], N = 30;
+  function pt(t) { var a = (1 - t) * (1 - t), b = 2 * (1 - t) * t, c = t * t; return [a * P0[0] + b * C[0] + c * P2[0], a * P0[1] + b * C[1] + c * P2[1]]; }
+  var g = el.querySelector(".c4-dots"), dots = [];
+  for (var i = 1; i < N; i++) {
+    var q = pt(i / N), r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    r.setAttribute("x", (q[0] - 6).toFixed(1)); r.setAttribute("y", (q[1] - 6).toFixed(1));
+    r.setAttribute("width", 12); r.setAttribute("height", 12); r.setAttribute("fill", "#fff");
+    r.setAttribute("stroke", "rgba(11,13,16,.35)"); r.setAttribute("stroke-width", 2);
+    g.appendChild(r); dots.push(r);
+  }
+  var plane = el.querySelector(".c4-plane"), proxy = { p: 0 };
+  function place() {
+    var p = proxy.p, q = pt(p), q2 = pt(Math.min(1, p + 0.01)), q1 = pt(Math.max(0, p - 0.01));
+    var ang = Math.atan2(q2[1] - q1[1], q2[0] - q1[0]) * 180 / Math.PI;
+    gsap.set(plane, { x: q[0], y: q[1], rotation: ang, opacity: p > 0.01 && p < 0.995 ? 1 : 0 });
+    dots.forEach(function (d, j) { d.style.opacity = (j + 1) / N <= p ? 1 : 0; });
+  }
+  place();
+
+  h.rise(".c4-h", { at: 0, y: 30 });
+  h.rise(".c4-isle", { at: 0.1, y: 80, stagger: 0.15 });
+  h.fade(".c4-cl", { at: 0.2 });
+  h.pop(".c4-lbl.mad", { at: 0.35 });
+  tl.call(Deck.sfx, ["fly", tl], 0.6);
+  tl.fromTo(proxy, { p: 0 }, { p: 1, duration: 1.8, ease: "power1.inOut", onUpdate: place }, 0.6);
+  h.rise(".c4-stats", { at: 0.8, y: 30 });
+  h.count(".c4-km", { to: 6943, at: 0.9, dur: 1.5 });
+  h.fade(".c4-row", { at: 1.0, stagger: 0.25 });
+  h.pop(".c4-lbl.atl", { at: 2.35 });
+  h.pop(".c4-me", { at: 2.45 });
+  tl.call(Deck.sfx, ["coin", tl], 2.45);
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c4-isle"), { y: -10, duration: 2.2, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.6 }); });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c4-cl"), { x: function (i) { return i ? -50 : 50; }, duration: 7, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+  var t = h.step();
+  h.rise(".c4-dlg", { at: t, y: 24 });
+});
+</script>
+
+<!-- 05-hub1.html -->
+<section data-file="05-hub1.html" class="slide" id="s05-hub1" data-title="Mapa: elige puerta" data-enter="zoom">
+  <template class="notes">⏱ 15 s · empieza en 3:00
+━━ ACTO 2 · LAS TRES PUERTAS ━━
+«De ahí se me abrieron tres puertas.»
+🖱 Clic en la puerta MORADA (Academia).</template>
+  <style>
+    #s05-hub1 .c5-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+    #s05-hub1 .c5-cl { display: block; width: 300px; margin-top: -34px; }
+    #s05-hub1 .door .px-door { width: 190px; position: relative; z-index: 1; }
+    #s05-hub1 .c5-me { position: absolute; left: 30px; bottom: 110px; width: 140px; }
+    #s05-hub1 .c5-hint { text-align: center; font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="05-hub1.html#0">Elige una puerta</span>
+      <div class="inv"><span data-e="05-hub1.html#1">Inventario</span><span class="slot empty"></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c5-h" style="text-align:center" data-e="05-hub1.html#2">Tres mundos. No hace falta elegir solo uno.</div>
+    <div class="c5-stage">
+      <div class="doors">
+        <button class="door acad" data-go="s06-w1-lab"><span class="arrow-down c5-arrow" data-px="arrow"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c5-cl" data-px="cloud"></span><span class="door-label" data-e="05-hub1.html#3">Academia</span></button>
+        <button class="door emp" data-go="s11-w2-path"><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c5-cl" data-px="cloud"></span><span class="door-label" data-e="05-hub1.html#4">Empresa</span></button>
+        <button class="door start" data-go="s14-w3-uniwords"><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c5-cl" data-px="cloud"></span><span class="door-label" data-e="05-hub1.html#5">Emprender</span></button>
+      </div>
+      <span class="c5-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="pxt c5-hint" data-e="05-hub1.html#6">Haz clic en una puerta · o pulsa →</div>
+  </div>
+</section>
+<script>
+Deck.slide("s05-hub1", function (el, tl, h) {
+  h.rise(".c5-h", { at: 0, y: 30 });
+  h.rise(".door", { at: 0.2, y: 80, stagger: 0.12 });
+  h.pop(".star", { at: 0.7 });
+  h.slideIn(".c5-me", { at: 0.6, x: -80 });
+  h.fade(".c5-hint", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c5-arrow"), { y: 14, duration: 0.45, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+});
+</script>
+
+<!-- 06-w1-lab.html -->
+<section data-file="06-w1-lab.html" class="slide" id="s06-w1-lab" data-section="1" data-title="Academia: el lab de Georgia Tech" data-enter="edge">
+  <template class="notes">⏱ 90 s · empieza en 3:15
+(espera a que se abra el círculo)
+Lee el post con tono de «muy orgulloso…» 😄
+→ «La realidad: le escribí un correo al profe.»
+«En clase dijo que buscaba gente para su lab.»
+«Le dije: en España esto en 3º no pasa. Quiero aprender.»
+«No sabía investigar: pregunté a los de doctorado.»
+→ «Y justo salió GPT-4: nadie era experto.»
+💬 «¿Alguien ha escrito alguna vez a un profe?»</template>
+  <style>
+    #s06-w1-lab .c6-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; margin-top: 36px; }
+    #s06-w1-lab .c6-col .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s06-w1-lab .c6-dlg p { font-size: 29px; }
+    #s06-w1-lab .c6-luck { display: flex; align-items: center; gap: 22px; margin-top: 40px; background: #fff8e1; }
+    #s06-w1-lab .c6-luck [data-px] { width: 60px; flex: none; }
+    #s06-w1-lab .c6-luck .pxt { font-size: 22px; color: #b45309; }
+    #s06-w1-lab .c6-luck .c6-lt { font-size: 28px; font-weight: 600; margin-top: 4px; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-acad)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t" data-e="06-w1-lab.html#0">Mundo 1 · Academia</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-acad)" data-e="06-w1-lab.html#1">Mundo 1 · Academia</span>
+      <div class="inv"><span data-e="06-w1-lab.html#2">Inventario</span><span class="slot empty"></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c6-h" data-e="06-w1-lab.html#3">Versión LinkedIn vs. versión real</div>
+    <div class="c6-grid">
+      <div class="c6-col c6-left">
+        <div class="pxt" data-e="06-w1-lab.html#4">Versión LinkedIn</div>
+        <div class="lpost">
+          <div class="lp-head"><span class="lp-av"><span data-px="jorge"></span></span><div><div class="lp-name" data-e="06-w1-lab.html#5">Jorge Garcelán <span>· 1.º</span></div><div class="lp-sub" data-e="06-w1-lab.html#6">Data Science @ UC3M · Exchange @ Georgia Tech</div><div class="lp-time" data-e="06-w1-lab.html#7">1 sem · 🌐</div></div><span class="lp-follow" data-e="06-w1-lab.html#8">+ Seguir</span></div>
+          <div class="lp-text" data-e="06-w1-lab.html#9">🎉 ¡Muy orgulloso de compartir que nuestro paper ha sido aceptado en AAAI! Gracias al Data Science &amp; Policy Lab de Georgia Tech por la oportunidad. <span class="lp-tags">#AI #Research #GPT4</span></div>
+          <div class="lp-img"><span data-px="atlanta" style="left:20px;bottom:26px;width:240px"></span><span data-px="jorge" style="left:330px;bottom:22px;width:96px"></span><span data-px="paper" style="left:440px;bottom:110px;width:70px;transform:rotate(-8deg)"></span><span data-px="cap" style="left:345px;top:14px;width:80px;transform:rotate(-12deg)"></span><span data-px="star" style="left:520px;top:40px;width:46px"></span><span class="lg" style="right:22px;top:20px"><img src="assets/img/logos/gatech.png" alt=""></span><span data-px="flask" style="right:60px;bottom:30px;width:56px"></span></div>
+          <div class="lp-react" data-e="06-w1-lab.html#10"><span>👍❤️👏</span> Tú y 248 personas más <span class="lp-com">32 comentarios</span></div>
+          <div class="lp-act"><span data-e="06-w1-lab.html#11">👍 Recomendar</span><span data-e="06-w1-lab.html#12">💬 Comentar</span><span data-e="06-w1-lab.html#13">🔁 Compartir</span><span data-e="06-w1-lab.html#14">➤ Enviar</span></div>
+        </div>
+      </div>
+      <div class="c6-col c6-right">
+        <div class="pxt" data-e="06-w1-lab.html#15">Versión real</div>
+        <div class="dlg c6-dlg"><span class="dlg-name" data-e="06-w1-lab.html#16">Jorge</span>
+          <p data-e="06-w1-lab.html#17">Al acabar el semestre <b>le escribí un correo</b> al profe de una asignatura: había dicho en clase que buscaba gente para su lab.</p>
+          <p data-e="06-w1-lab.html#18">Le conté que en España era raro que alguien de 3º pudiera investigar y publicar, y que quería aprender.</p>
+          <p data-e="06-w1-lab.html#19"><b>No sabía qué era investigar.</b> Pregunté a compañeros de máster y doctorado.</p>
+        </div>
+        <div class="panel c6-luck"><span data-px="star"></span><div><div class="pxt" data-e="06-w1-lab.html#20">¡Golpe de suerte!</div><div class="c6-lt" data-e="06-w1-lab.html#21">Justo salen ChatGPT y GPT-4: nadie era experto, todos partíamos del mismo nivel.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s06-w1-lab", function (el, tl, h) {
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+  h.rise(".c6-h", { at: o + 0, y: 30 });
+  h.rise(".c6-left > .pxt, .c6-left .lpost", { at: o + 0.25, y: 30, stagger: 0.1 });
+  var t = h.step();
+  h.fade(".c6-right > .pxt", { at: t });
+  h.rise(".c6-dlg", { at: t + 0.1, y: 24 });
+  h.rise(".c6-dlg p", { at: t + 0.3, y: 14, stagger: 0.25 });
+  var t2 = h.step();
+  h.pop(".c6-luck", { at: t2 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>
+
+<!-- 07-w1-loot.html -->
+<section data-file="07-w1-loot.html" class="slide" id="s07-w1-loot" data-section="1" data-title="Academia: lo que vino después" data-enter="push">
+  <template class="notes">⏱ 40 s · empieza en 4:45
+«El TFG me abrió un contrato de investigación.»
+«Papers en Iberspeech, womENcourage y AVI.»
+→ LECCIÓN 1: «Escribid a un profe. El TFM puede ser un paper.»</template>
+  <style>
+    #s07-w1-loot .c7-path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 44px; margin: auto 0; position: relative; }
+    #s07-w1-loot .c7-n { position: relative; padding: 30px 26px 26px; }
+    #s07-w1-loot .c7-n .tag { background: var(--c-acad); }
+    #s07-w1-loot .c7-n { padding-bottom: 86px; }
+    #s07-w1-loot .c7-ic { position: absolute; right: 18px; bottom: 16px; height: 56px; }
+    #s07-w1-loot .c7-ic svg { width: auto; height: 56px; }
+    #s07-w1-loot .c7-lg { position: absolute; top: -30px; right: 16px; }
+    #s07-w1-loot .c7-n .c7-t { font-size: 30px; font-weight: 600; line-height: 1.3; }
+    #s07-w1-loot .c7-n:not(:last-child)::after { content: ""; position: absolute; right: -44px; top: 50%; width: 44px; height: 8px; margin-top: -4px; background: repeating-linear-gradient(90deg, #fff 0 10px, transparent 10px 18px); }
+    #s07-w1-loot .c7-bottom { display: grid; grid-template-columns: 560px 1fr; gap: 48px; align-items: stretch; }
+    #s07-w1-loot .c7-tip .tag { background: var(--gold); color: var(--ink); }
+    #s07-w1-loot .c7-tip p { font-size: 29px; line-height: 1.4; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-acad)" data-e="07-w1-loot.html#0">Mundo 1 · Academia</span>
+      <div class="inv"><span data-e="07-w1-loot.html#1">Inventario</span><span class="slot c7-slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c7-h" data-e="07-w1-loot.html#2">Investigar no es solo para quien va a hacer un doctorado</div>
+    <div class="c7-path">
+      <div class="panel c7-n"><span class="tag" data-e="07-w1-loot.html#3">Georgia Tech</span><span class="lg sm c7-lg"><img src="assets/img/logos/gatech.png" alt=""></span><div class="c7-t" data-e="07-w1-loot.html#4">Primer paper, en AAAI (2023)</div><span class="c7-ic" data-px="flask"></span></div>
+      <div class="panel c7-n"><span class="tag" data-e="07-w1-loot.html#5">TFG</span><span class="lg sm c7-lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div class="c7-t" data-e="07-w1-loot.html#6">Me abre un contrato de investigación</div><span class="c7-ic" data-px="cap"></span></div>
+      <div class="panel c7-n"><span class="tag" data-e="07-w1-loot.html#7">Máster + IRIS</span><span class="lg sm c7-lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div class="c7-t" data-e="07-w1-loot.html#8">Sesgo de género en medios</div><span class="c7-ic" data-px="laptop"></span></div>
+      <div class="panel c7-n"><span class="tag" data-e="07-w1-loot.html#9">Papers</span><div class="c7-t" data-e="07-w1-loot.html#10">Iberspeech · womENcourage · AVI (Venecia)</div><span class="c7-ic" data-px="trophy"></span></div>
+    </div>
+    <div class="c7-bottom">
+      <div class="panel item-get c7-get"><span data-px="paper"></span><div><div class="pxt" data-e="07-w1-loot.html#11">¡Has conseguido!</div><div class="it-name" data-e="07-w1-loot.html#12">Un paper</div></div></div>
+      <div class="panel c7-tip"><span class="tag" data-e="07-w1-loot.html#13">Tip</span><p data-e="07-w1-loot.html#14">Habla con un profe cuyo trabajo te guste. <b>El TFM puede ser un paper.</b></p></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s07-w1-loot", function (el, tl, h) {
+  h.rise(".c7-h", { at: 0, y: 30 });
+  h.rise(".c7-n", { at: 0.3, y: 40, stagger: 0.18 });
+  var t = h.step();
+  h.pop(".c7-get", { at: t });
+  tl.call(Deck.sfx, ["coin", tl], t + 0.1);
+  h.pop(".c7-slot [data-px]", { at: t + 0.35 });
+  h.rise(".c7-tip", { at: t + 0.5, y: 24 });
+});
+</script>
+
+<!-- 08-boss.html -->
+<section data-file="08-boss.html" class="slide" id="s08-boss" data-section="1" data-title="Final boss: la rueda" data-enter="cut">
+  <template class="notes">⏱ 90 s · empieza en 5:25
+«¿Os acordáis del final boss? Aquí lo derroté.»
+«En 4º solo tenía el grado… y el paper.»
+→ «Telefónica, puesto de NLP: me preguntaron por el paper.»
+«Un correo a un profe me abrió Telefónica.»
+→ «No esperes a tener experiencia: CRÉALA.»</template>
+  <style>
+    #s08-boss .c8-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 760px 1fr; gap: 70px; align-items: center; }
+    #s08-boss .c8-arena { position: relative; width: 760px; height: 700px; }
+    #s08-boss .c8-ring { position: absolute; left: 80px; top: 80px; width: 600px; height: 600px; }
+    #s08-boss .c8-boss { position: absolute; left: 270px; top: 300px; width: 220px; }
+    #s08-boss .c8-hp { position: absolute; left: 230px; top: 0; width: 300px; text-align: center; }
+    #s08-boss .c8-hp .pxt { font-size: 20px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s08-boss .c8-bar { height: 26px; border: 4px solid var(--ink); background: #fff; margin-top: 8px; }
+    #s08-boss .c8-bar i { display: block; height: 100%; background: var(--red); transform-origin: 0 50%; }
+    #s08-boss .c8-lab { position: absolute; font-size: 22px; font-weight: 700; background: #fff; border: 4px solid var(--ink); padding: 8px 14px; white-space: nowrap; }
+    #s08-boss .c8-lab.t { left: 230px; top: 64px; } 
+    #s08-boss .c8-lab.r { left: 560px; top: 356px; }
+    #s08-boss .c8-lab.b { left: 230px; top: 650px; }
+    #s08-boss .c8-lab.l { left: 0; top: 356px; }
+    #s08-boss .c8-me { position: absolute; left: 20px; top: 470px; width: 100px; }
+    #s08-boss .c8-paper { position: absolute; left: 200px; top: 330px; width: 70px; }
+    #s08-boss .c8-hit { position: absolute; left: 300px; top: 250px; font-family: var(--pixel); font-weight: 700; font-size: 48px; color: #fff; text-shadow: 4px 4px 0 var(--ink); }
+    #s08-boss .c8-win .tag { background: var(--green); }
+    #s08-boss .c8-win p { font-size: 28px; line-height: 1.4; }
+    #s08-boss .c8-wrow { display: flex; align-items: center; gap: 24px; }
+    #s08-boss .c8-boss { cursor: pointer; }
+    #s08-boss .c8-moral { margin-top: 44px; background: var(--accent); color: #fff; }
+    #s08-boss .c8-moral .c8-big { font-size: 44px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+    #s08-boss .c8-moral .c8-small { font-size: 24px; margin-top: 14px; color: rgba(255,255,255,.9); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--red)" data-e="08-boss.html#0">Mundo 1 · Final boss</span>
+      <div class="inv"><span data-e="08-boss.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="c8-grid">
+      <div class="c8-arena">
+        <svg class="c8-ring" viewBox="0 0 600 600" aria-hidden="true">
+          <circle cx="300" cy="300" r="250" fill="none" stroke="#fff" stroke-width="10" stroke-dasharray="40 22"/>
+          <polygon points="560,280 530,330 590,330" fill="#fff"/>
+          <polygon points="40,320 10,270 70,270" fill="#fff"/>
+        </svg>
+        <div class="c8-hp"><div class="pxt" data-e="08-boss.html#2">La rueda · HP</div><div class="c8-bar"><i class="c8-hpfill"></i></div></div>
+        <span class="c8-lab t" data-e="08-boss.html#3">Necesitas experiencia</span>
+        <span class="c8-lab r" data-e="08-boss.html#4">para conseguir trabajo</span>
+        <span class="c8-lab b" data-e="08-boss.html#5">Necesitas trabajo</span>
+        <span class="c8-lab l" data-e="08-boss.html#6">para tener experiencia</span>
+        <span class="c8-boss" data-px="boss" data-noclick></span>
+        <span class="c8-paper" data-px="paper"></span>
+        <span class="c8-me shadow-px" data-px="jorge" data-anim="cheer"></span>
+        <span class="c8-hit" aria-hidden="true" data-e="08-boss.html#7">¡ZAS!</span>
+      </div>
+      <div>
+        <div class="panel c8-win"><span class="tag" data-e="08-boss.html#8">Desbloqueado: Telefónica</span>
+          <div class="c8-wrow"><span class="lg "><img src="assets/img/logos/telefonica.png" alt=""></span><p data-e="08-boss.html#9">4º de carrera, un puesto de NLP e IA. En la entrevista <b>se centraron en mi paper</b>. No tenía experiencia laboral, pero tenía algo que enseñar.</p></div></div>
+        <div class="panel c8-moral">
+          <div class="c8-big" data-e="08-boss.html#10">No tienes que esperar a tener experiencia. Créala.</div>
+          <div class="c8-small" data-e="08-boss.html#11">Hoy, con más competencia por los puestos junior, todavía más.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s08-boss", function (el, tl, h) {
+  h.fade(".c8-ring", { at: 0, dur: 0.4 });
+  h.pop(".c8-boss", { at: 0.15 });
+  h.fade(".c8-hp", { at: 0.3 });
+  h.pop(".c8-lab", { at: 0.4, stagger: 0.12 });
+  h.slideIn(".c8-me", { at: 0.5, x: -60 });
+  h.loop(function () { return gsap.to(el.querySelector(".c8-ring"), { rotation: 360, transformOrigin: "50% 50%", duration: 14, repeat: -1, ease: "none" }); });
+  var t = h.step();
+  tl.call(Deck.sfx, ["throw", tl], t + 0.03);
+  tl.call(Deck.sfx, ["hit", tl], t + 0.6);
+  tl.call(Deck.sfx, ["defeat", tl], t + 1.2);
+  tl.fromTo(el.querySelector(".c8-paper"), { x: -260, y: 40, opacity: 0, rotation: -40 }, { x: 0, y: 0, opacity: 1, rotation: 0, duration: 0.6, ease: "power2.in" }, t);
+  tl.fromTo(el.querySelector(".c8-hit"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(3)" }, t + 0.6);
+  tl.fromTo(el.querySelector(".c8-hpfill"), { scaleX: 1 }, { scaleX: 0, duration: 0.9, ease: "steps(8)" }, t + 0.65);
+  tl.fromTo(el.querySelector(".c8-boss"), { opacity: 1, y: 0 }, { opacity: 0.25, y: 30, duration: 0.6, ease: "steps(4)" }, t + 1.2);
+  tl.fromTo(el.querySelector(".c8-paper"), { opacity: 1 }, { opacity: 0, duration: 0.3, immediateRender: false }, t + 1.2);
+  tl.fromTo(el.querySelector(".c8-hit"), { opacity: 1 }, { opacity: 0, duration: 0.3, immediateRender: false }, t + 1.4);
+  h.rise(".c8-win", { at: t + 1.4, y: 24 });
+  var t2 = h.step();
+  h.pop(".c8-moral", { at: t2 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>
+
+<!-- 09-hub2.html -->
+<section data-file="09-hub2.html" class="slide" id="s09-hub2" data-title="Mapa: mundo 1 completado" data-enter="zoom">
+  <template class="notes">⏱ 15 s · empieza en 6:55
+«Con ese paper llegó la segunda puerta.»
+🖱 Clic en la puerta NARANJA (Empresa).</template>
+  <style>
+    #s09-hub2 .c9-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+    #s09-hub2 .c9-cl { display: block; width: 300px; margin-top: -34px; }
+    #s09-hub2 .door .px-door { width: 190px; position: relative; z-index: 1; }
+    #s09-hub2 .c9-me { position: absolute; left: 30px; bottom: 110px; width: 140px; }
+    #s09-hub2 .c9-hint { text-align: center; font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="09-hub2.html#0">Elige una puerta</span>
+      <div class="inv"><span data-e="09-hub2.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c9-h" style="text-align:center" data-e="09-hub2.html#2">Mundo 1 completado. Siguiente puerta.</div>
+    <div class="c9-stage">
+      <div class="doors">
+        <button class="door acad done" data-go="s06-w1-lab"><span class="star" data-px="star"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c9-cl" data-px="cloud"></span><span class="door-label" data-e="09-hub2.html#3">Academia</span></button>
+        <button class="door emp" data-go="s11-w2-path"><span class="arrow-down c9-arrow" data-px="arrow"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c9-cl" data-px="cloud"></span><span class="door-label" data-e="09-hub2.html#4">Empresa</span></button>
+        <button class="door start" data-go="s14-w3-uniwords"><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c9-cl" data-px="cloud"></span><span class="door-label" data-e="09-hub2.html#5">Emprender</span></button>
+      </div>
+      <span class="c9-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="pxt c9-hint" data-e="09-hub2.html#6">Haz clic en una puerta · o pulsa →</div>
+  </div>
+</section>
+<script>
+Deck.slide("s09-hub2", function (el, tl, h) {
+  h.rise(".c9-h", { at: 0, y: 30 });
+  h.rise(".door", { at: 0.2, y: 80, stagger: 0.12 });
+  h.pop(".star", { at: 0.7 });
+  h.slideIn(".c9-me", { at: 0.6, x: -80 });
+  h.fade(".c9-hint", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c9-arrow"), { y: 14, duration: 0.45, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+});
+</script>
+
+<!-- 11-w2-path.html -->
+<section data-file="11-w2-path.html" class="slide" id="s11-w2-path" data-section="2" data-title="Empresa: el péndulo" data-enter="push">
+  <template class="notes">⏱ 60 s · empieza en 7:10
+(espera a que se abra el círculo)
+«Arriba, construir. Abajo, hablar con clientes.»
+«Empiezo en Telefónica: construir.»
+→ «AWS: bajo a clientes.»
+→ «Multiverse: Pre-sales Engineer.»
+→ «De noche: proyectos propios.»
+→ «MediaRadar: vuelvo a construir, con mirada de cliente.»
+→ «Probar algo distinto no es perder el tiempo.»</template>
+  <style>
+    #s11-w2-path .c11-hud { display: flex; flex-direction: column; gap: 8px; }
+    #s11-w2-path .c11-bar { display: flex; align-items: center; gap: 12px; }
+    #s11-w2-path .c11-bar .pxt { width: 200px; text-align: right; font-size: 17px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s11-w2-path .c11-cells { display: flex; gap: 4px; padding: 4px; background: var(--ink); }
+    #s11-w2-path .c11-cells i { width: 22px; height: 18px; background: #334155; display: block; }
+    #s11-w2-path .c11-map { position: relative; width: 1728px; height: 604px; margin-top: 4px; }
+    #s11-w2-path .c11-lane { position: absolute; left: 0; right: 0; border: 3px dashed rgba(255,255,255,.45); background: rgba(255,255,255,.1); }
+    #s11-w2-path .c11-lane.top { top: 0; height: 300px; } #s11-w2-path .c11-lane.bot { top: 316px; height: 288px; }
+    #s11-w2-path .c11-ll { position: absolute; left: 16px; top: 12px; display: flex; align-items: center; gap: 12px; font-family: var(--pixel); font-size: 20px; color: #fff; text-transform: uppercase; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+    #s11-w2-path .c11-ll [data-px] { width: 42px; }
+    #s11-w2-path .c11-lane.bot .c11-ll { top: auto; bottom: 12px; }
+    #s11-w2-path .c11-svg { position: absolute; inset: 0; width: 1728px; height: 604px; overflow: visible; }
+    #s11-w2-path .c11-pl { position: absolute; height: 30px; border: 4px solid var(--ink); box-shadow: 6px 6px 0 rgba(11,13,16,.35);
+      background: repeating-linear-gradient(90deg, #c2410c 0 34px, #0b0d10 34px 37px), #c2410c; }
+    #s11-w2-path .c11-pl::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #4ade80; border-bottom: 3px solid var(--ink); }
+    #s11-w2-path .c11-pl.night { background: repeating-linear-gradient(90deg, #312e81 0 34px, #0b0d10 34px 37px), #312e81; }
+    #s11-w2-path .c11-pl.night::before { background: #a5b4fc; }
+    #s11-w2-path .c11-card { position: absolute; width: 300px; padding: 26px 20px 16px; }
+    #s11-w2-path .c11-card .tag { background: var(--c-emp); color: var(--ink); }
+    #s11-w2-path .c11-card .c11-r { font-size: 24px; font-weight: 600; line-height: 1.25; }
+    #s11-w2-path .c11-card .c11-y { font-family: var(--pixel); font-size: 16px; color: var(--faint); margin-top: 6px; }
+    #s11-w2-path .c11-card .lg { position: absolute; top: -28px; right: 14px; }
+    #s11-w2-path .c11-card.night { background: #1e1b4b; color: #fff; }
+    #s11-w2-path .c11-card.night .tag { background: #a5b4fc; }
+    #s11-w2-path .c11-card.night .c11-y { color: #c7d2fe; }
+    #s11-w2-path .c11-moon { position: absolute; left: 1110px; top: 30px; width: 54px; height: 54px; border-radius: 50%; background: #fde68a; box-shadow: 14px -6px 0 0 #1e1b4b inset, 0 0 24px #fde68a; }
+    #s11-w2-path .c11-me { position: absolute; left: 0; top: 0; width: 70px; z-index: 5; }
+    #s11-w2-path .c11-moral { margin-top: 12px; padding-top: 20px; padding-bottom: 20px; background: var(--accent); color: #fff; font-size: 30px; font-weight: 600; line-height: 1.35; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-emp)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t" data-e="11-w2-path.html#0">Mundo 2 · Empresa</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)" data-e="11-w2-path.html#1">Mundo 2 · Empresa</span>
+      <div class="c11-hud">
+        <div class="c11-bar"><span class="pxt" data-e="11-w2-path.html#2">Construir</span><span class="c11-cells b"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="c11-bar"><span class="pxt" data-e="11-w2-path.html#3">Clientes</span><span class="c11-cells c"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      </div></div>
+    <div class="h-sky c11-h" data-e="11-w2-path.html#4">Mi camino no es una línea: es un péndulo</div>
+    <div class="c11-map">
+      <div class="c11-lane top"><span class="c11-ll" data-e="11-w2-path.html#5"><span data-px="laptop"></span>▲ Construir</span></div>
+      <div class="c11-lane bot"><span class="c11-ll" data-e="11-w2-path.html#6"><span data-px="bubble"></span>▼ Hablar con clientes</span></div>
+      <svg class="c11-svg" viewBox="0 0 1728 604" aria-hidden="true"><g class="c11-dots"></g></svg>
+      <span class="c11-moon"></span>
+      <div class="c11-pl" style="left:160px;top:120px;width:280px"></div>
+      <div class="c11-pl" style="left:500px;top:420px;width:280px"></div>
+      <div class="c11-pl" style="left:880px;top:420px;width:280px"></div>
+      <div class="c11-pl night" style="left:1190px;top:120px;width:180px"></div>
+      <div class="c11-pl" style="left:1430px;top:120px;width:280px"></div>
+      <div class="panel c11-card s1" style="left:150px;top:168px"><span class="tag" data-e="11-w2-path.html#7">Telefónica</span><span class="lg sm"><img src="assets/img/logos/telefonica.png" alt=""></span><div class="c11-r" data-e="11-w2-path.html#8">Prácticas · IA en auditoría</div><div class="c11-y" data-e="11-w2-path.html#9">2023–24</div></div>
+      <div class="panel c11-card s2" style="left:490px;top:468px"><span class="tag" data-e="11-w2-path.html#10">AWS</span><span class="lg sm"><img src="assets/img/logos/aws.png" alt=""></span><div class="c11-r" data-e="11-w2-path.html#11">Solutions Architect (prácticas)</div><div class="c11-y" data-e="11-w2-path.html#12">2025</div></div>
+      <div class="panel c11-card s3" style="left:870px;top:468px"><span class="tag" data-e="11-w2-path.html#13">Multiverse</span><span class="lg sm"><img src="assets/img/logos/multiverse.png" alt=""></span><div class="c11-r" data-e="11-w2-path.html#14">Pre-sales Engineer</div><div class="c11-y" data-e="11-w2-path.html#15">2026</div></div>
+      <div class="panel c11-card night s4" style="left:1150px;top:168px;width:250px"><span class="tag" data-e="11-w2-path.html#16">Nivel secreto</span><div class="c11-r" data-e="11-w2-path.html#17">De noche: proyectos propios</div><div class="c11-y" data-e="11-w2-path.html#18">Siempre</div></div>
+      <div class="panel c11-card s5" style="left:1420px;top:168px"><span class="tag" data-e="11-w2-path.html#19">MediaRadar</span><span class="lg sm"><img src="assets/img/logos/mediaradar.png" alt=""></span><div class="c11-r" data-e="11-w2-path.html#20">AI Engineer</div><div class="c11-y" data-e="11-w2-path.html#21">Hoy</div></div>
+      <span class="c11-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="panel c11-moral" data-e="11-w2-path.html#22">Probar algo distinto no es perder el tiempo: vuelves con algo que los demás no tienen.</div>
+  </div>
+</section>
+<script>
+Deck.slide("s11-w2-path", function (el, tl, h) {
+  /* paradas: centro de cada plataforma (los pies de Jorge) y nivel de las barras al llegar */
+  var P = [[300, 120], [640, 420], [1020, 420], [1280, 120], [1570, 120]];
+  var LV = [[3, 0], [3, 3], [3, 6], [6, 6], [8, 7]];
+  var JUMP = 130, W = 70, HGT = 98, N = 14;
+  var me = el.querySelector(".c11-me"), g = el.querySelector(".c11-dots");
+  var cb = h.qa(".c11-cells.b i"), cc = h.qa(".c11-cells.c i"), dots = [];
+  function at(i, f) {
+    var a = P[i], b = P[i + 1];
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f - Math.sin(Math.PI * f) * JUMP - (Math.min(a[1], b[1]) < a[1] ? 0 : 0)];
+  }
+  for (var i = 0; i < P.length - 1; i++) {
+    dots.push([]);
+    for (var k = 1; k < N; k++) {
+      var q = at(i, k / N), r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      r.setAttribute("x", (q[0] - 5).toFixed(1)); r.setAttribute("y", (q[1] - 50).toFixed(1));
+      r.setAttribute("width", 10); r.setAttribute("height", 10); r.setAttribute("fill", "#fff");
+      r.setAttribute("stroke", "rgba(11,13,16,.35)"); r.setAttribute("stroke-width", 2);
+      g.appendChild(r); dots[i].push(r);
+    }
+  }
+  var pr = { s: 0 };
+  function place() {
+    var s = pr.s, i = Math.min(P.length - 2, Math.floor(s)), f = s - i, q = at(i, f);
+    gsap.set(me, { x: q[0] - W / 2, y: q[1] - HGT });
+    dots.forEach(function (row, j) { row.forEach(function (d, k) { d.style.opacity = j < i || (j === i && (k + 1) / N <= f) ? 1 : 0; }); });
+    var lv = LV[Math.min(LV.length - 1, Math.floor(s + 0.02))];
+    cb.forEach(function (c, j) { c.style.background = j < lv[0] ? "#4ade80" : ""; });
+    cc.forEach(function (c, j) { c.style.background = j < lv[1] ? "#f59e0b" : ""; });
+  }
+  place();
+
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+
+  h.rise(".c11-h", { at: o + 0, y: 30 });
+  h.fade(".c11-lane", { at: o + 0.1, stagger: 0.1 });
+  h.rise(".c11-pl", { at: o + 0.25, y: 40, stagger: 0.08 });
+  h.fade(".c11-moon", { at: o + 0.5 });
+  h.pop(".c11-card.s1", { at: o + 0.5 });
+  h.pop(".c11-me", { at: o + 0.6 });
+  h.fade(".c11-hud", { at: o + 0.7 });
+  var cards = [".c11-card.s2", ".c11-card.s3", ".c11-card.s4", ".c11-card.s5"], sfx = ["jump", "jump", "coin", "power"];
+  for (var j = 0; j < 4; j++) {
+    var t = h.step();
+    tl.call(Deck.sfx, ["jump", tl], t + 0.03);
+    tl.fromTo(pr, { s: j }, { s: j + 1, duration: 0.7, ease: "power1.inOut", onUpdate: place, immediateRender: j === 0 }, t);
+    h.pop(cards[j], { at: t + 0.55 });
+    if (sfx[j] !== "jump") tl.call(Deck.sfx, [sfx[j], tl], t + 0.7);
+  }
+  var t2 = h.step();
+  h.rise(".c11-moral", { at: t2, y: 24 });
+});
+</script>
+
+<!-- 10b-w2-aws.html -->
+<section data-file="10b-w2-aws.html" class="slide" id="s10b-w2-aws" data-section="2" data-title="Empresa: cómo entré en AWS" data-enter="push">
+  <template class="notes">⏱ 60 s · empieza en 8:10
+«Zoom en AWS. Lo que dice LinkedIn…» 😄
+→ «Lo real: vi la oferta en LinkedIn. Un rol nuevo para mí.»
+«Me preparé un par de semanas.»
+«Solo tenía prácticas e investigación…»
+«…y las conté como si fueran un producto.»
+→ TIP: «Contad lo vuestro como experiencia laboral.»</template>
+  <style>
+    #s10b-w2-aws .c10b-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; margin-top: 36px; }
+    #s10b-w2-aws .c10b-col > .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s10b-w2-aws .c10b-dlg p { font-size: 28px; }
+    #s10b-w2-aws .c10b-tip { margin-top: 40px; }
+    #s10b-w2-aws .c10b-tip .tag { background: var(--gold); color: var(--ink); }
+    #s10b-w2-aws .c10b-tip p { font-size: 28px; line-height: 1.4; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)" data-e="10b-w2-aws.html#0">Mundo 2 · Empresa</span>
+      <div class="inv"><span data-e="10b-w2-aws.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c10b-h" data-e="10b-w2-aws.html#2">Cómo entré en AWS</div>
+    <div class="c10b-grid">
+      <div class="c10b-col c10b-left">
+        <div class="pxt" data-e="10b-w2-aws.html#3">Versión LinkedIn</div>
+        <div class="lpost">
+          <div class="lp-head"><span class="lp-av"><span data-px="jorge"></span></span><div><div class="lp-name" data-e="10b-w2-aws.html#4">Jorge Garcelán <span>· 1.º</span></div><div class="lp-sub" data-e="10b-w2-aws.html#5">Solutions Architect Intern @ AWS</div><div class="lp-time" data-e="10b-w2-aws.html#6">1 sem · 🌐</div></div><span class="lp-follow" data-e="10b-w2-aws.html#7">+ Seguir</span></div>
+          <div class="lp-text" data-e="10b-w2-aws.html#8">🚀 ¡Nuevo capítulo! Este verano me uno a Amazon Web Services como Solutions Architect Intern. Muy agradecido y con muchas ganas de aprender. <span class="lp-tags">#AWS #Cloud #NewJob</span></div>
+          <div class="lp-img"><span class="pcloud" data-px="cloud" style="left:30px;top:24px;width:150px"></span><span class="pcloud" data-px="cloud" style="left:470px;top:60px;width:120px"></span><span data-px="jorge" style="left:180px;bottom:22px;width:96px"></span><span data-px="laptop" style="left:300px;bottom:26px;width:150px"></span><span data-px="briefcase" style="left:60px;bottom:26px;width:90px"></span><span class="lg lgx" style="right:40px;top:40px"><img src="assets/img/logos/aws.png" alt=""></span><span data-px="coin" style="right:180px;top:30px;width:40px"></span></div>
+          <div class="lp-react" data-e="10b-w2-aws.html#9"><span>👍❤️👏</span> Tú y 312 personas más <span class="lp-com">41 comentarios</span></div>
+          <div class="lp-act"><span data-e="10b-w2-aws.html#10">👍 Recomendar</span><span data-e="10b-w2-aws.html#11">💬 Comentar</span><span data-e="10b-w2-aws.html#12">🔁 Compartir</span><span data-e="10b-w2-aws.html#13">➤ Enviar</span></div>
+        </div>
+      </div>
+      <div class="c10b-col c10b-right">
+        <div class="pxt" data-e="10b-w2-aws.html#14">Versión real</div>
+        <div class="dlg c10b-dlg"><span class="dlg-name" data-e="10b-w2-aws.html#15">Jorge</span>
+          <p data-e="10b-w2-aws.html#16">Buscando prácticas para el máster, encontré la oferta en <b>LinkedIn</b>. Un rol que no conocía: técnico <b>y</b> de cara al cliente. Me apetecía probarlo.</p>
+          <p data-e="10b-w2-aws.html#17">Me preparé el proceso durante <b>un par de semanas</b>.</p>
+          <p data-e="10b-w2-aws.html#18">Solo tenía prácticas e investigación, así que las conté <b>como si fueran un producto</b>: qué valor aportaban, qué retos tuve y qué conseguí.</p>
+          <p><b data-e="10b-w2-aws.html#19">Eso fue lo que me diferenció.</b></p>
+        </div>
+        <div class="panel c10b-tip"><span class="tag" data-e="10b-w2-aws.html#20">Tip</span><p data-e="10b-w2-aws.html#21">Cuenta tus prácticas, tu investigación y tus proyectos <b>como experiencia laboral</b>: el valor, los retos y el resultado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s10b-w2-aws", function (el, tl, h) {
+  h.rise(".c10b-h", { at: 0, y: 30 });
+  h.rise(".c10b-left > .pxt, .c10b-left .lpost", { at: 0.25, y: 30, stagger: 0.1 });
+  var t = h.step();
+  h.fade(".c10b-right > .pxt", { at: t });
+  h.rise(".c10b-dlg", { at: t + 0.1, y: 24 });
+  h.rise(".c10b-dlg p", { at: t + 0.3, y: 14, stagger: 0.22 });
+  var t2 = h.step();
+  h.pop(".c10b-tip", { at: t2 });
+  tl.call(Deck.sfx, ["select", tl], t2 + 0.03);
+});
+</script>
+
+<!-- 15a2-pitch.html -->
+<section data-file="15a2-pitch.html" class="slide" id="s15a2-pitch" data-title="Cómo contar un proyecto en 60 segundos" data-enter="push">
+  <template class="notes">⏱ 60 s · empieza en 9:10
+«Os regalo la estructura: 60 segundos.»
+→ «Problema: qué pasaba.»
+→ «Qué hice yo. Yo, no el equipo.»
+→ «Resultado, con una cifra.»
+→ «Qué aprendí.»
+→ «El lunes, presentad vuestro agente así.»</template>
+  <style>
+    #s15a2-pitch .c15p-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; background: var(--ink); margin-top: 30px; }
+    #s15a2-pitch .c15p-bar i { display: block; height: 22px; background: #334155; position: relative; overflow: hidden; }
+    #s15a2-pitch .c15p-bar i b { position: absolute; inset: 0; background: #4ade80; transform-origin: 0 50%; }
+    #s15a2-pitch .c15p-marks { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; font-family: var(--pixel); font-size: 18px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+    #s15a2-pitch .c15p-marks span { text-align: right; padding-right: 6px; }
+    #s15a2-pitch .c15p-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 30px; }
+    #s15a2-pitch .c15p-c { padding: 38px 26px 28px; display: flex; flex-direction: column; }
+    #s15a2-pitch .c15p-c .tag { background: var(--accent); }
+    #s15a2-pitch .c15p-n { font-family: var(--pixel); font-weight: 700; font-size: 44px; color: var(--accent); line-height: 1; }
+    #s15a2-pitch .c15p-k { font-family: var(--pixel); font-size: 22px; text-transform: uppercase; margin-top: 12px; }
+    #s15a2-pitch .c15p-hint { font-size: 21px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+    #s15a2-pitch .c15p-ex { margin-top: 18px; padding-top: 16px; border-top: 3px dashed var(--line); font-size: 24px; line-height: 1.35; font-weight: 500; }
+    #s15a2-pitch .c15p-ex .pxt { display: block; font-size: 15px; color: var(--faint); margin-bottom: 6px; }
+    #s15a2-pitch .c15p-moral { margin-top: auto; display: flex; align-items: center; gap: 22px; background: var(--accent); color: #fff; }
+    #s15a2-pitch .c15p-moral [data-px] { width: 64px; flex: none; }
+    #s15a2-pitch .c15p-moral p { font-size: 29px; font-weight: 600; line-height: 1.3; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="15a2-pitch.html#0">Tutorial</span>
+      <div class="inv"><span data-e="15a2-pitch.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15p-h" data-e="15a2-pitch.html#2">Cómo contar un proyecto en 60 segundos</div>
+    <div class="c15p-bar"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    <div class="c15p-marks"><span data-e="15a2-pitch.html#3">0:15</span><span data-e="15a2-pitch.html#4">0:30</span><span data-e="15a2-pitch.html#5">0:45</span><span data-e="15a2-pitch.html#6">1:00</span></div>
+    <div class="c15p-grid">
+      <div class="panel c15p-c k1"><span class="tag" data-e="15a2-pitch.html#7">Paso 1</span><div class="c15p-n" data-e="15a2-pitch.html#8">1</div><div class="c15p-k" data-e="15a2-pitch.html#9">Problema</div><div class="c15p-hint" data-e="15a2-pitch.html#10">Qué pasaba y a quién le importaba</div>
+        <div class="c15p-ex" data-e="15a2-pitch.html#11"><span class="pxt">Ejemplo</span>Entender qué opinaba la gente sobre una ley de plásticos de California (SB-54)</div></div>
+      <div class="panel c15p-c k2"><span class="tag" data-e="15a2-pitch.html#12">Paso 2</span><div class="c15p-n" data-e="15a2-pitch.html#13">2</div><div class="c15p-k" data-e="15a2-pitch.html#14">Qué hice yo</div><div class="c15p-hint" data-e="15a2-pitch.html#15">Tú, no «el equipo»</div>
+        <div class="c15p-ex" data-e="15a2-pitch.html#16"><span class="pxt">Ejemplo</span>Usé GPT-4 con chain-of-thought para clasificarlas, cuando casi nadie lo hacía</div></div>
+      <div class="panel c15p-c k3"><span class="tag" data-e="15a2-pitch.html#17">Paso 3</span><div class="c15p-n" data-e="15a2-pitch.html#18">3</div><div class="c15p-k" data-e="15a2-pitch.html#19">Resultado</div><div class="c15p-hint" data-e="15a2-pitch.html#20">Con una cifra si puedes</div>
+        <div class="c15p-ex" data-e="15a2-pitch.html#21"><span class="pxt">Ejemplo</span>F1 por encima de 0,90 y un paper en AAAI</div></div>
+      <div class="panel c15p-c k4"><span class="tag" data-e="15a2-pitch.html#22">Paso 4</span><div class="c15p-n" data-e="15a2-pitch.html#23">4</div><div class="c15p-k" data-e="15a2-pitch.html#24">Qué aprendí</div><div class="c15p-hint" data-e="15a2-pitch.html#25">Lo que te llevas al siguiente sitio</div>
+        <div class="c15p-ex" data-e="15a2-pitch.html#26"><span class="pxt">Ejemplo</span>Herramienta nueva + problema real = algo que contar</div></div>
+    </div>
+    <div class="panel c15p-moral"><span data-px="mic"></span><p data-e="15a2-pitch.html#27">El lunes, presentad vuestro agente así. Y en la próxima entrevista, también.</p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s15a2-pitch", function (el, tl, h) {
+  h.rise(".c15p-h", { at: 0, y: 30 });
+  h.fade(".c15p-bar, .c15p-marks", { at: 0.2 });
+  var bars = h.qa(".c15p-bar i b");
+  for (var i = 0; i < 4; i++) {
+    var t = h.step();
+    h.pop(".c15p-c.k" + (i + 1), { at: t });
+    tl.fromTo(bars[i], { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "steps(6)" }, t + 0.1);
+    tl.call(Deck.sfx, ["select", tl], t + 0.03);
+  }
+  var t2 = h.step();
+  h.rise(".c15p-moral", { at: t2, y: 24 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>
+
+<!-- 12-w2-compare.html (hidden) -->
+<section data-file="12-w2-compare.html" data-hidden="1" class="slide" id="s12-w2-compare" data-section="2" data-title="Empresa: tres escuelas" data-enter="push">
+  <template class="notes">⏱ 40 s · empieza en 10:10
+«AWS: la mejor entrada al mundo tech. Menos cercanía.»
+«Multiverse: clientes y ritmo de scale-up. Poca dirección.»
+«MediaRadar: construir y probar. Menos cliente.»
+→ «La pregunta: ¿qué quiero aprender ahora?»</template>
+  <style>
+    #s12-w2-compare .c12-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; margin-top: 56px; }
+    #s12-w2-compare .c12-c { padding: 38px 32px 30px; }
+    #s12-w2-compare .c12-c .tag { background: var(--c-emp); color: var(--ink); }
+    #s12-w2-compare .c12-c { position: relative; }
+    #s12-w2-compare .c12-lg { position: absolute; top: 26px; right: 26px; }
+    #s12-w2-compare .c12-co { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; }
+    #s12-w2-compare .c12-role { font-size: 24px; color: var(--muted); margin-top: 4px; }
+    #s12-w2-compare .c12-k { font-family: var(--pixel); font-size: 18px; margin-top: 24px; text-transform: uppercase; }
+    #s12-w2-compare .c12-k.plus { color: var(--green); } #s12-w2-compare .c12-k.minus { color: var(--red); }
+    #s12-w2-compare .c12-v { font-size: 24px; line-height: 1.35; margin-top: 6px; }
+    #s12-w2-compare .c12-row { display: grid; grid-template-columns: auto 1fr; gap: 30px; margin-top: 56px; align-items: stretch; }
+    #s12-w2-compare .c12-moral { background: var(--accent); color: #fff; font-size: 30px; font-weight: 600; line-height: 1.3; display: flex; align-items: center; }
+    #s12-w2-compare .c12-moral b { color: #fff; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)" data-e="12-w2-compare.html#0">Mundo 2 · Empresa</span><div class="inv"><span data-e="12-w2-compare.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot c12-slot"><span data-px="bubble"></span></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c12-h" data-e="12-w2-compare.html#2">Tres empresas, tres escuelas distintas</div>
+    <div class="c12-grid">
+      <div class="panel c12-c"><span class="tag" data-e="12-w2-compare.html#3">Big tech</span><span class="lg c12-lg"><img src="assets/img/logos/aws.png" alt=""></span><div class="c12-co" data-e="12-w2-compare.html#4">AWS</div><div class="c12-role" data-e="12-w2-compare.html#5">Solutions Architect (prácticas)</div>
+        <div class="c12-k plus" data-e="12-w2-compare.html#6">+ Me dio</div><div class="c12-v" data-e="12-w2-compare.html#7">La mejor entrada al mundo tech, en el mayor proveedor cloud del mundo: ver cómo usan cloud e IA muchas industrias, conocer roles nuevos y aprender de compañeros increíbles.</div>
+        <div class="c12-k minus" data-e="12-w2-compare.html#8">− Lo menos bonito</div><div class="c12-v" data-e="12-w2-compare.html#9">En una empresa tan grande hay menos cercanía entre equipos y con el liderazgo.</div></div>
+      <div class="panel c12-c"><span class="tag" data-e="12-w2-compare.html#10">Scale-up deep tech</span><span class="lg c12-lg"><img src="assets/img/logos/multiverse.png" alt=""></span><div class="c12-co" data-e="12-w2-compare.html#11">Multiverse</div><div class="c12-role" data-e="12-w2-compare.html#12">Pre-sales Engineer</div>
+        <div class="c12-k plus" data-e="12-w2-compare.html#13">+ Me dio</div><div class="c12-v" data-e="12-w2-compare.html#14">Mi primer trabajo a jornada completa. Desarrollar el trato con cliente, con clientes importantes en España, y vivir cómo se trabaja en una scale-up.</div>
+        <div class="c12-k minus" data-e="12-w2-compare.html#15">− Lo menos bonito</div><div class="c12-v" data-e="12-w2-compare.html#16">Scale-up: todo va muy rápido y sin una estrategia muy clara. Toca adaptarse continuamente.</div></div>
+      <div class="panel c12-c"><span class="tag" data-e="12-w2-compare.html#17">Producto</span><span class="lg c12-lg"><img src="assets/img/logos/mediaradar.png" alt=""></span><div class="c12-co" data-e="12-w2-compare.html#18">MediaRadar</div><div class="c12-role" data-e="12-w2-compare.html#19">AI Engineer</div>
+        <div class="c12-k plus" data-e="12-w2-compare.html#20">+ Me dio</div><div class="c12-v" data-e="12-w2-compare.html#21">Construir distintos proyectos y probar cosas nuevas, en un producto que toca publicidad, marketing y anuncios.</div>
+        <div class="c12-k minus" data-e="12-w2-compare.html#22">− Lo menos bonito</div><div class="c12-v" data-e="12-w2-compare.html#23">Menos trato con cliente: ahora estoy en el carril de construir.</div></div>
+    </div>
+    <div class="c12-row">
+      <div class="panel item-get c12-get"><span data-px="bubble"></span><div><div class="pxt" data-e="12-w2-compare.html#24">¡Has conseguido!</div><div class="it-name" data-e="12-w2-compare.html#25">Hablar con clientes</div></div></div>
+      <div class="panel c12-moral"><p data-e="12-w2-compare.html#26">La pregunta no es «¿qué empresa es mejor?», sino <b>«¿qué quiero aprender ahora?»</b></p></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s12-w2-compare", function (el, tl, h) {
+  h.rise(".c12-h", { at: 0, y: 30 });
+  h.rise(".c12-c", { at: 0.25, y: 40, stagger: 0.15 });
+  var t = h.step();
+  h.pop(".c12-get", { at: t });
+  h.rise(".c12-moral", { at: t + 0.3, y: 20 });
+  tl.call(Deck.sfx, ["coin", tl], t + 0.1);
+  h.pop(".c12-slot [data-px]", { at: t + 0.35 });
+});
+</script>
+
+<!-- 12b-w2-gameover.html -->
+<section data-file="12b-w2-gameover.html" class="slide c12b" id="s12b-w2-gameover" data-section="2" data-title="Empresa: game over (o no)" data-enter="cut">
+  <template class="notes">⏱ 90 s · empieza en 10:50
+«Lo que me salió mal: cinco enemigos.»
+«1. No aplicaba porque no me sentía preparado.»
+→ «2. Síndrome del impostor en AWS y Multiverse.»
+→ «3. No hacía proyectos propios.»
+→ «4. No escribía a nadie por LinkedIn.»
+→ «5. Muchos «no» al aplicar.»
+💬 «¿Cuál tenéis vosotros? Escribid el número.»
+→ «Cada «no» me quitó una vida, no la partida.»</template>
+  <style>
+    #s12b-w2-gameover.slide { background: linear-gradient(180deg, #0b1230 0%, #1b2559 60%, #3a4a8c 100%); }
+    #s12b-w2-gameover.slide::before { background:
+      radial-gradient(2px 2px at 12% 18%, #fff, transparent), radial-gradient(2px 2px at 28% 8%, #fff, transparent),
+      radial-gradient(2px 2px at 44% 22%, #fff, transparent), radial-gradient(2px 2px at 63% 12%, #fff, transparent),
+      radial-gradient(2px 2px at 78% 26%, #fff, transparent), radial-gradient(2px 2px at 90% 9%, #fff, transparent),
+      radial-gradient(2px 2px at 8% 40%, #fff, transparent), radial-gradient(2px 2px at 95% 44%, #fff, transparent);
+      filter: none; }
+    #s12b-w2-gameover .hud-world { background: var(--red); }
+    #s12b-w2-gameover .c12b-top { display: flex; align-items: center; justify-content: center; gap: 48px; }
+    #s12b-w2-gameover .c12b-go { font-family: var(--pixel); font-weight: 700; font-size: 110px; line-height: 1; color: var(--red); text-shadow: 0 7px 0 #7f1d1d, 0 14px 0 rgba(0,0,0,.35); }
+    #s12b-w2-gameover .c12b-hearts { position: relative; height: 52px; width: 200px; }
+    #s12b-w2-gameover .c12b-h { position: absolute; inset: 0; display: flex; gap: 14px; }
+    #s12b-w2-gameover .c12b-h [data-px] { width: 52px; }
+    #s12b-w2-gameover .c12b-lbl { font-family: var(--pixel); font-size: 20px; color: rgba(255,255,255,.8); text-transform: uppercase; margin: 34px 0 18px; }
+    #s12b-w2-gameover .c12b-en { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+    #s12b-w2-gameover .c12b-e { background: rgba(255,255,255,.96); border: 4px solid var(--ink); box-shadow: 6px 6px 0 #000; padding: 28px 24px 28px; position: relative; }
+    #s12b-w2-gameover .c12b-e [data-px] { display: block; width: 84px; margin-bottom: 16px; }
+    #s12b-w2-gameover .c12b-e .c12b-t { font-size: 26px; font-weight: 600; line-height: 1.3; }
+    #s12b-w2-gameover .c12b-e .c12b-x { position: absolute; right: 14px; top: 12px; font-family: var(--pixel); font-size: 18px; color: var(--red); }
+    #s12b-w2-gameover .c12b-row { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; margin-top: auto; }
+    #s12b-w2-gameover .c12b-dlg p { font-size: 28px; }
+    #s12b-w2-gameover .c12b-cont { font-family: var(--pixel); font-size: 34px; color: #fff; text-shadow: 3px 3px 0 rgba(0,0,0,.5); text-align: center; }
+    #s12b-w2-gameover .c12b-me { display: block; width: 110px; margin: 10px auto 0; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="12b-w2-gameover.html#0">Mundo 2 · ¿Fin?</span></div>
+    <div class="c12b-top">
+      <div class="c12b-go" data-e="12b-w2-gameover.html#1">Game over?</div>
+      <div class="c12b-hearts"><span class="c12b-h e"><span data-px="heart_empty"></span><span data-px="heart_empty"></span><span data-px="heart_empty"></span></span><span class="c12b-h f"><span data-px="heart"></span><span data-px="heart"></span><span data-px="heart"></span></span></div>
+    </div>
+    <div class="c12b-lbl" data-e="12b-w2-gameover.html#2">Los enemigos que me encontré</div>
+    <div class="c12b-en">
+      <div class="c12b-e"><span class="c12b-x" data-e="12b-w2-gameover.html#3">−1 ♥</span><span data-px="ghost" style="color:#a78bfa"></span><div class="c12b-t" data-e="12b-w2-gameover.html#4">No aplicar porque no me sentía preparado</div></div>
+      <div class="c12b-e"><span class="c12b-x" data-e="12b-w2-gameover.html#5">−1 ♥</span><span data-px="ghost" style="color:#f472b6"></span><div class="c12b-t" data-e="12b-w2-gameover.html#6">Síndrome del impostor en AWS y Multiverse</div></div>
+      <div class="c12b-e"><span class="c12b-x" data-e="12b-w2-gameover.html#7">−1 ♥</span><span data-px="ghost" style="color:#60a5fa"></span><div class="c12b-t" data-e="12b-w2-gameover.html#8">No hacer proyectos propios ni curiosear</div></div>
+      <div class="c12b-e"><span class="c12b-x" data-e="12b-w2-gameover.html#9">−1 ♥</span><span data-px="ghost" style="color:#34d399"></span><div class="c12b-t" data-e="12b-w2-gameover.html#10">No escribir a nadie por LinkedIn</div></div>
+      <div class="c12b-e"><span class="c12b-x" data-e="12b-w2-gameover.html#11">−1 ♥</span><span data-px="ghost" style="color:#fbbf24"></span><div class="c12b-t" data-e="12b-w2-gameover.html#12">Aplicar a muchos sitios y oír muchos «no»</div></div>
+    </div>
+    <div class="c12b-row">
+      <div class="dlg c12b-dlg"><span class="dlg-name" data-e="12b-w2-gameover.html#13">Jorge</span>
+        <p data-e="12b-w2-gameover.html#14"><b>Ninguno fue game over:</b> cada «no» me quitó una vida, no la partida.</p>
+        <p data-e="12b-w2-gameover.html#15">Hoy aplicaría aunque no cumpliera todo, escribiría ese mensaje y empezaría ese proyecto.</p>
+      </div>
+      <div><div class="c12b-cont" data-e="12b-w2-gameover.html#16">Continue? ▶ Sí</div><span class="c12b-me" data-px="jorge" data-anim="cheer"></span></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s12b-w2-gameover", function (el, tl, h) {
+  var t0 = h.split(".c12b-go", "chars");
+  tl.fromTo(t0.chars, { opacity: 0, yPercent: -60 }, { opacity: 1, yPercent: 0, duration: 0.4, ease: "steps(3)", stagger: 0.05 }, 0.1);
+  tl.call(Deck.sfx, ["defeat", tl], 0.1);
+  h.fade(".c12b-h.e", { at: 0.6 });
+  h.fade(".c12b-lbl", { at: 0.9 });
+  var en = h.qa(".c12b-e");
+  for (var i = 0; i < en.length; i++) {
+    var ti = i === 0 ? 1.0 : h.step();
+    h.pop(en[i], { at: ti });
+    tl.call(Deck.sfx, ["hit", tl], ti + 0.03);
+  }
+  var t = h.step();
+  h.pop(".c12b-cont", { at: t });
+  tl.call(Deck.sfx, ["start", tl], t + 0.03);
+  h.pop(".c12b-h.f [data-px]", { at: t + 0.15, stagger: 0.12 });
+  h.pop(".c12b-me", { at: t + 0.3 });
+  h.rise(".c12b-dlg", { at: t + 0.4, y: 24 });
+  h.rise(".c12b-dlg p", { at: t + 0.6, y: 14, stagger: 0.22 });
+});
+</script>
+
+<!-- 13-hub3.html -->
+<section data-file="13-hub3.html" class="slide" id="s13-hub3" data-title="Mapa: queda una puerta" data-enter="zoom">
+  <template class="notes">⏱ 15 s · empieza en 12:20
+LECCIÓN 2: «Contad lo que hacéis como un producto.»
+🖱 Clic en la puerta VERDE (Emprender).</template>
+  <style>
+    #s13-hub3 .c13-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+    #s13-hub3 .c13-cl { display: block; width: 300px; margin-top: -34px; }
+    #s13-hub3 .door .px-door { width: 190px; position: relative; z-index: 1; }
+    #s13-hub3 .c13-me { position: absolute; left: 30px; bottom: 110px; width: 140px; }
+    #s13-hub3 .c13-hint { text-align: center; font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="13-hub3.html#0">Elige una puerta</span>
+      <div class="inv"><span data-e="13-hub3.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c13-h" style="text-align:center" data-e="13-hub3.html#2">Queda una puerta.</div>
+    <div class="c13-stage">
+      <div class="doors">
+        <button class="door acad done" data-go="s06-w1-lab"><span class="star" data-px="star"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c13-cl" data-px="cloud"></span><span class="door-label" data-e="13-hub3.html#3">Academia</span></button>
+        <button class="door emp done" data-go="s11-w2-path"><span class="star" data-px="star"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c13-cl" data-px="cloud"></span><span class="door-label" data-e="13-hub3.html#4">Empresa</span></button>
+        <button class="door start" data-go="s14-w3-uniwords"><span class="arrow-down c13-arrow" data-px="arrow"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c13-cl" data-px="cloud"></span><span class="door-label" data-e="13-hub3.html#5">Emprender</span></button>
+      </div>
+      <span class="c13-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="pxt c13-hint" data-e="13-hub3.html#6">Haz clic en una puerta · o pulsa →</div>
+  </div>
+</section>
+<script>
+Deck.slide("s13-hub3", function (el, tl, h) {
+  h.rise(".c13-h", { at: 0, y: 30 });
+  h.rise(".door", { at: 0.2, y: 80, stagger: 0.12 });
+  h.pop(".star", { at: 0.7 });
+  h.slideIn(".c13-me", { at: 0.6, x: -80 });
+  h.fade(".c13-hint", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c13-arrow"), { y: 14, duration: 0.45, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+});
+</script>
+
+<!-- 14-w3-uniwords.html -->
+<section data-file="14-w3-uniwords.html" class="slide" id="s14-w3-uniwords" data-section="3" data-title="Emprender: Uniwords" data-enter="edge">
+  <template class="notes">⏱ 60 s · empieza en 12:35
+(espera a que se abra el círculo)
+💬 «¿Quién tiene un proyecto propio?»
+Lee el post 😄
+→ «Nació de lo que viví en Georgia Tech.»
+«Lo monté a la vez que todo lo demás.»
+«Unas horas a la semana. La IA me deja compaginarlo.»
+→ «Me llevo: pensar en producto.»</template>
+  <style>
+    #s14-w3-uniwords .c14-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; margin-top: 36px; }
+    #s14-w3-uniwords .c14-col > .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s14-w3-uniwords .c14-dlg p { font-size: 28px; }
+    #s14-w3-uniwords .c14-get { margin-top: 40px; }
+    #s14-w3-uniwords .c14-get .c14-m { font-size: 24px; color: var(--muted); margin-top: 6px; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-start)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t" data-e="14-w3-uniwords.html#0">Mundo 3 · Emprender</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-start)" data-e="14-w3-uniwords.html#1">Mundo 3 · Emprender</span><div class="inv"><span data-e="14-w3-uniwords.html#2">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot c14-slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c14-h" data-e="14-w3-uniwords.html#3">Uniwords nació de un problema que viví en Georgia Tech</div>
+    <div class="c14-grid">
+      <div class="c14-col c14-left">
+        <div class="pxt" data-e="14-w3-uniwords.html#4">Versión LinkedIn</div>
+        <div class="lpost">
+          <div class="lp-head"><span class="lp-av"><span data-px="jorge"></span></span><div><div class="lp-name" data-e="14-w3-uniwords.html#5">Jorge Garcelán <span>· 1.º</span></div><div class="lp-sub" data-e="14-w3-uniwords.html#6">Cofundador @ Uniwords</div><div class="lp-time" data-e="14-w3-uniwords.html#7">1 sem · 🌐</div></div><span class="lp-follow" data-e="14-w3-uniwords.html#8">+ Seguir</span></div>
+          <div class="lp-text" data-e="14-w3-uniwords.html#9">🌍 Feliz de presentar Uniwords: la plataforma para estudiantes que se mudan a otra ciudad. Alojamiento, papeleo, empleo y comunidad, en un solo sitio. <span class="lp-tags">#Startup #Emprendimiento</span></div>
+          <div class="lp-img"><span data-px="globe" style="left:40px;top:30px;width:110px"></span><span data-px="suitcase" style="left:60px;bottom:26px;width:90px"></span><span data-px="jorge" data-anim="cheer" style="left:220px;bottom:22px;width:110px"></span><span data-px="rocket" style="left:400px;top:40px;width:100px"></span><span class="lg lgx full" style="right:40px;top:40px"><img src="assets/img/logos/uniwords.jpg" alt=""></span></div>
+          <div class="lp-react" data-e="14-w3-uniwords.html#10"><span>👍❤️👏</span> Tú y 187 personas más <span class="lp-com">24 comentarios</span></div>
+          <div class="lp-act"><span data-e="14-w3-uniwords.html#11">👍 Recomendar</span><span data-e="14-w3-uniwords.html#12">💬 Comentar</span><span data-e="14-w3-uniwords.html#13">🔁 Compartir</span><span data-e="14-w3-uniwords.html#14">➤ Enviar</span></div>
+        </div>
+      </div>
+      <div class="c14-col c14-right">
+        <div class="pxt" data-e="14-w3-uniwords.html#15">Versión real</div>
+        <div class="dlg c14-dlg"><span class="dlg-name" data-e="14-w3-uniwords.html#16">Jorge</span>
+          <p data-e="14-w3-uniwords.html#17">Lo viví en primera persona: <b>alojamiento, papeleo, trabajo, conocer gente</b>.</p>
+          <p data-e="14-w3-uniwords.html#18">Lo monté a la vez que la carrera, Telefónica, el máster y AWS.</p>
+          <p data-e="14-w3-uniwords.html#19">Empezamos en <b>WordPress</b>. Este año lo he rehecho con <b>desarrollo propio</b>.</p>
+          <p data-e="14-w3-uniwords.html#20">Le dedico unas horas a la semana. <b>La IA es lo que me deja compaginarlo.</b></p>
+        </div>
+        <div class="panel item-get c14-get"><span data-px="rocket"></span><div><div class="pxt" data-e="14-w3-uniwords.html#21">¡Has conseguido!</div><div class="it-name" data-e="14-w3-uniwords.html#22">Pensar en producto</div><div class="c14-m" data-e="14-w3-uniwords.html#23">Emprender no es dejarlo todo.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s14-w3-uniwords", function (el, tl, h) {
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+  h.rise(".c14-h", { at: o + 0, y: 30 });
+  h.rise(".c14-left > .pxt, .c14-left .lpost", { at: o + 0.25, y: 30, stagger: 0.1 });
+  var t = h.step();
+  h.fade(".c14-right > .pxt", { at: t });
+  h.rise(".c14-dlg", { at: t + 0.1, y: 24 });
+  h.rise(".c14-dlg p", { at: t + 0.3, y: 14, stagger: 0.22 });
+  var t2 = h.step();
+  h.pop(".c14-get", { at: t2 });
+  tl.call(Deck.sfx, ["coin", tl], t2 + 0.1);
+  h.pop(".c14-slot [data-px]", { at: t2 + 0.35 });
+});
+</script>
+
+<!-- 14b-w3-stack.html -->
+<section data-file="14b-w3-stack.html" class="slide" id="s14b-w3-stack" data-section="3" data-title="Emprender: de WordPress a plataforma propia" data-enter="push">
+  <template class="notes">⏱ 45 s · empieza en 13:35
+«Nivel 1: empezamos en WordPress.»
+→ «Nivel 2: de noche, proyectos propios. Supabase, GitHub, Vercel.»
+→ «Nivel 3: este año, plataforma propia con IA.»
+→ «Lo que hacía de noche me permitió rehacerlo.»</template>
+  <style>
+    #s14b-w3-stack .c14b-row { display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: stretch; margin: auto 0; }
+    #s14b-w3-stack .c14b-arr { display: grid; place-items: center; font-family: var(--pixel); font-size: 40px; color: #fff; text-shadow: 3px 3px 0 rgba(11,13,16,.4); }
+    #s14b-w3-stack .c14b-c { padding: 40px 28px 30px; display: flex; flex-direction: column; }
+    #s14b-w3-stack .c14b-c .tag { background: var(--c-start); }
+    #s14b-w3-stack .c14b-lv { font-family: var(--pixel); font-weight: 700; font-size: 22px; color: var(--c-start); }
+    #s14b-w3-stack .c14b-px { display: block; height: 84px; margin: 14px 0 18px; }
+    #s14b-w3-stack .c14b-px svg { width: auto; height: 84px; }
+    #s14b-w3-stack .c14b-t { font-size: 34px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+    #s14b-w3-stack .c14b-s { font-size: 24px; color: var(--muted); margin-top: 10px; line-height: 1.35; }
+    #s14b-w3-stack .c14b-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    #s14b-w3-stack .c14b-chips span { font-family: var(--pixel); font-size: 17px; text-transform: uppercase; background: var(--ink); color: #fff; padding: 6px 10px; }
+    #s14b-w3-stack .c14b-c.night { background: #1e1b4b; color: #fff; }
+    #s14b-w3-stack .c14b-c.night .tag { background: #a5b4fc; color: var(--ink); }
+    #s14b-w3-stack .c14b-c.night .c14b-s { color: #c7d2fe; }
+    #s14b-w3-stack .c14b-c.night .c14b-lv { color: #a5b4fc; }
+    #s14b-w3-stack .c14b-c.night .c14b-chips span { background: #a5b4fc; color: var(--ink); }
+    #s14b-w3-stack .c14b-c.top { background: #ecfdf5; }
+    #s14b-w3-stack .c14b-flash { position: absolute; inset: 0; background: #fff; pointer-events: none; opacity: 0; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-start)" data-e="14b-w3-stack.html#0">Mundo 3 · Emprender</span><div class="inv"><span data-e="14b-w3-stack.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c14b-h" data-e="14b-w3-stack.html#2">De WordPress a plataforma propia, con IA</div>
+    <div class="c14b-row">
+      <div class="panel c14b-c s1"><span class="tag" data-e="14b-w3-stack.html#3">Al principio</span><div class="c14b-lv" data-e="14b-w3-stack.html#4">Nv. 1</div><span class="c14b-px" data-px="browser"></span><div class="c14b-t" data-e="14b-w3-stack.html#5">WordPress</div><div class="c14b-s" data-e="14b-w3-stack.html#6">Rápido, sin programar. Suficiente para arrancar.</div></div>
+      <div class="c14b-arr a1" data-e="14b-w3-stack.html#7">▶</div>
+      <div class="panel c14b-c night s2"><span class="tag" data-e="14b-w3-stack.html#8">De noche</span><div class="c14b-lv" data-e="14b-w3-stack.html#9">Nv. 2</div><span class="c14b-px" data-px="laptop"></span><div class="c14b-t" data-e="14b-w3-stack.html#10">Proyectos propios</div><div class="c14b-s" data-e="14b-w3-stack.html#11">Experimentar, jugar e investigar un stack.</div><div class="c14b-chips"><span data-e="14b-w3-stack.html#12">Supabase</span><span data-e="14b-w3-stack.html#13">GitHub</span><span data-e="14b-w3-stack.html#14">Vercel</span></div></div>
+      <div class="c14b-arr a2" data-e="14b-w3-stack.html#15">▶</div>
+      <div class="panel c14b-c top s3"><span class="tag" data-e="14b-w3-stack.html#16">2026</span><div class="c14b-lv" data-e="14b-w3-stack.html#17">Nv. 3</div><span class="c14b-px" data-px="rocket"></span><div class="c14b-t" data-e="14b-w3-stack.html#18">Plataforma propia</div><div class="c14b-s" data-e="14b-w3-stack.html#19">Migrada a desarrollo propio, con ayuda de la IA.</div><div class="c14b-chips"><span data-e="14b-w3-stack.html#20">Stack propio</span><span data-e="14b-w3-stack.html#21">+ IA</span></div><span class="c14b-flash"></span></div>
+    </div>
+    <div class="dlg c14b-dlg"><span class="dlg-name" data-e="14b-w3-stack.html#22">Jorge</span><p data-e="14b-w3-stack.html#23">Lo que hacía de noche sin que nadie me lo pidiera es <b>lo que me permitió rehacer Uniwords</b>.</p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s14b-w3-stack", function (el, tl, h) {
+  h.rise(".c14b-h", { at: 0, y: 30 });
+  h.rise(".c14b-c.s1", { at: 0.25, y: 40 });
+  var t1 = h.step();
+  h.fade(".c14b-arr.a1", { at: t1 });
+  h.pop(".c14b-c.s2", { at: t1 + 0.15 });
+  tl.call(Deck.sfx, ["power", tl], t1 + 0.05);
+  var t2 = h.step();
+  h.fade(".c14b-arr.a2", { at: t2 });
+  h.pop(".c14b-c.s3", { at: t2 + 0.15 });
+  tl.fromTo(el.querySelector(".c14b-flash"), { opacity: 0.9 }, { opacity: 0, duration: 0.5, ease: "steps(5)" }, t2 + 0.3);
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.05);
+  var t3 = h.step();
+  h.rise(".c14b-dlg", { at: t3, y: 24 });
+});
+</script>
+
+<!-- 14c-w3-skills.html -->
+<section data-file="14c-w3-skills.html" class="slide" id="s14c-w3-skills" data-section="3" data-title="Emprender: lo que me ha dado Uniwords" data-enter="push">
+  <template class="notes">⏱ 45 s · empieza en 14:20
+«Uniwords me dio: producto, go-to-market, inversores, clientes, marca y plataforma.»
+→ «Sin dejarlo todo: unas horas a la semana, con IA.»
+→ LECCIÓN 3: «Un proyecto propio también es experiencia.»</template>
+  <style>
+    #s14c-w3-skills .c14c-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: auto 0; }
+    #s14c-w3-skills .c14c-it { display: grid; grid-template-columns: 90px 1fr; gap: 22px; align-items: center; padding: 32px 28px; }
+    #s14c-w3-skills .c14c-it [data-px] { width: 70px; justify-self: center; }
+    #s14c-w3-skills .c14c-n { font-family: var(--pixel); font-size: 24px; text-transform: uppercase; line-height: 1.15; }
+    #s14c-w3-skills .c14c-d { font-size: 23px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+    #s14c-w3-skills .c14c-bot { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: stretch; }
+    #s14c-w3-skills .c14c-ia { display: flex; gap: 22px; align-items: center; background: #ecfdf5; }
+    #s14c-w3-skills .c14c-ia .tag { background: var(--c-start); }
+    #s14c-w3-skills .c14c-ia [data-px] { width: 76px; flex: none; }
+    #s14c-w3-skills .c14c-ia p { font-size: 26px; line-height: 1.35; }
+    #s14c-w3-skills .c14c-moral { background: var(--accent); color: #fff; font-size: 32px; font-weight: 700; line-height: 1.25; display: flex; align-items: center; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-start)" data-e="14c-w3-skills.html#0">Mundo 3 · Emprender</span><div class="inv"><span data-e="14c-w3-skills.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c14c-h" data-e="14c-w3-skills.html#2">Emprender también es crear experiencia</div>
+    <div class="c14c-grid">
+      <div class="panel c14c-it"><span data-px="rocket"></span><div><div class="c14c-n" data-e="14c-w3-skills.html#3">Producto</div><div class="c14c-d" data-e="14c-w3-skills.html#4">Qué construir y por qué</div></div></div>
+      <div class="panel c14c-it"><span data-px="megaphone"></span><div><div class="c14c-n" data-e="14c-w3-skills.html#5">Go-to-market</div><div class="c14c-d" data-e="14c-w3-skills.html#6">Cómo llegar a los usuarios</div></div></div>
+      <div class="panel c14c-it"><span data-px="coin"></span><div><div class="c14c-n" data-e="14c-w3-skills.html#7">Inversores</div><div class="c14c-d" data-e="14c-w3-skills.html#8">Contar y defender una idea</div></div></div>
+      <div class="panel c14c-it"><span data-px="people"></span><div><div class="c14c-n" data-e="14c-w3-skills.html#9">Clientes</div><div class="c14c-d" data-e="14c-w3-skills.html#10">Universidades y partners</div></div></div>
+      <div class="panel c14c-it"><span data-px="star"></span><div><div class="c14c-n" data-e="14c-w3-skills.html#11">Diseño y marca</div><div class="c14c-d" data-e="14c-w3-skills.html#12">Cómo se ve y cómo suena</div></div></div>
+      <div class="panel c14c-it"><span data-px="laptop"></span><div><div class="c14c-n" data-e="14c-w3-skills.html#13">Plataforma</div><div class="c14c-d" data-e="14c-w3-skills.html#14">Del diseño al desarrollo</div></div></div>
+    </div>
+    <div class="c14c-bot">
+      <div class="panel c14c-ia"><span class="tag" data-e="14c-w3-skills.html#15">Sin dejarlo todo</span><span data-px="key"></span><p data-e="14c-w3-skills.html#16">Unas horas a la semana, compaginado con todo lo demás. <b>La IA es lo que hoy lo hace posible.</b></p></div>
+      <div class="panel c14c-moral" data-e="14c-w3-skills.html#17">Un proyecto propio también es experiencia que puedes contar.</div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s14c-w3-skills", function (el, tl, h) {
+  h.rise(".c14c-h", { at: 0, y: 30 });
+  h.pop(".c14c-it", { at: 0.3, stagger: 0.12 });
+  tl.call(Deck.sfx, ["coin", tl], 0.3);
+  var t = h.step();
+  h.rise(".c14c-ia", { at: t, y: 24 });
+  var t2 = h.step();
+  h.pop(".c14c-moral", { at: t2 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>
+
+<!-- 15-reveal.html -->
+<section data-file="15-reveal.html" class="slide" id="s15-reveal" data-title="Mapa completo: todo salió de Georgia Tech" data-enter="zoom">
+  <template class="notes">⏱ 30 s · empieza en 15:05
+━━ ACTO 3 · VUESTRO TURNO ━━
+«¿Os acordáis del nivel 0? Todo salió de ahí.»
+→ «No sabía que abría tres puertas. Solo salí de lo cómodo.»</template>
+  <style>
+    #s15-reveal .c15-map { position: relative; width: 1728px; height: 610px; margin-top: 20px; }
+    #s15-reveal .c15-svg { position: absolute; inset: 0; width: 1728px; height: 610px; }
+    #s15-reveal .c15-root { position: absolute; left: 454px; top: 0; width: 820px; text-align: center; padding: 20px 24px; background: #fff8e1; }
+    #s15-reveal .c15-root { display: flex; align-items: center; justify-content: center; gap: 20px; }
+    #s15-reveal .c15-root .pxt { font-size: 24px; font-weight: 700; }
+    #s15-reveal .c15-col { position: absolute; top: 200px; width: 480px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    #s15-reveal .c15-col.a { left: 48px; color: var(--c-acad); } #s15-reveal .c15-col.e { left: 624px; color: var(--c-emp); } #s15-reveal .c15-col.s { left: 1200px; color: var(--c-start); }
+    #s15-reveal .c15-door { width: 70px; }
+    #s15-reveal .c15-col .door-label { font-size: 24px; margin-bottom: 8px; }
+    #s15-reveal .c15-chip { font-size: 23px; font-weight: 600; color: var(--ink); background: #fff; border: 3px solid var(--ink); padding: 8px 16px; }
+    #s15-reveal .c15-chest { position: absolute; left: 1560px; top: 470px; width: 120px; }
+    #s15-reveal .c15-dlg { margin-top: auto; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="15-reveal.html#0">Mapa completo</span><div class="inv"><span data-e="15-reveal.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15-h" style="text-align:center" data-e="15-reveal.html#2">Las tres puertas salieron de la misma decisión</div>
+    <div class="c15-map">
+      <svg class="c15-svg" viewBox="0 0 1728 610" aria-hidden="true">
+        <path class="c15-l" d="M 864 76 L 864 120 L 288 120 L 288 196" fill="none" stroke="#fff" stroke-width="8"/>
+        <path class="c15-l" d="M 864 76 L 864 196" fill="none" stroke="#fff" stroke-width="8"/>
+        <path class="c15-l" d="M 864 76 L 864 120 L 1440 120 L 1440 196" fill="none" stroke="#fff" stroke-width="8"/>
+      </svg>
+      <div class="panel c15-root"><span class="lg sm"><img src="assets/img/logos/gatech.png" alt=""></span><div class="pxt" data-e="15-reveal.html#3">Movilidad en Georgia Tech · 3º</div></div>
+      <div class="c15-col a"><span class="c15-door shadow-px" data-px="door"></span><span class="door-label" data-e="15-reveal.html#4">Academia</span>
+        <span class="c15-chip" data-e="15-reveal.html#5">Lab → paper en AAAI</span><span class="c15-chip" data-e="15-reveal.html#6">TFG → contrato de investigación</span><span class="c15-chip" data-e="15-reveal.html#7">Máster + IRIS</span></div>
+      <div class="c15-col e"><span class="c15-door shadow-px" data-px="door"></span><span class="door-label" data-e="15-reveal.html#8">Empresa</span>
+        <span class="c15-chip" data-e="15-reveal.html#9">Paper → Telefónica</span><span class="c15-chip" data-e="15-reveal.html#10">AWS → Multiverse</span><span class="c15-chip" data-e="15-reveal.html#11">MediaRadar</span></div>
+      <span class="c15-chest" data-px="chest"></span>
+      <div class="c15-col s"><span class="c15-door shadow-px" data-px="door"></span><span class="door-label" data-e="15-reveal.html#12">Emprender</span>
+        <span class="c15-chip" data-e="15-reveal.html#13">Problema vivido</span><span class="c15-chip" data-e="15-reveal.html#14">Uniwords</span></div>
+    </div>
+    <div class="dlg c15-dlg"><span class="dlg-name" data-e="15-reveal.html#15">Jorge</span><p data-e="15-reveal.html#16">No sabía que estaba abriendo tres puertas. <b>Solo salí de lo cómodo.</b></p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s15-reveal", function (el, tl, h) {
+  h.rise(".c15-h", { at: 0, y: 30 });
+  h.pop(".c15-root", { at: 0.3 });
+  h.draw(".c15-l", { at: 0.6, dur: 0.8, stagger: 0.1 });
+  tl.call(Deck.sfx, ["reveal", tl], 0.6);
+  h.rise(".c15-col", { at: 1.1, y: 40, stagger: 0.15 });
+  h.fade(".c15-chip", { at: 1.4, stagger: 0.07 });
+  h.pop(".c15-chest", { at: 1.9 });
+  var t = h.step();
+  h.rise(".c15-dlg", { at: t, y: 24 });
+});
+</script>
+
+<!-- 15b-cuentala.html -->
+<section data-file="15b-cuentala.html" class="slide" id="s15b-cuentala" data-title="Créala… y cuéntala" data-enter="push">
+  <template class="notes">⏱ 30 s · empieza en 15:35
+«Créala… y cuéntala. Lo que no se ve, no existe.»
+«Web, Substack, X, comunidad, charlas.»
+→ «Haced el reto… y contadlo.»</template>
+  <style>
+    #s15b-cuentala .c15b-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px; margin: auto 0; }
+    #s15b-cuentala .c15b-px { display: block; height: 70px; margin-bottom: 16px; }
+    #s15b-cuentala .c15b-px svg { width: auto; height: 70px; }
+    #s15b-cuentala .c15b-c { padding: 40px 24px 28px; }
+    #s15b-cuentala .c15b-c .tag { background: var(--accent); }
+    #s15b-cuentala .c15b-ic { font-family: var(--pixel); font-size: 18px; color: var(--accent); text-transform: uppercase; }
+    #s15b-cuentala .c15b-t { font-size: 28px; font-weight: 700; line-height: 1.15; margin-top: 8px; letter-spacing: -0.01em; }
+    #s15b-cuentala .c15b-s { font-size: 22px; color: var(--muted); margin-top: 12px; line-height: 1.4; }
+    #s15b-cuentala .c15b-moral { background: var(--accent); color: #fff; font-size: 34px; font-weight: 600; line-height: 1.35; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="15b-cuentala.html#0">Power-up</span>
+      <div class="inv"><span data-e="15b-cuentala.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15b-h" data-e="15b-cuentala.html#2">Créala… y cuéntala</div>
+    <div class="c15b-grid">
+      <div class="panel c15b-c"><span class="tag" data-e="15b-cuentala.html#3">Web</span><span class="c15b-px" data-px="browser"></span><div class="c15b-ic" data-e="15b-cuentala.html#4">Escaparate</div><div class="c15b-t" data-e="15b-cuentala.html#5">jorgegarcelan.com</div><div class="c15b-s" data-e="15b-cuentala.html#6">Todo lo que hago, en un sitio</div></div>
+      <div class="panel c15b-c"><span class="tag" data-e="15b-cuentala.html#7">Escribir</span><span class="c15b-px" data-px="paper"></span><div class="c15b-ic" data-e="15b-cuentala.html#8">Substack</div><div class="c15b-t" data-e="15b-cuentala.html#9">The Corporate Layer</div><div class="c15b-s" data-e="15b-cuentala.html#10">Lo que aprendo, por escrito</div></div>
+      <div class="panel c15b-c"><span class="tag" data-e="15b-cuentala.html#11">Opinar</span><span class="c15b-px" data-px="xlogo"></span><div class="c15b-ic" data-e="15b-cuentala.html#12">X / Twitter</div><div class="c15b-t" data-e="15b-cuentala.html#13">@jgarcelan</div><div class="c15b-s" data-e="15b-cuentala.html#14">Ideas cortas sobre IA</div></div>
+      <div class="panel c15b-c"><span class="tag" data-e="15b-cuentala.html#15">Gente</span><span class="c15b-px" data-px="people"></span><div class="c15b-ic" data-e="15b-cuentala.html#16">Comunidad tech</div><div class="c15b-t" data-e="15b-cuentala.html#17">Eventos y meetups</div><div class="c15b-s" data-e="15b-cuentala.html#18">Conocer a quien hace cosas</div></div>
+      <div class="panel c15b-c"><span class="tag" data-e="15b-cuentala.html#19">Charlas</span><span class="c15b-px" data-px="mic"></span><div class="c15b-ic" data-e="15b-cuentala.html#20">Escenario</div><div class="c15b-t" data-e="15b-cuentala.html#21">T3chFest · AWS Summit · AVI</div><div class="c15b-s" data-e="15b-cuentala.html#22">Y hoy, aquí</div></div>
+    </div>
+    <div class="panel c15b-moral" data-e="15b-cuentala.html#23">Lo que no se ve no existe para quien te va a contratar.</div>
+  </div>
+</section>
+<script>
+Deck.slide("s15b-cuentala", function (el, tl, h) {
+  h.rise(".c15b-h", { at: 0, y: 30 });
+  h.pop(".c15b-c", { at: 0.3, stagger: 0.15 });
+  tl.call(Deck.sfx, ["power", tl], 0.3);
+  var t = h.step();
+  h.rise(".c15b-moral", { at: t, y: 24 });
+});
+</script>
+
+<!-- 16-quests.html -->
+<section data-file="16-quests.html" class="slide" id="s16-quests" data-title="Misiones para esta semana" data-enter="push">
+  <template class="notes">⏱ 45 s · empieza en 16:05
+«Las tres lecciones, en tres misiones:»
+«1. Escribid a un profe.»
+→ «2. Haced el reto, subidlo y contadlo.»
+→ «3. Apuntad un problema que os moleste.»
+💬 «¿Cuál vais a hacer esta semana?»</template>
+  <style>
+    #s16-quests .c16-log { margin-top: 48px; padding: 44px 48px 24px; }
+    #s16-quests .c16-q { display: grid; grid-template-columns: 56px 290px 1fr 210px; gap: 28px; align-items: center; padding: 22px 0; border-bottom: 4px dashed var(--line); }
+    #s16-quests .c16-q:last-child { border-bottom: 0; }
+    #s16-quests .c16-box { width: 48px; height: 48px; border: 5px solid var(--ink); background: #fff; }
+    #s16-quests .c16-q .tag { justify-self: start; color: #fff; }
+    #s16-quests .c16-t { font-size: 30px; line-height: 1.35; }
+    #s16-quests .c16-q { cursor: pointer; }
+    #s16-quests .c16-q.done .c16-box { background: var(--green) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 6' shape-rendering='crispEdges'><path fill='white' d='M5 0h2v2H6v1H5v1H4v1H3v1H2V5H1V4H0V3h2v1h1V3h1V2h1z'/></svg>") center/70% no-repeat; }
+    #s16-quests .c16-q.done .c16-t { color: var(--muted); }
+    #s16-quests .c16-tg { display: flex; align-items: center; gap: 14px; }
+    #s16-quests .c16-ic { width: 54px; flex: none; }
+    #s16-quests .c16-coin { width: 26px; display: inline-block; vertical-align: -3px; margin-right: 8px; }
+    #s16-quests .c16-xp { font-family: var(--pixel); font-weight: 700; font-size: 26px; color: var(--accent); text-align: right; white-space: nowrap; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="16-quests.html#0">Misiones</span></div>
+    <div class="h-sky c16-h" data-e="16-quests.html#1">Tres misiones para esta semana</div>
+    <div class="panel c16-log">
+      <span class="tag" data-e="16-quests.html#2">Diario de misiones</span>
+      <div class="c16-q" data-noclick><span class="c16-box"></span><span class="c16-tg"><span class="c16-ic" data-px="cap"></span><span class="tag" style="background:var(--c-acad)" data-e="16-quests.html#3">Academia</span></span><div class="c16-t" data-e="16-quests.html#4">Habla con un profe cuyo trabajo te guste. <b>A mí me cambió la carrera.</b></div><div class="c16-xp" data-e="16-quests.html#5"><span class="c16-coin" data-px="coin"></span>+100 XP</div></div>
+      <div class="c16-q" data-noclick><span class="c16-box"></span><span class="c16-tg"><span class="c16-ic" data-px="briefcase"></span><span class="tag" style="background:var(--c-emp);color:var(--ink)" data-e="16-quests.html#6">Empresa</span></span><div class="c16-t" data-e="16-quests.html#7">Haz bien el reto de agentes, <b>súbelo a GitHub y cuéntalo en LinkedIn</b>. Eso ya es experiencia.</div><div class="c16-xp" data-e="16-quests.html#8"><span class="c16-coin" data-px="coin"></span>+100 XP</div></div>
+      <div class="c16-q" data-noclick><span class="c16-box"></span><span class="c16-tg"><span class="c16-ic" data-px="rocket"></span><span class="tag" style="background:var(--c-start)" data-e="16-quests.html#9">Emprender</span></span><div class="c16-t" data-e="16-quests.html#10">Apunta un problema que te moleste de verdad. <b>Uniwords empezó así.</b></div><div class="c16-xp" data-e="16-quests.html#11"><span class="c16-coin" data-px="coin"></span>+100 XP</div></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s16-quests", function (el, tl, h) {
+  h.rise(".c16-h", { at: 0, y: 30 });
+  h.rise(".c16-log", { at: 0.2, y: 30 });
+  var q = h.qa(".c16-q");
+  h.slideIn(q[0], { at: 0.5, x: 50 });
+  for (var i = 1; i < q.length; i++) h.slideIn(q[i], { at: h.step(), x: 50 });
+});
+</script>
+
+<!-- 02b-casualidad.html -->
+<section data-file="02b-casualidad.html" class="slide" id="s02b-casualidad" data-title="Esta charla ya es una puerta" data-enter="push">
+  <template class="notes">⏱ 30 s · empieza en 16:50
+«Una última cosa: esta charla.»
+«Prácticas en AWS → conocí a Dani → me invitó.»
+→ «Escribidme por LinkedIn: puede ser vuestra próxima puerta.»</template>
+  <style>
+    #s02b-casualidad .c2b-path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 52px; margin: auto 0; }
+    #s02b-casualidad .c2b-n { position: relative; padding: 34px 28px 30px; min-height: 190px; }
+    #s02b-casualidad .c2b-n .tag { background: var(--accent); }
+    #s02b-casualidad .c2b-n .c2b-t { font-size: 32px; font-weight: 600; line-height: 1.25; }
+    #s02b-casualidad .c2b-n .c2b-s { font-size: 22px; color: var(--muted); margin-top: 10px; line-height: 1.35; }
+    #s02b-casualidad .c2b-n:not(:last-child)::after { content: "▶"; position: absolute; right: -44px; top: 50%; margin-top: -18px; font-family: var(--pixel); font-size: 30px; color: #fff; text-shadow: 3px 3px 0 rgba(11,13,16,.4); }
+    #s02b-casualidad .c2b-lg { position: absolute; top: -30px; right: 16px; }
+    #s02b-casualidad .c2b-n.last { background: #fff8e1; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="02b-casualidad.html#0">Una última cosa</span></div>
+    <div class="h-sky c2b-h" data-e="02b-casualidad.html#1">Esta charla también es una puerta que no planeé</div>
+    <div class="c2b-path">
+      <div class="panel c2b-n"><span class="tag" data-e="02b-casualidad.html#2">2025</span><span class="lg sm c2b-lg"><img src="assets/img/logos/aws.png" alt=""></span><div class="c2b-t" data-e="02b-casualidad.html#3">Prácticas en AWS</div><div class="c2b-s" data-e="02b-casualidad.html#4">Solutions Architect</div></div>
+      <div class="panel c2b-n"><span class="tag" data-e="02b-casualidad.html#5">Allí</span><div class="c2b-t" data-e="02b-casualidad.html#6">Coincido con Dani</div><div class="c2b-s" data-e="02b-casualidad.html#7">Él ya trabajaba allí</div></div>
+      <div class="panel c2b-n"><span class="tag" data-e="02b-casualidad.html#8">Después</span><div class="c2b-t" data-e="02b-casualidad.html#9">Me invita a contarlo</div><div class="c2b-s" data-e="02b-casualidad.html#10">Le digo que sí</div></div>
+      <div class="panel c2b-n last"><span class="tag" data-e="02b-casualidad.html#11">Hoy</span><span class="lg sm c2b-lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div class="c2b-t" data-e="02b-casualidad.html#12">Aquí, con vosotros</div><div class="c2b-s" data-e="02b-casualidad.html#13">Máster de Informática</div></div>
+    </div>
+    <div class="dlg c2b-dlg"><span class="dlg-name" data-e="02b-casualidad.html#14">Jorge</span><p data-e="02b-casualidad.html#15">Nada de esto lo planeé: dije que sí a lo anterior. <b>Escribidme por LinkedIn: puede ser vuestra próxima puerta.</b></p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s02b-casualidad", function (el, tl, h) {
+  h.rise(".c2b-h", { at: 0, y: 30 });
+  h.rise(".c2b-n", { at: 0.3, y: 40, stagger: 0.25 });
+  var t = h.step();
+  h.rise(".c2b-dlg", { at: t, y: 24 });
+});
+</script>
+
+<!-- 17-end.html -->
+<section data-file="17-end.html" class="slide" id="s17-end" data-title="Fin: creadla" data-footer="off" data-enter="fade">
+  <template class="notes">⏱ 40 s · empieza en 17:20
+💬 «Al principio muchos marcasteis «ni idea». ¿Y ahora?»
+«No esperéis a tener experiencia. CREADLA.»
+«Arriba, el kit. Abajo, mi LinkedIn.»
+«¿Preguntas?»</template>
+  <style>
+    #s17-end .c17-cl { position: absolute; }
+    #s17-end .c17-cl.a { left: 640px; top: 80px; width: 280px; }
+    #s17-end .c17-cl.b { right: 140px; top: 80px; width: 240px; }
+    #s17-end .c17-cl.c { left: 760px; top: 900px; width: 300px; }
+    #s17-end .c17-wrap { position: absolute; top: 0; bottom: 0; right: 0; left: 560px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    #s17-end .c17-cont { font-size: 34px; color: #fff; text-shadow: 3px 3px 0 rgba(11,13,16,.45); }
+    #s17-end .c17-big { margin-top: 34px; font-size: 92px; font-weight: 700; line-height: 1.02; letter-spacing: -0.04em; color: #fff; text-shadow: 0 6px 34px rgba(16,52,110,.35); max-width: 1150px; }
+    #s17-end .c17-btn { margin-top: 64px; font-size: 32px; }
+    #s17-end .c17-web { margin-top: 40px; font-size: 26px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.4); }
+    #s17-end .c17-me { position: absolute; right: 50px; top: 720px; width: 330px; }
+    #s17-end .c17-qrs { position: absolute; left: 100px; top: 70px; bottom: 70px; width: 420px; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+    #s17-end .c17-qrp { padding: 34px 26px 20px; text-align: center; }
+    #s17-end .c17-qrp .tag { background: var(--accent); }
+    #s17-end .c17-qrp.l .tag { background: #0a66c2; }
+    #s17-end .c17-qr { width: 250px; margin: 0 auto; }
+    #s17-end .c17-qt { font-size: 22px; font-weight: 600; margin-top: 12px; line-height: 1.25; }
+    #s17-end .c17-x { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 8px; font-family: var(--pixel); font-size: 22px; }
+    #s17-end .c17-x [data-px] { width: 30px; }
+    #s17-end .c17-me .c17-sp { display: block; width: 120px; margin: 0 auto -16px; position: relative; z-index: 1; }
+    #s17-end .c17-me .c17-tr { position: absolute; right: 12px; top: -10px; width: 70px; }
+    #s17-end .c17-me .c17-c1 { position: absolute; left: 20px; top: -60px; width: 34px; }
+    #s17-end .c17-me .c17-c2 { position: absolute; left: 60px; top: -110px; width: 28px; }
+    #s17-end .c17-me { position: absolute; }
+    #s17-end .c17-me .c17-pl { display: block; width: 330px; }
+  </style>
+  <span class="c17-cl a pcloud" data-px="cloud"></span>
+  <span class="c17-cl b pcloud" data-px="cloud"></span>
+  <span class="c17-cl c pcloud" data-px="cloud"></span>
+  <div class="c17-me"><span class="c17-tr" data-px="trophy"></span><span class="c17-c1" data-px="coin"></span><span class="c17-c2" data-px="coin"></span><span class="c17-sp shadow-px" data-px="jorge" data-anim="cheer"></span><span class="c17-pl" data-px="cloud"></span></div>
+  <div class="c17-qrs">
+    <div class="panel c17-qrp k"><span class="tag" data-e="17-end.html#0">Kit de la charla</span>
+      <div class="qr c17-qr q1" data-text="https://claude.ai/artifact/GpfsbAopiX8YmRjPKLGj4B"></div>
+      <div class="c17-qt" data-e="17-end.html#1">Plantillas, checklist y misiones</div>
+    </div>
+    <div class="panel c17-qrp l"><span class="tag" data-e="17-end.html#2">Conecta conmigo</span>
+      <div class="qr c17-qr q2" data-text="https://linkedin.com/in/jgarcelan"></div>
+      <div class="c17-qt" data-e="17-end.html#3">linkedin.com/in/jgarcelan</div>
+      <div class="c17-x" data-e="17-end.html#4"><span data-px="xlogo"></span>@jgarcelan</div>
+    </div>
+  </div>
+  <div class="c17-wrap">
+    <div class="pxt c17-cont" data-e="17-end.html#5">Continue?</div>
+    <div class="c17-big" data-e="17-end.html#6">No esperéis a tener experiencia. Creadla.</div>
+    <div class="px-btn c17-btn" data-e="17-end.html#7">▶ Preguntas</div>
+    <div class="pxt c17-web" data-e="17-end.html#8">jorgegarcelan.com · @jgarcelan</div>
+  </div>
+</section>
+<script>
+Deck.slide("s17-end", function (el, tl, h) {
+  h.fade(".c17-cl", { at: 0, stagger: 0.1 });
+  h.fade(".c17-cont", { at: 0.1 });
+  var t = h.split(".c17-big", "lines");
+  tl.fromTo(t.lines, { yPercent: 105 }, { yPercent: 0, duration: 0.9, ease: "power4.out", stagger: 0.12 }, 0.3);
+  h.rise(".c17-me", { at: 0.9, y: 60 });
+  h.pop(".c17-btn", { at: 1.1 });
+  h.fade(".c17-web", { at: 1.3 });
+  h.rise(".c17-qrp", { at: 0.6, y: 40, stagger: 0.15 });
+  h.qr(".c17-qr.q1", { at: 0.9 });
+  h.qr(".c17-qr.q2", { at: 1.1 });
+  tl.call(Deck.sfx, ["start", tl], 0.3);
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c17-cl"), { x: function (i) { return i % 2 ? -40 : 40; }, duration: 6, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c17-me"), { y: -14, duration: 1.6, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c17-cont"), { opacity: 0.3, duration: 0.6, repeat: -1, yoyo: true, ease: "steps(1)" }); });
+});
+</script>
+
+<!-- 10-w2-roles.html (hidden) -->
+<section data-file="10-w2-roles.html" data-hidden="1" class="slide" id="s10-w2-roles" data-section="2" data-title="Empresa: roles que no conocía" data-enter="edge">
+  <template class="notes">⏱ OCULTA (solo para preguntas, desde la vista G)
+Mundo 2, Empresa. Enganche con Dani.
+«Hice Ciencia de Datos, así que pensaba que mis opciones eran ML Engineer, Data Engineer o Data Analyst.»
+→ (siguiente): se desbloquean los roles que no sabía que existían. «Los roles de los que os acaba de hablar Dani, yo no sabía que existían.»
+→ (siguiente): el diálogo. «En las prácticas del máster quise probar algo nuevo y distinto: Solutions Architect en AWS.»</template>
+  <style>
+    #s10-w2-roles .c10-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 44px; align-items: start; }
+    #s10-w2-roles .c10-col > .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s10-w2-roles .c10-lbl { display: flex; align-items: center; gap: 14px; }
+    #s10-w2-roles .c10-key { width: 64px; }
+    #s10-w2-roles .c10-chip { display: flex; align-items: center; gap: 18px; font-size: 32px; font-weight: 600; padding: 18px 26px; margin-bottom: 22px; }
+    #s10-w2-roles .c10-chip .pxt { font-size: 20px; color: var(--faint); width: 34px; }
+    #s10-w2-roles .c10-new { background: #fff8e1; }
+    #s10-w2-roles .c10-new .c10-name { font-family: var(--font); }
+    #s10-w2-roles .c10-dlg { margin-top: auto; }
+    #s10-w2-roles .c10-dlg p { font-size: 29px; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-emp)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t" data-e="10-w2-roles.html#0">Mundo 2 · Empresa</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)" data-e="10-w2-roles.html#1">Mundo 2 · Empresa</span><div class="inv"><span data-e="10-w2-roles.html#2">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c10-h" data-e="10-w2-roles.html#3">Hice Ciencia de Datos. Creía que había tres caminos.</div>
+    <div class="c10-grid">
+      <div class="c10-col">
+        <div class="pxt" data-e="10-w2-roles.html#4">Los que conocía</div>
+        <div class="panel c10-chip c10-old" data-e="10-w2-roles.html#5"><span class="pxt">01</span>ML Engineer</div>
+        <div class="panel c10-chip c10-old" data-e="10-w2-roles.html#6"><span class="pxt">02</span>Data Engineer</div>
+        <div class="panel c10-chip c10-old" data-e="10-w2-roles.html#7"><span class="pxt">03</span>Data Analyst</div>
+      </div>
+      <div class="c10-col">
+        <div class="pxt c10-lbl" data-e="10-w2-roles.html#8"><span class="c10-key" data-px="key"></span>Desbloqueados: no sabía que existían</div>
+        <div class="panel c10-chip c10-new"><span class="pxt" data-e="10-w2-roles.html#9">04</span><span class="c10-name" data-e="10-w2-roles.html#10">Solutions Architect</span></div>
+        <div class="panel c10-chip c10-new"><span class="pxt" data-e="10-w2-roles.html#11">05</span><span class="c10-name" data-e="10-w2-roles.html#12">Preventa técnica</span></div>
+        <div class="panel c10-chip c10-new"><span class="pxt" data-e="10-w2-roles.html#13">06</span><span class="c10-name" data-e="10-w2-roles.html#14">Technical Account Manager</span></div>
+      </div>
+    </div>
+    <div class="dlg c10-dlg"><span class="dlg-name" data-e="10-w2-roles.html#15">Jorge</span><p data-e="10-w2-roles.html#16">En las prácticas del máster quise probar algo distinto: <b>Solutions Architect en AWS</b>.</p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s10-w2-roles", function (el, tl, h) {
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+  h.rise(".c10-h", { at: o + 0, y: 30 });
+  h.fade(".c10-col:first-child > .pxt", { at: o + 0.2 });
+  h.slideIn(".c10-old", { at: o + 0.3, x: -50, stagger: 0.12 });
+  var t = h.step();
+  h.fade(".c10-lbl", { at: t });
+  tl.call(Deck.sfx, ["power", tl], t + 0.03);
+  h.pop(".c10-new", { at: t + 0.1, stagger: 0.15 });
+  h.qa(".c10-name").forEach(function (n, i) { h.decode(n, { at: t + 0.2 + i * 0.15, dur: 0.8 }); });
+  var t2 = h.step();
+  h.rise(".c10-dlg", { at: t2, y: 24 });
+});
+</script>
+
+<!-- 15a-entrevistas.html (hidden) -->
+<section data-file="15a-entrevistas.html" data-hidden="1" class="slide" id="s15a-entrevistas" data-title="Lo que podía contar en cada entrevista" data-enter="push">
+  <template class="notes">⏱ OCULTA (solo para preguntas, desde la vista G)
+ESCENA 7 · La bola de nieve. La prueba de «créala» en la práctica.
+«¿Sabéis qué contaba en mis entrevistas? Os lo enseño.»
+Entrevista 1, las prácticas de Telefónica: solo podía contar el paper de Georgia Tech. Era lo único que tenía, y fue suficiente.
+→ Entrevista 2, las siguientes prácticas: ya podía contar lo que había hecho en Telefónica.
+→ Entrevista 3, trabajo a jornada completa: ahí pedían más. Unas prácticas no bastaban, así que contaba Uniwords y mis proyectos personales.
+→ La frase: cada cosa que creas hoy es lo que cuentas en tu próxima entrevista. Y así fui: una cosa me llevaba a la siguiente.</template>
+  <style>
+    #s15a-entrevistas .c15a-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 36px; align-items: end; }
+    #s15a-entrevistas .c15a-col { display: flex; flex-direction: column; }
+    #s15a-entrevistas .c15a-q { position: relative; align-self: flex-start; background: #fff; border: 4px solid var(--ink); box-shadow: 5px 5px 0 rgba(11,13,16,.35); padding: 10px 16px; font-size: 22px; font-weight: 600; margin-bottom: 26px; }
+    #s15a-entrevistas .c15a-q::after { content: ""; position: absolute; left: 26px; bottom: -14px; width: 16px; height: 10px; background: var(--ink); clip-path: polygon(0 0, 100% 0, 30% 100%); }
+    #s15a-entrevistas .c15a-q.more { background: #fee2e2; }
+    #s15a-entrevistas .c15a-box { padding: 38px 26px 22px; }
+    #s15a-entrevistas .c15a-box .tag { background: var(--accent); }
+    #s15a-entrevistas .c15a-k { font-family: var(--pixel); font-size: 18px; color: var(--muted); text-transform: uppercase; }
+    #s15a-entrevistas .c15a-t { font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 4px 0 18px; }
+    #s15a-entrevistas .c15a-it { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; padding: 10px 0; border-top: 3px dashed var(--line); font-size: 23px; font-weight: 600; line-height: 1.25; }
+    #s15a-entrevistas .c15a-it > [data-px] { width: 48px; justify-self: center; }
+    #s15a-entrevistas .c15a-it .lg { width: 52px; height: 52px; border-width: 3px; box-shadow: none; }
+    #s15a-entrevistas .c15a-it.new { background: #fff8e1; margin: 0 -26px; padding-left: 26px; padding-right: 26px; }
+    #s15a-entrevistas .c15a-moral { margin-top: auto; background: var(--accent); color: #fff; display: flex; align-items: center; gap: 24px; }
+    #s15a-entrevistas .c15a-moral p { font-size: 30px; font-weight: 600; line-height: 1.3; }
+    #s15a-entrevistas .c15a-moral [data-px] { width: 70px; flex: none; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="15a-entrevistas.html#0">La bola de nieve</span>
+      <div class="inv"><span data-e="15a-entrevistas.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15a-h" data-e="15a-entrevistas.html#2">Lo que podía contar en cada entrevista</div>
+    <div class="c15a-cols">
+      <div class="c15a-col c1">
+        <div class="c15a-q" data-e="15a-entrevistas.html#3">«¿Qué experiencia tienes?»</div>
+        <div class="panel c15a-box"><span class="tag" data-e="15a-entrevistas.html#4">Entrevista 1</span><div class="c15a-k" data-e="15a-entrevistas.html#5">Prácticas</div><div class="c15a-t" data-e="15a-entrevistas.html#6">Telefónica</div>
+          <div class="c15a-it new"><span data-px="paper"></span><span data-e="15a-entrevistas.html#7">Paper en AAAI · Georgia Tech</span></div>
+        </div>
+      </div>
+      <div class="c15a-col c2">
+        <div class="c15a-q" data-e="15a-entrevistas.html#8">«¿Qué has hecho desde entonces?»</div>
+        <div class="panel c15a-box"><span class="tag" data-e="15a-entrevistas.html#9">Entrevista 2</span><div class="c15a-k" data-e="15a-entrevistas.html#10">Siguientes prácticas</div><div class="c15a-t" data-e="15a-entrevistas.html#11">+1 objeto</div>
+          <div class="c15a-it"><span data-px="paper"></span><span data-e="15a-entrevistas.html#12">Paper en AAAI · Georgia Tech</span></div>
+          <div class="c15a-it new"><span class="lg"><img src="assets/img/logos/telefonica.png" alt=""></span><span data-e="15a-entrevistas.html#13">Prácticas en Telefónica</span></div>
+        </div>
+      </div>
+      <div class="c15a-col c3">
+        <div class="c15a-q more" data-e="15a-entrevistas.html#14">«Para este puesto pedimos más…»</div>
+        <div class="panel c15a-box"><span class="tag" data-e="15a-entrevistas.html#15">Entrevista 3</span><div class="c15a-k" data-e="15a-entrevistas.html#16">Trabajo a jornada completa</div><div class="c15a-t" data-e="15a-entrevistas.html#17">+2 objetos</div>
+          <div class="c15a-it"><span data-px="paper"></span><span data-e="15a-entrevistas.html#18">Paper en AAAI · Georgia Tech</span></div>
+          <div class="c15a-it"><span class="lg"><img src="assets/img/logos/telefonica.png" alt=""></span><span data-e="15a-entrevistas.html#19">Prácticas en Telefónica</span></div>
+          <div class="c15a-it new"><span class="lg full"><img src="assets/img/logos/uniwords.jpg" alt=""></span><span data-e="15a-entrevistas.html#20">Uniwords</span></div>
+          <div class="c15a-it new"><span data-px="laptop"></span><span data-e="15a-entrevistas.html#21">Mis proyectos personales</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel c15a-moral"><span data-px="coin"></span><p data-e="15a-entrevistas.html#22">Cada cosa que creas hoy es lo que cuentas en tu próxima entrevista. <b>Y así fui.</b></p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s15a-entrevistas", function (el, tl, h) {
+  h.rise(".c15a-h", { at: 0, y: 30 });
+  h.pop(".c1 .c15a-q", { at: 0.3 });
+  h.rise(".c1 .c15a-box", { at: 0.45, y: 40 });
+  tl.call(Deck.sfx, ["coin", tl], 0.7);
+  var cols = [".c2", ".c3"];
+  for (var i = 0; i < cols.length; i++) {
+    var t = h.step();
+    h.pop(cols[i] + " .c15a-q", { at: t });
+    h.rise(cols[i] + " .c15a-box", { at: t + 0.15, y: 40 });
+    h.pop(cols[i] + " .c15a-it.new", { at: t + 0.45, stagger: 0.2 });
+    tl.call(Deck.sfx, ["coin", tl], t + 0.5);
+  }
+  var t2 = h.step();
+  h.rise(".c15a-moral", { at: t2, y: 24 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>
+
+<!-- 15c-plantillas.html (hidden) -->
+<section data-file="15c-plantillas.html" data-hidden="1" class="slide" id="s15c-plantillas" data-title="Plantillas contra los enemigos" data-enter="push">
+  <template class="notes">⏱ OCULTA (solo para preguntas, desde la vista G)
+«¿Os acordáis de los enemigos del Game over? Aquí tenéis las armas.» Tres plantillas que podéis copiar tal cual; están todas en el QR del final.
+El mensaje de LinkedIn (ya visible): corto, concreto y pidiendo poco (15 minutos). Contra el enemigo «no escribir a nadie».
+→ El correo al profe: así empezó todo para mí en Georgia Tech.
+→ El checklist para publicar el reto: README, vídeo de un minuto y post. Eso ya es experiencia que contar.</template>
+  <style>
+    #s15c-plantillas .c15c-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin: auto 0; align-items: stretch; }
+    #s15c-plantillas .c15c-c { padding: 40px 26px 26px; display: flex; flex-direction: column; }
+    #s15c-plantillas .c15c-c .tag { background: var(--accent); }
+    #s15c-plantillas .c15c-top { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+    #s15c-plantillas .c15c-top [data-px] { width: 58px; flex: none; }
+    #s15c-plantillas .c15c-t { font-family: var(--pixel); font-size: 22px; text-transform: uppercase; line-height: 1.15; }
+    #s15c-plantillas .c15c-vs { font-size: 18px; color: var(--red); font-weight: 600; margin-top: 2px; }
+    #s15c-plantillas .c15c-tx { flex: 1; background: #f8fafc; border: 3px dashed #cbd5e1; padding: 16px 18px; font-size: 21px; line-height: 1.42; color: #1f2937; }
+    #s15c-plantillas .c15c-tx i { font-style: normal; background: #fef3c7; padding: 0 4px; }
+    #s15c-plantillas .c15c-tx ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    #s15c-plantillas .c15c-tx li { display: grid; grid-template-columns: 30px 1fr; }
+    #s15c-plantillas .c15c-tx li::before { content: "☐"; font-size: 22px; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" data-e="15c-plantillas.html#0">Armas</span>
+      <div class="inv"><span data-e="15c-plantillas.html#1">Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15c-h" data-e="15c-plantillas.html#2">Tres plantillas para vencer a los enemigos</div>
+    <div class="c15c-grid">
+      <div class="panel c15c-c k1"><span class="tag" data-e="15c-plantillas.html#3">Arma 1</span>
+        <div class="c15c-top"><span data-px="bubble"></span><div><div class="c15c-t" data-e="15c-plantillas.html#4">Mensaje de LinkedIn</div><div class="c15c-vs" data-e="15c-plantillas.html#5">vs. «no escribo a nadie»</div></div></div>
+        <div class="c15c-tx" data-e="15c-plantillas.html#6">Hola <i>[nombre]</i>, soy <i>[tú]</i>, del Máster de Informática de la UC3M. He visto que trabajas en <i>[empresa]</i> y me interesa mucho <i>[tema concreto]</i>. ¿Te importaría que te hiciera un par de preguntas en 15 minutos? ¡Gracias!</div></div>
+      <div class="panel c15c-c k2"><span class="tag" data-e="15c-plantillas.html#7">Arma 2</span>
+        <div class="c15c-top"><span data-px="cap"></span><div><div class="c15c-t" data-e="15c-plantillas.html#8">Correo a un profe</div><div class="c15c-vs" data-e="15c-plantillas.html#9">vs. «no me siento preparado»</div></div></div>
+        <div class="c15c-tx" data-e="15c-plantillas.html#10">Hola <i>[profesor/a]</i>: soy <i>[tú]</i>, de su asignatura <i>[X]</i>. He leído <i>[paper o proyecto]</i> y me encantaría colaborar. Puedo dedicarle <i>[N]</i> h a la semana y sé <i>[habilidad]</i>. ¿Podríamos hablar 10 minutos?</div></div>
+      <div class="panel c15c-c k3"><span class="tag" data-e="15c-plantillas.html#11">Arma 3</span>
+        <div class="c15c-top"><span data-px="laptop"></span><div><div class="c15c-t" data-e="15c-plantillas.html#12">Publicar el reto</div><div class="c15c-vs" data-e="15c-plantillas.html#13">vs. «no tengo nada que enseñar»</div></div></div>
+        <div class="c15c-tx"><ul><li data-e="15c-plantillas.html#14">Repo público en GitHub</li><li data-e="15c-plantillas.html#15">README: problema, solución, arquitectura y cómo ejecutarlo</li><li data-e="15c-plantillas.html#16">Vídeo de 1 minuto con la demo</li><li data-e="15c-plantillas.html#17">Post en LinkedIn: problema → qué hice → resultado → qué aprendí</li></ul></div></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s15c-plantillas", function (el, tl, h) {
+  h.rise(".c15c-h", { at: 0, y: 30 });
+  h.rise(".c15c-c.k1", { at: 0.25, y: 40 });
+  tl.call(Deck.sfx, ["coin", tl], 0.4);
+  for (var i = 2; i <= 3; i++) {
+    var t = h.step();
+    h.rise(".c15c-c.k" + i, { at: t, y: 40 });
+    tl.call(Deck.sfx, ["coin", tl], t + 0.1);
+  }
+});
+</script>
+
+  <div id="progress"></div>
+  <footer id="footer">
+    <div class="dots"></div>
+    <div class="fsec"></div>
+    <div class="ftitle">Créala<span>Jorge Garcelán · Máster de Informática · UC3M</span></div>
+    <div class="flogos"><img src="assets/img/logos/uc3m.png" alt="UC3M" style="height:36px" /></div>
+    <div class="fnum"></div>
+  </footer>
+</div></div>
+<script>Deck.boot();</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<section class="slide" id="s03b-rueda" data-title="El final boss al que nos enfrentamos" data-enter="cut">
+  <template class="notes">⏱ 40 s · empieza en 1:40
+«Para trabajar te piden experiencia.»
+«Para tener experiencia, te piden trabajo.»
+→ «¿Os suena?» (1 segundo de silencio)
+«Os cuento cómo lo rompí yo.»</template>
+  <style>
+    #s03b-rueda .c3b-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 760px 1fr; gap: 70px; align-items: center; }
+    #s03b-rueda .c3b-arena { position: relative; width: 760px; height: 700px; }
+    #s03b-rueda .c3b-ring { position: absolute; left: 80px; top: 80px; width: 600px; height: 600px; }
+    #s03b-rueda .c3b-boss { position: absolute; left: 270px; top: 300px; width: 220px; }
+    #s03b-rueda .c3b-hp { position: absolute; left: 230px; top: 0; width: 300px; text-align: center; }
+    #s03b-rueda .c3b-hp .pxt { font-size: 20px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s03b-rueda .c3b-bar { height: 26px; border: 4px solid var(--ink); background: var(--red); margin-top: 8px; }
+    #s03b-rueda .c3b-lab { position: absolute; font-size: 22px; font-weight: 700; background: #fff; border: 4px solid var(--ink); padding: 8px 14px; white-space: nowrap; }
+    #s03b-rueda .c3b-lab.t { left: 230px; top: 64px; } #s03b-rueda .c3b-lab.r { left: 560px; top: 356px; }
+    #s03b-rueda .c3b-lab.b { left: 230px; top: 650px; } #s03b-rueda .c3b-lab.l { left: 0; top: 356px; }
+    #s03b-rueda .c3b-q { font-size: 30px; color: #fff; margin-top: 24px; text-shadow: 0 2px 16px rgba(16,52,110,.35); }
+    #s03b-rueda .c3b-dlg { margin-top: 44px; }
+    #s03b-rueda .c3b-dlg p { font-size: 32px; }
+    #s03b-rueda .hud-world { background: var(--red); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">¡Cuidado! · Final boss</span></div>
+    <div class="c3b-grid">
+      <div class="c3b-arena">
+        <svg class="c3b-ring" viewBox="0 0 600 600" aria-hidden="true">
+          <circle cx="300" cy="300" r="250" fill="none" stroke="#fff" stroke-width="10" stroke-dasharray="40 22"/>
+          <polygon points="560,280 530,330 590,330" fill="#fff"/>
+          <polygon points="40,320 10,270 70,270" fill="#fff"/>
+        </svg>
+        <div class="c3b-hp"><div class="pxt">La rueda · HP</div><div class="c3b-bar"></div></div>
+        <span class="c3b-lab t">Necesitas experiencia</span>
+        <span class="c3b-lab r">para conseguir trabajo</span>
+        <span class="c3b-lab b">Necesitas trabajo</span>
+        <span class="c3b-lab l">para tener experiencia</span>
+        <span class="c3b-boss" data-px="boss"></span>
+      </div>
+      <div>
+        <div class="h-sky c3b-h">El final boss al que nos enfrentamos todos</div>
+        <div class="c3b-q">Sin experiencia no hay trabajo. Sin trabajo no hay experiencia.</div>
+        <div class="dlg c3b-dlg"><span class="dlg-name">Jorge</span><p>¿Os suena?</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s03b-rueda", function (el, tl, h) {
+  h.fade(".c3b-ring", { at: 0, dur: 0.4 });
+  h.pop(".c3b-boss", { at: 0.15 });
+  tl.call(Deck.sfx, ["hit", tl], 0.2);
+  h.fade(".c3b-hp", { at: 0.3 });
+  h.pop(".c3b-lab", { at: 0.4, stagger: 0.12 });
+  h.rise(".c3b-h", { at: 0.6, y: 30 });
+  h.fade(".c3b-q", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelector(".c3b-ring"), { rotation: 360, transformOrigin: "50% 50%", duration: 14, repeat: -1, ease: "none" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c3b-boss"), { y: -10, duration: 0.5, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+  var t = h.step();
+  h.rise(".c3b-dlg", { at: t, y: 24 });
+});
+</script>

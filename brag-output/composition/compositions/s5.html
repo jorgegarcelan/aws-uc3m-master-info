@@ -1,0 +1,41 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Regular.ttf'); font-weight: 400; }
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-500-normal.woff2'); font-weight: 500; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s5-wrap { position: absolute; inset: 0; background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 34%, #8fbef6 68%, #dcebfd 92%, #f6faff 100%); }
+    #s5-haze { position: absolute; inset: -100px; background: radial-gradient(ellipse 460px 150px at 16% 20%, rgba(255,255,255,.7), transparent 70%), radial-gradient(ellipse 560px 170px at 80% 12%, rgba(255,255,255,.55), transparent 70%), radial-gradient(ellipse 640px 190px at 66% 82%, rgba(255,255,255,.6), transparent 70%); filter: blur(22px); }
+    .s5-cl { position: absolute; } #s5-c1 { left: 130px; top: 130px; width: 300px; } #s5-c2 { left: 1500px; top: 110px; width: 260px; } #s5-c3 { left: 1440px; top: 830px; width: 320px; }
+    #s5-t { position: absolute; left: 0; right: 0; top: 250px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 290px; line-height: 1; color: #fff; text-shadow: 0 10px 0 #1667d6, 0 20px 0 rgba(11,13,16,.28); }
+    #s5-s { position: absolute; left: 0; right: 0; top: 600px; text-align: center; font-size: 52px; font-weight: 700; color: #0b0d10; }
+    #s5-h { position: absolute; left: 610px; top: 740px; width: 700px; text-align: center; font-family: "Pixel"; font-size: 50px; color: #0b0d10; background: #fbbf24; border: 6px solid #0b0d10; box-shadow: 8px 8px 0 #0b0d10; padding: 12px 0; }
+    #s5-me { position: absolute; left: 110px; top: 690px; width: 330px; }
+    .s5-j { position: absolute; left: 95px; top: 0; width: 140px; }
+    #s5-j0 { opacity: 0; }
+    #s5-pl { position: absolute; left: 0; top: 176px; width: 330px; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080">
+    <div id="s5-wrap">
+      <div id="s5-haze"></div>
+      <img id="s5-c1" class="s5-cl" src="assets/sprites/cloud.svg" alt=""><img id="s5-c2" class="s5-cl" src="assets/sprites/cloud.svg" alt=""><img id="s5-c3" class="s5-cl" src="assets/sprites/cloud.svg" alt="">
+      <div id="s5-t">CRÉALA</div>
+      <div id="s5-s">Mi charla del seminario, convertida en videojuego</div>
+      <div id="s5-h">@jgarcelan</div>
+      <div id="s5-me"><img id="s5-pl" src="assets/sprites/cloud.svg" alt=""><img id="s5-j1" class="s5-j" src="assets/sprites/jorge-cheer.svg" alt=""><img id="s5-j0" class="s5-j" src="assets/sprites/jorge-idle.svg" alt=""></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s5-wrap", { clipPath: "circle(0px at 960px 540px)" }, { clipPath: "circle(1250px at 960px 540px)", duration: 0.12, ease: "power2.in" }, 0);
+    tl.fromTo("#s5-t", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.in" }, 0); // beat-locked: 22.23s
+    tl.fromTo("#s5-wrap", { x: 0 }, { x: 12, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, 0.13);
+    tl.fromTo(".s5-cl", { opacity: 0, x: function (i) { return i ? 300 : -300; } }, { opacity: 1, x: 0, duration: 0.7, ease: "expo.out", stagger: 0.08 }, 0.2);
+    tl.fromTo("#s5-me", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.35);
+    tl.fromTo("#s5-s", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 0.5);
+    tl.fromTo("#s5-h", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, 0.85); // beat-locked: 22.95s
+    [1.56, 2.99].forEach(function (t) { tl.set("#s5-j1", { opacity: 0 }, t); tl.set("#s5-j0", { opacity: 1 }, t); tl.set("#s5-j1", { opacity: 1 }, t + 0.72); tl.set("#s5-j0", { opacity: 0 }, t + 0.72); });
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

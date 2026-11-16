@@ -1,0 +1,64 @@
+<section class="slide" id="s14-w3-uniwords" data-section="3" data-title="Emprender: Uniwords" data-enter="edge">
+  <template class="notes">⏱ 60 s · empieza en 12:35
+(espera a que se abra el círculo)
+💬 «¿Quién tiene un proyecto propio?»
+Lee el post 😄
+→ «Nació de lo que viví en Georgia Tech.»
+«Lo monté a la vez que todo lo demás.»
+«Unas horas a la semana. La IA me deja compaginarlo.»
+→ «Me llevo: pensar en producto.»</template>
+  <style>
+    #s14-w3-uniwords .c14-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; margin-top: 36px; }
+    #s14-w3-uniwords .c14-col > .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s14-w3-uniwords .c14-dlg p { font-size: 28px; }
+    #s14-w3-uniwords .c14-get { margin-top: 40px; }
+    #s14-w3-uniwords .c14-get .c14-m { font-size: 24px; color: var(--muted); margin-top: 6px; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-start)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t">Mundo 3 · Emprender</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-start)">Mundo 3 · Emprender</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot c14-slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c14-h">Uniwords nació de un problema que viví en Georgia Tech</div>
+    <div class="c14-grid">
+      <div class="c14-col c14-left">
+        <div class="pxt">Versión LinkedIn</div>
+        <div class="lpost">
+          <div class="lp-head"><span class="lp-av"><span data-px="jorge"></span></span><div><div class="lp-name">Jorge Garcelán <span>· 1.º</span></div><div class="lp-sub">Cofundador @ Uniwords</div><div class="lp-time">1 sem · 🌐</div></div><span class="lp-follow">+ Seguir</span></div>
+          <div class="lp-text">🌍 Feliz de presentar Uniwords: la plataforma para estudiantes que se mudan a otra ciudad. Alojamiento, papeleo, empleo y comunidad, en un solo sitio. <span class="lp-tags">#Startup #Emprendimiento</span></div>
+          <div class="lp-img"><span data-px="globe" style="left:40px;top:30px;width:110px"></span><span data-px="suitcase" style="left:60px;bottom:26px;width:90px"></span><span data-px="jorge" data-anim="cheer" style="left:220px;bottom:22px;width:110px"></span><span data-px="rocket" style="left:400px;top:40px;width:100px"></span><span class="lg lgx full" style="right:40px;top:40px"><img src="assets/img/logos/uniwords.jpg" alt=""></span></div>
+          <div class="lp-react"><span>👍❤️👏</span> Tú y 187 personas más <span class="lp-com">24 comentarios</span></div>
+          <div class="lp-act"><span>👍 Recomendar</span><span>💬 Comentar</span><span>🔁 Compartir</span><span>➤ Enviar</span></div>
+        </div>
+      </div>
+      <div class="c14-col c14-right">
+        <div class="pxt">Versión real</div>
+        <div class="dlg c14-dlg"><span class="dlg-name">Jorge</span>
+          <p>Lo viví en primera persona: <b>alojamiento, papeleo, trabajo, conocer gente</b>.</p>
+          <p>Lo monté a la vez que la carrera, Telefónica, el máster y AWS.</p>
+          <p>Empezamos en <b>WordPress</b>. Este año lo he rehecho con <b>desarrollo propio</b>.</p>
+          <p>Le dedico unas horas a la semana. <b>La IA es lo que me deja compaginarlo.</b></p>
+        </div>
+        <div class="panel item-get c14-get"><span data-px="rocket"></span><div><div class="pxt">¡Has conseguido!</div><div class="it-name">Pensar en producto</div><div class="c14-m">Emprender no es dejarlo todo.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s14-w3-uniwords", function (el, tl, h) {
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+  h.rise(".c14-h", { at: o + 0, y: 30 });
+  h.rise(".c14-left > .pxt, .c14-left .lpost", { at: o + 0.25, y: 30, stagger: 0.1 });
+  var t = h.step();
+  h.fade(".c14-right > .pxt", { at: t });
+  h.rise(".c14-dlg", { at: t + 0.1, y: 24 });
+  h.rise(".c14-dlg p", { at: t + 0.3, y: 14, stagger: 0.22 });
+  var t2 = h.step();
+  h.pop(".c14-get", { at: t2 });
+  tl.call(Deck.sfx, ["coin", tl], t2 + 0.1);
+  h.pop(".c14-slot [data-px]", { at: t2 + 0.35 });
+});
+</script>

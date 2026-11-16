@@ -1,0 +1,57 @@
+<section class="slide" id="s10b-w2-aws" data-section="2" data-title="Empresa: cómo entré en AWS" data-enter="push">
+  <template class="notes">⏱ 60 s · empieza en 8:10
+«Zoom en AWS. Lo que dice LinkedIn…» 😄
+→ «Lo real: vi la oferta en LinkedIn. Un rol nuevo para mí.»
+«Me preparé un par de semanas.»
+«Solo tenía prácticas e investigación…»
+«…y las conté como si fueran un producto.»
+→ TIP: «Contad lo vuestro como experiencia laboral.»</template>
+  <style>
+    #s10b-w2-aws .c10b-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; margin-top: 36px; }
+    #s10b-w2-aws .c10b-col > .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s10b-w2-aws .c10b-dlg p { font-size: 28px; }
+    #s10b-w2-aws .c10b-tip { margin-top: 40px; }
+    #s10b-w2-aws .c10b-tip .tag { background: var(--gold); color: var(--ink); }
+    #s10b-w2-aws .c10b-tip p { font-size: 28px; line-height: 1.4; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)">Mundo 2 · Empresa</span>
+      <div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c10b-h">Cómo entré en AWS</div>
+    <div class="c10b-grid">
+      <div class="c10b-col c10b-left">
+        <div class="pxt">Versión LinkedIn</div>
+        <div class="lpost">
+          <div class="lp-head"><span class="lp-av"><span data-px="jorge"></span></span><div><div class="lp-name">Jorge Garcelán <span>· 1.º</span></div><div class="lp-sub">Solutions Architect Intern @ AWS</div><div class="lp-time">1 sem · 🌐</div></div><span class="lp-follow">+ Seguir</span></div>
+          <div class="lp-text">🚀 ¡Nuevo capítulo! Este verano me uno a Amazon Web Services como Solutions Architect Intern. Muy agradecido y con muchas ganas de aprender. <span class="lp-tags">#AWS #Cloud #NewJob</span></div>
+          <div class="lp-img"><span class="pcloud" data-px="cloud" style="left:30px;top:24px;width:150px"></span><span class="pcloud" data-px="cloud" style="left:470px;top:60px;width:120px"></span><span data-px="jorge" style="left:180px;bottom:22px;width:96px"></span><span data-px="laptop" style="left:300px;bottom:26px;width:150px"></span><span data-px="briefcase" style="left:60px;bottom:26px;width:90px"></span><span class="lg lgx" style="right:40px;top:40px"><img src="assets/img/logos/aws.png" alt=""></span><span data-px="coin" style="right:180px;top:30px;width:40px"></span></div>
+          <div class="lp-react"><span>👍❤️👏</span> Tú y 312 personas más <span class="lp-com">41 comentarios</span></div>
+          <div class="lp-act"><span>👍 Recomendar</span><span>💬 Comentar</span><span>🔁 Compartir</span><span>➤ Enviar</span></div>
+        </div>
+      </div>
+      <div class="c10b-col c10b-right">
+        <div class="pxt">Versión real</div>
+        <div class="dlg c10b-dlg"><span class="dlg-name">Jorge</span>
+          <p>Buscando prácticas para el máster, encontré la oferta en <b>LinkedIn</b>. Un rol que no conocía: técnico <b>y</b> de cara al cliente. Me apetecía probarlo.</p>
+          <p>Me preparé el proceso durante <b>un par de semanas</b>.</p>
+          <p>Solo tenía prácticas e investigación, así que las conté <b>como si fueran un producto</b>: qué valor aportaban, qué retos tuve y qué conseguí.</p>
+          <p><b>Eso fue lo que me diferenció.</b></p>
+        </div>
+        <div class="panel c10b-tip"><span class="tag">Tip</span><p>Cuenta tus prácticas, tu investigación y tus proyectos <b>como experiencia laboral</b>: el valor, los retos y el resultado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s10b-w2-aws", function (el, tl, h) {
+  h.rise(".c10b-h", { at: 0, y: 30 });
+  h.rise(".c10b-left > .pxt, .c10b-left .lpost", { at: 0.25, y: 30, stagger: 0.1 });
+  var t = h.step();
+  h.fade(".c10b-right > .pxt", { at: t });
+  h.rise(".c10b-dlg", { at: t + 0.1, y: 24 });
+  h.rise(".c10b-dlg p", { at: t + 0.3, y: 14, stagger: 0.22 });
+  var t2 = h.step();
+  h.pop(".c10b-tip", { at: t2 });
+  tl.call(Deck.sfx, ["select", tl], t2 + 0.03);
+});
+</script>

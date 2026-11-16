@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Lánzala: Supabase, GitHub y Vercel</title>
+<link rel="stylesheet" href="slaas/engine.css?v=1794822040805" />
+<link rel="stylesheet" href="slaas/components.css?v=1794822040805" />
+<link rel="stylesheet" href="theme/theme.css?v=1794822040805" />
+<script src="slaas/vendor/gsap.min.js"></script>
+<script src="slaas/vendor/SplitText.min.js"></script>
+<script src="slaas/vendor/DrawSVGPlugin.min.js"></script>
+<script src="slaas/vendor/MotionPathPlugin.min.js"></script>
+<script src="slaas/vendor/CustomEase.min.js"></script>
+<script>window.SLAAS_CONFIG = {"id":"stack-supabase","title":"Lánzala: Supabase, GitHub y Vercel","lang":"es","sections":[{"name":"Stack","color":"#6366f1","dark":true}],"accent":"#1f7ff5","appendix":null,"number":null,"strings":null};</script>
+<script src="slaas/engine.js?v=1794822040805"></script>
+<script src="slaas/components.js?v=1794822040805"></script>
+<script src="theme/theme.js?v=1794822040805"></script>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+  
+<!-- 01-start.html -->
+<section data-file="01-start.html" class="slide" id="s01-start" data-title="Portada: Lánzala" data-footer="off" data-enter="fade">
+  <template class="notes">⏱ 20 s
+«Hola, somos Jorge y Dani.»
+«Hoy os enseñamos el stack con el que montamos proyectos de noche: Supabase, GitHub y Vercel.»
+(clic en cualquiera de los dos monigotes: saluda)</template>
+  <style>
+    #s01-start .c1-cl { position: absolute; }
+    #s01-start .c1-cl.a { left: 90px; top: 120px; width: 300px; }
+    #s01-start .c1-cl.b { right: 150px; top: 70px; width: 230px; }
+    #s01-start .c1-cl.d { left: 1580px; top: 330px; width: 250px; }
+    #s01-start .c1-wrap { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    #s01-start .c1-hey { font-size: 30px; font-weight: 600; color: #fff; text-shadow: 0 2px 14px rgba(16,52,110,.35); }
+    #s01-start .c1-kick { margin-top: 30px; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; }
+    #s01-start .c1-title { margin-top: 48px; font-size: 200px; }
+    #s01-start .c1-sub { margin-top: 48px; max-width: 1180px; }
+    #s01-start .c1-press { margin-top: 64px; }
+    #s01-start .c1-credit { position: absolute; left: 0; right: 0; bottom: 40px; display: flex; justify-content: center; align-items: center; gap: 22px; }
+    #s01-start .c1-lg { height: 72px; width: auto; display: block; }
+    #s01-start .c1-x { font-size: 26px; color: #fff; }
+    #s01-start .c1-who { font-size: 20px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.4); margin-left: 18px; }
+    #s01-start .c1-me { position: absolute; top: 740px; width: 330px; }
+    #s01-start .c1-me.l { left: 100px; }
+    #s01-start .c1-me.r { right: 100px; }
+    #s01-start .c1-me .c1-sp { display: block; width: 120px; margin: 0 auto -16px; position: relative; z-index: 1; }
+    #s01-start .c1-me .c1-pl { display: block; width: 330px; }
+  </style>
+  <span class="c1-cl a pcloud" data-px="cloud"></span>
+  <span class="c1-cl b pcloud" data-px="cloud"></span>
+  <span class="c1-cl d pcloud" data-px="cloud"></span>
+  <div class="c1-me l"><span class="c1-sp shadow-px" data-px="jorge" data-anim="wave"></span><span class="c1-pl" data-px="cloud"></span></div>
+  <div class="c1-me r"><span class="c1-sp shadow-px" data-px="invitado" data-anim="idle"></span><span class="c1-pl" data-px="cloud"></span></div>
+  <div class="c1-wrap">
+    <div class="c1-hey" data-e="01-start.html#0">👋&nbsp; Hey, somos Jorge y Dani</div>
+    <div class="sub-sky c1-kick" data-e="01-start.html#1">No esperes a tenerla perfecta:</div>
+    <div class="pxt-hero c1-title" data-e="01-start.html#2">Lánzala</div>
+    <div class="sub-sky c1-sub" data-e="01-start.html#3">Supabase, GitHub y Vercel: de tu portátil a internet</div>
+    <button class="px-btn c1-press" type="button" data-next data-e="01-start.html#4">▶ Pulsa para empezar</button>
+  </div>
+  <div class="c1-credit"><img class="c1-lg" src="assets/img/logos/uc3m.png" alt="UC3M"><span class="c1-x pxt" data-e="01-start.html#5">×</span><img class="c1-lg" src="assets/img/logos/aws.png" alt="AWS"><span class="pxt c1-who" data-e="01-start.html#6">Jorge Garcelán y Dani Jiménez · Máster de Informática · 2026</span></div>
+</section>
+<script>
+Deck.slide("s01-start", function (el, tl, h) {
+  h.fade(".c1-cl", { at: 0, stagger: 0.1 });
+  h.fade(".c1-hey", { at: 0.1 });
+  h.rise(".c1-kick", { at: 0.15, y: 20 });
+  var t = h.split(".c1-title", "chars");
+  tl.fromTo(t.chars, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "steps(4)", stagger: 0.05 }, 0.25);
+  h.rise(".c1-sub", { at: 0.9, y: 20 });
+  h.rise(".c1-me.l", { at: 1.0, y: 60 });
+  h.rise(".c1-me.r", { at: 1.15, y: 60 });
+  h.pop(".c1-press", { at: 1.3 });
+  h.fade(".c1-credit", { at: 1.4 });
+  tl.call(Deck.sfx, ["start", tl], 0.3);
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c1-cl"), { x: function (i) { return i % 2 ? -40 : 40; }, duration: 6, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+  h.loop(function () { return gsap.to(el.querySelector(".c1-press"), { opacity: 0.25, duration: 0.6, repeat: -1, yoyo: true, ease: "steps(1)" }); });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c1-me"), { y: -14, duration: 1.6, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.8 }); });
+});
+</script>
+
+<!-- 02-stack.html -->
+<section data-file="02-stack.html" class="slide" id="s02-stack" data-section="1" data-title="El stack: Supabase, GitHub y Vercel" data-enter="push">
+  <template class="notes">⏱ 1 min
+«Escribes el código en tu portátil y haces git push. GitHub lo guarda, con todas las versiones.»
+→ «Vercel está conectado a GitHub: cada push se construye y se publica solo. Cada pull request tiene su propia URL de prueba.»
+→ «Y la app necesita datos: Supabase te da la base de datos Postgres, el login de usuarios y los archivos.»
+→ «Los tres tienen plan gratuito: puedes tener tu proyecto en internet sin pagar un servidor.»</template>
+  <style>
+    #s02-stack .c2-h { margin-bottom: 8px; }
+    #s02-stack .c2-dia { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 150px 1fr 150px 1fr 150px 1fr; grid-template-rows: auto 96px auto; align-content: center; }
+    #s02-stack .c2-n { display: flex; flex-direction: column; padding: 38px 26px 26px; }
+    #s02-stack .c2-ic { display: block; height: 64px; margin-bottom: 16px; }
+    #s02-stack .c2-ic svg { width: auto; height: 64px; }
+    #s02-stack .c2-t { font-size: 32px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+    #s02-stack .c2-s { font-size: 22px; color: var(--muted); margin-top: 8px; line-height: 1.35; }
+    #s02-stack .c2-s b { color: var(--ink); font-weight: 600; white-space: nowrap; }
+    #s02-stack .c2-a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 0 8px; }
+    #s02-stack .c2-al { font-family: var(--pixel); font-size: 17px; text-transform: uppercase; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); text-align: center; line-height: 1.2; }
+    #s02-stack .c2-ln { position: relative; width: 100%; height: 8px; background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 22px); transform-origin: 0 50%; }
+    #s02-stack .c2-ln::after { content: ""; position: absolute; right: -10px; top: -10px; border: 14px solid transparent; border-left: 16px solid #fff; border-right: 0; }
+    #s02-stack .c2-v { grid-column: 5 / 8; grid-row: 2; display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; }
+    #s02-stack .c2-v > * { grid-row: 1; }
+    #s02-stack .c2-v .c2-vl:first-child { grid-column: 1; justify-self: center; }
+    #s02-stack .c2-v .c2-vl:last-child { grid-column: 3; justify-self: center; }
+    #s02-stack .c2-v .c2-al { grid-column: 1 / 4; justify-self: center; }
+    #s02-stack .c2-h i { padding-right: 0.14em; }
+    #s02-stack .c2-vl { width: 8px; height: 100%; background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 22px); transform-origin: 50% 0; }
+    #s02-stack .c2-sb { grid-column: 5 / 8; grid-row: 3; display: flex; gap: 30px; align-items: center; padding: 34px 34px 28px; background: #ecfdf5; }
+    #s02-stack .c2-sb .tag { background: #249361; }
+    #s02-stack .c2-sb .c2-ic { height: 96px; margin: 0; flex: none; }
+    #s02-stack .c2-sb .c2-ic svg { height: 96px; }
+    #s02-stack .c2-chips { display: flex; gap: 10px; margin-top: 14px; }
+    #s02-stack .c2-chips span { font-family: var(--pixel); font-size: 17px; text-transform: uppercase; background: var(--ink); color: #fff; padding: 6px 10px; }
+    #s02-stack .c2-dlg { grid-column: 1 / 4; grid-row: 3; align-self: center; margin-right: 40px; }
+    #s02-stack .c2-dlg p { font-size: 28px; }
+    #s02-stack .n1 .tag { background: var(--accent); }
+    #s02-stack .n2 .tag { background: #6366f1; }
+    #s02-stack .n4 .tag { background: var(--gold); color: var(--ink); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:#6366f1" data-e="02-stack.html#0">El stack</span><div class="inv"><span data-e="02-stack.html#1">Inventario</span><span class="slot"><span data-px="branch"></span></span><span class="slot"><span data-px="vercel"></span></span><span class="slot"><span data-px="supabase"></span></span></div></div>
+    <div class="h-sky c2-h" data-e="02-stack.html#2">Haces <i>git push</i> y en un minuto está en internet</div>
+    <div class="c2-dia">
+      <div class="panel c2-n n1"><span class="tag" data-e="02-stack.html#3">Tú</span><span class="c2-ic" data-px="laptop"></span><div class="c2-t" data-e="02-stack.html#4">Tu portátil</div><div class="c2-s" data-e="02-stack.html#5">Escribes el código, con o sin IA.</div></div>
+      <div class="c2-a a1"><span class="c2-al" data-e="02-stack.html#6">git push</span><span class="c2-ln"></span></div>
+      <div class="panel c2-n n2"><span class="tag" data-e="02-stack.html#7">Código</span><span class="c2-ic" data-px="branch"></span><div class="c2-t" data-e="02-stack.html#8">GitHub</div><div class="c2-s" data-e="02-stack.html#9">Guarda el código y cada versión. Trabajáis a la vez sin pisaros.</div></div>
+      <div class="c2-a a2"><span class="c2-al" data-e="02-stack.html#10">Deploy<br>automático</span><span class="c2-ln"></span></div>
+      <div class="panel c2-n n3"><span class="tag" data-e="02-stack.html#11">Despliegue</span><span class="c2-ic" data-px="vercel"></span><div class="c2-t" data-e="02-stack.html#12">Vercel</div><div class="c2-s" data-e="02-stack.html#13">Cada push se publica solo. Cada PR, su URL de prueba.</div></div>
+      <div class="c2-a a3"><span class="c2-al" data-e="02-stack.html#14">URL<br>pública</span><span class="c2-ln"></span></div>
+      <div class="panel c2-n n4"><span class="tag" data-e="02-stack.html#15">Internet</span><span class="c2-ic" data-px="globe"></span><div class="c2-t" data-e="02-stack.html#16">Tu web</div><div class="c2-s" data-e="02-stack.html#17">La abre cualquiera: <b>tu-app.vercel.app</b></div></div>
+      <div class="c2-v"><span class="c2-vl"></span><span class="c2-al" data-e="02-stack.html#18">Lee y guarda datos</span><span class="c2-vl"></span></div>
+      <div class="panel c2-sb"><span class="tag" data-e="02-stack.html#19">Datos</span><span class="c2-ic" data-px="supabase"></span><div><div class="c2-t" data-e="02-stack.html#20">Supabase</div><div class="c2-s" data-e="02-stack.html#21">Base de datos, login de usuarios y archivos, sin montar servidor.</div><div class="c2-chips"><span data-e="02-stack.html#22">Postgres</span><span data-e="02-stack.html#23">Auth</span><span data-e="02-stack.html#24">Storage</span></div></div></div>
+      <div class="dlg c2-dlg"><span class="dlg-name" data-e="02-stack.html#25">Jorge</span><p data-e="02-stack.html#26">Los tres tienen <b>plan gratuito</b>: puedes tener tu proyecto en internet sin pagar un servidor.</p></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s02-stack", function (el, tl, h) {
+  h.rise(".c2-h", { at: 0, y: 30 });
+  h.rise(".n1", { at: 0.2, y: 40 });
+  tl.fromTo(el.querySelector(".a1 .c2-ln"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "steps(6)" }, 0.5);
+  h.fade(".a1 .c2-al", { at: 0.5 });
+  h.pop(".n2", { at: 0.8 });
+  var t1 = h.step();
+  tl.fromTo(el.querySelector(".a2 .c2-ln"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "steps(6)" }, t1);
+  h.fade(".a2 .c2-al", { at: t1 });
+  h.pop(".n3", { at: t1 + 0.3 });
+  tl.fromTo(el.querySelector(".a3 .c2-ln"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "steps(6)" }, t1 + 0.7);
+  h.fade(".a3 .c2-al", { at: t1 + 0.7 });
+  h.pop(".n4", { at: t1 + 1.0 });
+  tl.call(Deck.sfx, ["power", tl], t1 + 0.3);
+  var t2 = h.step();
+  tl.fromTo(el.querySelectorAll(".c2-vl"), { scaleY: 0 }, { scaleY: 1, duration: 0.4, ease: "steps(5)" }, t2);
+  h.fade(".c2-v .c2-al", { at: t2 + 0.1 });
+  h.pop(".c2-sb", { at: t2 + 0.35 });
+  tl.call(Deck.sfx, ["coin", tl], t2 + 0.35);
+  var t3 = h.step();
+  h.rise(".c2-dlg", { at: t3, y: 24 });
+});
+</script>
+
+  <div id="progress"></div>
+  <footer id="footer">
+    <div class="dots"></div>
+    <div class="fsec"></div>
+    <div class="ftitle">Lánzala<span>Jorge Garcelán y Dani Jiménez · Máster de Informática · UC3M</span></div>
+    <div class="flogos"><img src="assets/img/logos/uc3m.png" alt="UC3M" style="height:36px" /></div>
+    <div class="fnum"></div>
+  </footer>
+</div></div>
+<script>Deck.boot();</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "title": "Lánzala: Supabase, GitHub y Vercel",
+  "lang": "es",
+  "theme": "minimal",
+  "sections": [
+    { "name": "Stack", "color": "#6366f1", "dark": true }
+  ],
+  "accent": "#1f7ff5",
+  "footer": {
+    "title": "Lánzala",
+    "subtitle": "Jorge Garcelán y Dani Jiménez · Máster de Informática · UC3M",
+    "logos": [{ "src": "assets/img/logos/uc3m.png", "alt": "UC3M", "style": "height:36px" }]
+  },
+  "slides": [
+    { "file": "01-start.html", "hidden": false },
+    { "file": "02-stack.html", "hidden": false }
+  ]
+}

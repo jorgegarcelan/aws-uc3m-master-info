@@ -1,0 +1,14 @@
+{
+  "name": "minimal",
+  "description": "Blanco, tipografía del sistema, un acento azul. Neutro, sin fuentes que cargar; buen punto de partida para cualquier marca.",
+  "accent": "#2563eb",
+  "ease": "deck",
+  "sectionColors": [
+    { "color": "#2563eb" },
+    { "color": "#0d9488" },
+    { "color": "#d97706" },
+    { "color": "#e11d48" },
+    { "color": "#7c3aed" },
+    { "color": "#475569" }
+  ]
+}

@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-500-normal.woff2'); font-weight: 500; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; background: #e9ebef; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s1-slide { position: absolute; left: 240px; top: 136px; width: 1440px; height: 808px; background: #fff; border: 2px solid #cfd4dc; }
+    .s1-box { position: absolute; left: 120px; width: 1200px; border: 3px dashed #c3c9d2; display: flex; align-items: center; padding-left: 40px; white-space: nowrap; }
+    #s1-t { top: 152px; height: 256px; font-size: 92px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; color: #0b0d10; }
+    #s1-s { top: 456px; height: 128px; font-size: 60px; font-weight: 500; color: #1667d6; }
+    #s1-ph { position: absolute; left: 40px; top: 0; height: 100%; display: flex; align-items: center; color: #6b7280; }
+    #s1-caret { position: absolute; left: 28px; top: 28px; width: 6px; height: 72px; background: #0b0d10; }
+    #s1-type span { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1920" data-height="1080">
+    <div id="s1-slide">
+      <div id="s1-t" class="s1-box"><div>Charla para el seminario<br>AWS × UC3M</div></div>
+      <div id="s1-s" class="s1-box">
+        <div id="s1-ph" data-layout-ignore>Haz clic para añadir un subtítulo</div>
+        <div id="s1-caret" data-layout-ignore></div>
+        <div id="s1-type" data-layout-allow-overlap>¿y si fuera un videojuego?</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // split the typed line into characters (deterministic, runs once)
+    const line = document.querySelector("#s1-type");
+    const text = line.textContent;
+    line.textContent = "";
+    const chars = Array.from(text).map(function (c) {
+      const s = document.createElement("span");
+      s.textContent = c;
+      line.appendChild(s);
+      return s;
+    });
+    // caret blinks in the empty subtitle box
+    [0.3, 0.9].forEach(function (t) { tl.set("#s1-caret", { opacity: 0 }, t); });
+    [0.6].forEach(function (t) { tl.set("#s1-caret", { opacity: 1 }, t); });
+    // the placeholder goes, the question is typed; the caret rides the last character
+    tl.set("#s1-ph", { opacity: 0 }, 0.96);
+    tl.set("#s1-caret", { opacity: 0 }, 0.96);
+    chars.forEach(function (c, i) {
+      const t = 1.0 + i * 0.045;
+      tl.set(c, { opacity: 1, boxShadow: "6px 0 0 #0b0d10" }, t);
+      if (i > 0) tl.set(chars[i - 1], { boxShadow: "0px 0 0 rgba(11,13,16,0)" }, t);
+    });
+    tl.set(chars[chars.length - 1], { boxShadow: "0px 0 0 rgba(11,13,16,0)" }, 2.5);
+    tl.set({}, {}, 3.3);
+    window.__timelines["s1"] = tl;
+  </script>
+</template>

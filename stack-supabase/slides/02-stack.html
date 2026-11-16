@@ -1,0 +1,79 @@
+<section class="slide" id="s02-stack" data-section="1" data-title="El stack: Supabase, GitHub y Vercel" data-enter="push">
+  <template class="notes">⏱ 1 min
+«Escribes el código en tu portátil y haces git push. GitHub lo guarda, con todas las versiones.»
+→ «Vercel está conectado a GitHub: cada push se construye y se publica solo. Cada pull request tiene su propia URL de prueba.»
+→ «Y la app necesita datos: Supabase te da la base de datos Postgres, el login de usuarios y los archivos.»
+→ «Los tres tienen plan gratuito: puedes tener tu proyecto en internet sin pagar un servidor.»</template>
+  <style>
+    #s02-stack .c2-h { margin-bottom: 8px; }
+    #s02-stack .c2-dia { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 150px 1fr 150px 1fr 150px 1fr; grid-template-rows: auto 96px auto; align-content: center; }
+    #s02-stack .c2-n { display: flex; flex-direction: column; padding: 38px 26px 26px; }
+    #s02-stack .c2-ic { display: block; height: 64px; margin-bottom: 16px; }
+    #s02-stack .c2-ic svg { width: auto; height: 64px; }
+    #s02-stack .c2-t { font-size: 32px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+    #s02-stack .c2-s { font-size: 22px; color: var(--muted); margin-top: 8px; line-height: 1.35; }
+    #s02-stack .c2-s b { color: var(--ink); font-weight: 600; white-space: nowrap; }
+    #s02-stack .c2-a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 0 8px; }
+    #s02-stack .c2-al { font-family: var(--pixel); font-size: 17px; text-transform: uppercase; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); text-align: center; line-height: 1.2; }
+    #s02-stack .c2-ln { position: relative; width: 100%; height: 8px; background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 22px); transform-origin: 0 50%; }
+    #s02-stack .c2-ln::after { content: ""; position: absolute; right: -10px; top: -10px; border: 14px solid transparent; border-left: 16px solid #fff; border-right: 0; }
+    #s02-stack .c2-v { grid-column: 5 / 8; grid-row: 2; display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; }
+    #s02-stack .c2-v > * { grid-row: 1; }
+    #s02-stack .c2-v .c2-vl:first-child { grid-column: 1; justify-self: center; }
+    #s02-stack .c2-v .c2-vl:last-child { grid-column: 3; justify-self: center; }
+    #s02-stack .c2-v .c2-al { grid-column: 1 / 4; justify-self: center; }
+    #s02-stack .c2-h i { padding-right: 0.14em; }
+    #s02-stack .c2-vl { width: 8px; height: 100%; background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 22px); transform-origin: 50% 0; }
+    #s02-stack .c2-sb { grid-column: 5 / 8; grid-row: 3; display: flex; gap: 30px; align-items: center; padding: 34px 34px 28px; background: #ecfdf5; }
+    #s02-stack .c2-sb .tag { background: #249361; }
+    #s02-stack .c2-sb .c2-ic { height: 96px; margin: 0; flex: none; }
+    #s02-stack .c2-sb .c2-ic svg { height: 96px; }
+    #s02-stack .c2-chips { display: flex; gap: 10px; margin-top: 14px; }
+    #s02-stack .c2-chips span { font-family: var(--pixel); font-size: 17px; text-transform: uppercase; background: var(--ink); color: #fff; padding: 6px 10px; }
+    #s02-stack .c2-dlg { grid-column: 1 / 4; grid-row: 3; align-self: center; margin-right: 40px; }
+    #s02-stack .c2-dlg p { font-size: 28px; }
+    #s02-stack .n1 .tag { background: var(--accent); }
+    #s02-stack .n2 .tag { background: #6366f1; }
+    #s02-stack .n4 .tag { background: var(--gold); color: var(--ink); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:#6366f1">El stack</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="branch"></span></span><span class="slot"><span data-px="vercel"></span></span><span class="slot"><span data-px="supabase"></span></span></div></div>
+    <div class="h-sky c2-h">Haces <i>git push</i> y en un minuto está en internet</div>
+    <div class="c2-dia">
+      <div class="panel c2-n n1"><span class="tag">Tú</span><span class="c2-ic" data-px="laptop"></span><div class="c2-t">Tu portátil</div><div class="c2-s">Escribes el código, con o sin IA.</div></div>
+      <div class="c2-a a1"><span class="c2-al">git push</span><span class="c2-ln"></span></div>
+      <div class="panel c2-n n2"><span class="tag">Código</span><span class="c2-ic" data-px="branch"></span><div class="c2-t">GitHub</div><div class="c2-s">Guarda el código y cada versión. Trabajáis a la vez sin pisaros.</div></div>
+      <div class="c2-a a2"><span class="c2-al">Deploy<br>automático</span><span class="c2-ln"></span></div>
+      <div class="panel c2-n n3"><span class="tag">Despliegue</span><span class="c2-ic" data-px="vercel"></span><div class="c2-t">Vercel</div><div class="c2-s">Cada push se publica solo. Cada PR, su URL de prueba.</div></div>
+      <div class="c2-a a3"><span class="c2-al">URL<br>pública</span><span class="c2-ln"></span></div>
+      <div class="panel c2-n n4"><span class="tag">Internet</span><span class="c2-ic" data-px="globe"></span><div class="c2-t">Tu web</div><div class="c2-s">La abre cualquiera: <b>tu-app.vercel.app</b></div></div>
+      <div class="c2-v"><span class="c2-vl"></span><span class="c2-al">Lee y guarda datos</span><span class="c2-vl"></span></div>
+      <div class="panel c2-sb"><span class="tag">Datos</span><span class="c2-ic" data-px="supabase"></span><div><div class="c2-t">Supabase</div><div class="c2-s">Base de datos, login de usuarios y archivos, sin montar servidor.</div><div class="c2-chips"><span>Postgres</span><span>Auth</span><span>Storage</span></div></div></div>
+      <div class="dlg c2-dlg"><span class="dlg-name">Jorge</span><p>Los tres tienen <b>plan gratuito</b>: puedes tener tu proyecto en internet sin pagar un servidor.</p></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s02-stack", function (el, tl, h) {
+  h.rise(".c2-h", { at: 0, y: 30 });
+  h.rise(".n1", { at: 0.2, y: 40 });
+  tl.fromTo(el.querySelector(".a1 .c2-ln"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "steps(6)" }, 0.5);
+  h.fade(".a1 .c2-al", { at: 0.5 });
+  h.pop(".n2", { at: 0.8 });
+  var t1 = h.step();
+  tl.fromTo(el.querySelector(".a2 .c2-ln"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "steps(6)" }, t1);
+  h.fade(".a2 .c2-al", { at: t1 });
+  h.pop(".n3", { at: t1 + 0.3 });
+  tl.fromTo(el.querySelector(".a3 .c2-ln"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "steps(6)" }, t1 + 0.7);
+  h.fade(".a3 .c2-al", { at: t1 + 0.7 });
+  h.pop(".n4", { at: t1 + 1.0 });
+  tl.call(Deck.sfx, ["power", tl], t1 + 0.3);
+  var t2 = h.step();
+  tl.fromTo(el.querySelectorAll(".c2-vl"), { scaleY: 0 }, { scaleY: 1, duration: 0.4, ease: "steps(5)" }, t2);
+  h.fade(".c2-v .c2-al", { at: t2 + 0.1 });
+  h.pop(".c2-sb", { at: t2 + 0.35 });
+  tl.call(Deck.sfx, ["coin", tl], t2 + 0.35);
+  var t3 = h.step();
+  h.rise(".c2-dlg", { at: t3, y: 24 });
+});
+</script>

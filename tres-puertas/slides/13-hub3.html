@@ -1,0 +1,36 @@
+<section class="slide" id="s13-hub3" data-title="Mapa: queda una puerta" data-enter="zoom">
+  <template class="notes">⏱ 15 s · empieza en 12:20
+LECCIÓN 2: «Contad lo que hacéis como un producto.»
+🖱 Clic en la puerta VERDE (Emprender).</template>
+  <style>
+    #s13-hub3 .c13-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+    #s13-hub3 .c13-cl { display: block; width: 300px; margin-top: -34px; }
+    #s13-hub3 .door .px-door { width: 190px; position: relative; z-index: 1; }
+    #s13-hub3 .c13-me { position: absolute; left: 30px; bottom: 110px; width: 140px; }
+    #s13-hub3 .c13-hint { text-align: center; font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Elige una puerta</span>
+      <div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c13-h" style="text-align:center">Queda una puerta.</div>
+    <div class="c13-stage">
+      <div class="doors">
+        <button class="door acad done" data-go="s06-w1-lab"><span class="star" data-px="star"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c13-cl" data-px="cloud"></span><span class="door-label">Academia</span></button>
+        <button class="door emp done" data-go="s11-w2-path"><span class="star" data-px="star"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c13-cl" data-px="cloud"></span><span class="door-label">Empresa</span></button>
+        <button class="door start" data-go="s14-w3-uniwords"><span class="arrow-down c13-arrow" data-px="arrow"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c13-cl" data-px="cloud"></span><span class="door-label">Emprender</span></button>
+      </div>
+      <span class="c13-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="pxt c13-hint">Haz clic en una puerta · o pulsa →</div>
+  </div>
+</section>
+<script>
+Deck.slide("s13-hub3", function (el, tl, h) {
+  h.rise(".c13-h", { at: 0, y: 30 });
+  h.rise(".door", { at: 0.2, y: 80, stagger: 0.12 });
+  h.pop(".star", { at: 0.7 });
+  h.slideIn(".c13-me", { at: 0.6, x: -80 });
+  h.fade(".c13-hint", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c13-arrow"), { y: 14, duration: 0.45, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+});
+</script>

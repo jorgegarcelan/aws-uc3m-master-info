@@ -1,0 +1,86 @@
+<template>
+  <style>
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s3-cam { position: absolute; inset: 0; background-color: #eef4fd; background-image: linear-gradient(#d5e4f9 2px, transparent 2px), linear-gradient(90deg, #d5e4f9 2px, transparent 2px); background-size: 40px 40px; }
+    #s3-zoom { position: absolute; inset: 0; }
+    #s3-canvas { position: absolute; left: 200px; top: 162px; width: 540px; height: 756px; background-color: #fff; background-image: linear-gradient(#e3e8ef 1px, transparent 1px), linear-gradient(90deg, #e3e8ef 1px, transparent 1px); background-size: 18px 18px; outline: 6px solid #0b0d10; box-shadow: 18px 18px 0 #0b0d10; overflow: hidden; }
+    .s3-av { position: absolute; left: 0; top: 0; width: 540px; height: 756px; }
+    #s3-ghost { opacity: 0.16; }
+    #s3-w1, #s3-w2, #s3-k1, #s3-k2 { opacity: 0; }
+    #s3-scan { position: absolute; left: 0; top: 0; width: 540px; height: 18px; background: #1f7ff5; }
+    #s3-pal { position: absolute; left: 840px; top: 162px; width: 624px; height: 64px; }
+    #s3-pal i { position: absolute; top: 0; width: 64px; height: 64px; outline: 4px solid #0b0d10; }
+    .s3-fact { position: absolute; left: 840px; font-size: 72px; font-weight: 700; letter-spacing: -0.02em; color: #0b0d10; white-space: nowrap; }
+    #s3-f1 { top: 264px; } #s3-f2 { top: 632px; }
+    .s3-pose { position: absolute; top: 400px; width: 140px; height: 196px; background: #fff; outline: 4px solid #0b0d10; box-shadow: 8px 8px 0 #0b0d10; }
+    .s3-pose img { position: absolute; left: 0; top: 0; width: 140px; height: 196px; }
+    .s3-tr { position: absolute; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1920" data-height="1080">
+    <div id="s3-cam">
+      <div id="s3-zoom">
+        <div id="s3-canvas">
+          <img id="s3-ghost" class="s3-av" src="assets/sprites/jorge-idle.svg" alt="">
+          <img id="s3-solid" class="s3-av" src="assets/sprites/jorge-idle.svg" alt="">
+          <div id="s3-walk">
+            <img id="s3-av0" class="s3-av" src="assets/sprites/jorge-idle.svg" alt="">
+            <img id="s3-w1" class="s3-av" src="assets/sprites/jorge-wave1.svg" alt=""><img id="s3-w2" class="s3-av" src="assets/sprites/jorge-wave2.svg" alt="">
+            <img id="s3-k1" class="s3-av" src="assets/sprites/jorge-side1.svg" alt=""><img id="s3-k2" class="s3-av" src="assets/sprites/jorge-side2.svg" alt="">
+          </div>
+          <div id="s3-scan"></div>
+        </div>
+        <div id="s3-pal">
+          <i style="left:0;background:#3b2417"></i><i style="left:80px;background:#6b4429"></i><i style="left:160px;background:#ecb894"></i><i style="left:240px;background:#cfa67a"></i><i style="left:320px;background:#f8f8f6"></i><i style="left:400px;background:#8fb4e0"></i><i style="left:480px;background:#2a1a12"></i><i style="left:560px;background:#b8624c"></i>
+        </div>
+        <div id="s3-f1" class="s3-fact">30 × 42 píxeles</div>
+        <div id="s3-p1" class="s3-pose" style="left:840px"><img src="assets/sprites/jorge-blink.svg" alt=""></div>
+        <div id="s3-p2" class="s3-pose" style="left:996px"><img src="assets/sprites/jorge-wave1.svg" alt=""></div>
+        <div id="s3-p3" class="s3-pose" style="left:1152px"><img src="assets/sprites/jorge-wave2.svg" alt=""></div>
+        <div id="s3-p4" class="s3-pose" style="left:1308px"><img src="assets/sprites/jorge-side1.svg" alt=""></div>
+        <div id="s3-p5" class="s3-pose" style="left:1464px"><img src="assets/sprites/jorge-side2.svg" alt=""></div>
+        <div id="s3-p6" class="s3-pose" style="left:1620px"><img src="assets/sprites/jorge-cheer.svg" alt=""></div>
+        <div id="s3-f2" class="s3-fact">7 poses</div>
+        <img id="s3-t1" class="s3-tr" src="assets/sprites/door-acad.svg" alt="" style="left:840px;top:772px;width:108px">
+        <img id="s3-t2" class="s3-tr" src="assets/sprites/door-emp.svg" alt="" style="left:972px;top:772px;width:108px">
+        <img id="s3-t3" class="s3-tr" src="assets/sprites/door-start.svg" alt="" style="left:1104px;top:772px;width:108px">
+        <img id="s3-t4" class="s3-tr" src="assets/sprites/star.svg" alt="" style="left:1252px;top:828px;width:90px">
+        <img id="s3-t8" class="s3-tr" src="assets/sprites/rocket.svg" alt="" style="left:1372px;top:828px;width:90px">
+        <img id="s3-t5" class="s3-tr" src="assets/sprites/coin.svg" alt="" style="left:1492px;top:838px;width:80px">
+        <img id="s3-t6" class="s3-tr" src="assets/sprites/heart.svg" alt="" style="left:1596px;top:838px;width:90px">
+        <img id="s3-t7" class="s3-tr" src="assets/sprites/boss.svg" alt="" style="left:1710px;top:832px;width:104px">
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // match cut from the dive: the camera lands on the canvas           abs 8.63
+    tl.fromTo("#s3-zoom", { scale: 1.9, transformOrigin: "470px 540px" }, { scale: 1, duration: 0.55, ease: "expo.out" }, 0);
+    // the avatar is painted row by row over its ghost
+    tl.fromTo("#s3-solid", { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "none" }, 0.08);
+    tl.fromTo("#s3-av0", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.75, ease: "steps(42)" }, 0.36);
+    tl.fromTo("#s3-scan", { y: 0, opacity: 0 }, { y: 738, opacity: 1, duration: 1.75, ease: "steps(41)" }, 0.36);
+    tl.set("#s3-scan", { opacity: 0 }, 2.12);
+    tl.fromTo("#s3-pal i", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)", stagger: 0.15 }, 0.35);
+    tl.fromTo("#s3-f1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, 0.72);
+    // it comes alive: a jump and a wave                                 abs 10.78
+    tl.set("#s3-ghost", { opacity: 0 }, 2.15);
+    tl.fromTo("#s3-walk", { y: 0 }, { y: -72, duration: 0.15, ease: "power2.out", yoyo: true, repeat: 1 }, 2.152);
+    [[2.152, 1], [2.33, 2], [2.51, 1], [2.69, 2], [2.87, 0]].forEach(function (p) {
+      tl.set("#s3-av0", { opacity: p[1] === 0 ? 1 : 0 }, p[0]); tl.set("#s3-w1", { opacity: p[1] === 1 ? 1 : 0 }, p[0]); tl.set("#s3-w2", { opacity: p[1] === 2 ? 1 : 0 }, p[0]);
+    });
+    // the other poses and the rest of the sprite sheet                  abs 10.96 → 12.4
+    tl.fromTo(".s3-pose", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.22, ease: "back.out(1.6)", stagger: 0.107 }, 2.33);
+    tl.fromTo("#s3-f2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, 2.87);
+    tl.fromTo(".s3-tr", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)", stagger: 0.075 }, 3.225);
+    // he starts walking and leaves the canvas                           abs 12.57 → 13.4
+    for (let i = 0; i < 8; i++) {
+      const t = 3.94 + i * 0.12;
+      tl.set("#s3-av0", { opacity: 0 }, t); tl.set("#s3-k1", { opacity: i % 2 ? 0 : 1 }, t); tl.set("#s3-k2", { opacity: i % 2 ? 1 : 0 }, t);
+    }
+    tl.fromTo("#s3-walk", { x: 0 }, { x: 560, duration: 0.6, ease: "none", immediateRender: false }, 4.3);
+    // whip pan to the next table                                        abs 13.25 → 13.75
+    tl.fromTo("#s3-cam", { x: 0 }, { x: -1920, duration: 0.5, ease: "power3.inOut" }, 4.62);
+    window.__timelines["s3"] = tl;
+  </script>
+</template>

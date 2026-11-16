@@ -1,0 +1,39 @@
+<section class="slide" id="s15b-cuentala" data-title="Créala… y cuéntala" data-enter="push">
+  <template class="notes">⏱ 30 s · empieza en 15:35
+«Créala… y cuéntala. Lo que no se ve, no existe.»
+«Web, Substack, X, comunidad, charlas.»
+→ «Haced el reto… y contadlo.»</template>
+  <style>
+    #s15b-cuentala .c15b-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px; margin: auto 0; }
+    #s15b-cuentala .c15b-px { display: block; height: 70px; margin-bottom: 16px; }
+    #s15b-cuentala .c15b-px svg { width: auto; height: 70px; }
+    #s15b-cuentala .c15b-c { padding: 40px 24px 28px; }
+    #s15b-cuentala .c15b-c .tag { background: var(--accent); }
+    #s15b-cuentala .c15b-ic { font-family: var(--pixel); font-size: 18px; color: var(--accent); text-transform: uppercase; }
+    #s15b-cuentala .c15b-t { font-size: 28px; font-weight: 700; line-height: 1.15; margin-top: 8px; letter-spacing: -0.01em; }
+    #s15b-cuentala .c15b-s { font-size: 22px; color: var(--muted); margin-top: 12px; line-height: 1.4; }
+    #s15b-cuentala .c15b-moral { background: var(--accent); color: #fff; font-size: 34px; font-weight: 600; line-height: 1.35; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Power-up</span>
+      <div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15b-h">Créala… y cuéntala</div>
+    <div class="c15b-grid">
+      <div class="panel c15b-c"><span class="tag">Web</span><span class="c15b-px" data-px="browser"></span><div class="c15b-ic">Escaparate</div><div class="c15b-t">jorgegarcelan.com</div><div class="c15b-s">Todo lo que hago, en un sitio</div></div>
+      <div class="panel c15b-c"><span class="tag">Escribir</span><span class="c15b-px" data-px="paper"></span><div class="c15b-ic">Substack</div><div class="c15b-t">The Corporate Layer</div><div class="c15b-s">Lo que aprendo, por escrito</div></div>
+      <div class="panel c15b-c"><span class="tag">Opinar</span><span class="c15b-px" data-px="xlogo"></span><div class="c15b-ic">X / Twitter</div><div class="c15b-t">@jgarcelan</div><div class="c15b-s">Ideas cortas sobre IA</div></div>
+      <div class="panel c15b-c"><span class="tag">Gente</span><span class="c15b-px" data-px="people"></span><div class="c15b-ic">Comunidad tech</div><div class="c15b-t">Eventos y meetups</div><div class="c15b-s">Conocer a quien hace cosas</div></div>
+      <div class="panel c15b-c"><span class="tag">Charlas</span><span class="c15b-px" data-px="mic"></span><div class="c15b-ic">Escenario</div><div class="c15b-t">T3chFest · AWS Summit · AVI</div><div class="c15b-s">Y hoy, aquí</div></div>
+    </div>
+    <div class="panel c15b-moral">Lo que no se ve no existe para quien te va a contratar.</div>
+  </div>
+</section>
+<script>
+Deck.slide("s15b-cuentala", function (el, tl, h) {
+  h.rise(".c15b-h", { at: 0, y: 30 });
+  h.pop(".c15b-c", { at: 0.3, stagger: 0.15 });
+  tl.call(Deck.sfx, ["power", tl], 0.3);
+  var t = h.step();
+  h.rise(".c15b-moral", { at: t, y: 24 });
+});
+</script>

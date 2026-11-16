@@ -1,0 +1,65 @@
+<section class="slide" id="s02-player" data-title="Player 1" data-enter="push">
+  <template class="notes">⏱ 30 s · empieza en 0:20
+«Soy Jorge. Data Science y máster en IA, aquí en la UC3M.»
+«Hoy, AI Engineer en MediaRadar y cofundador de Uniwords.»
+→ «Hace 4 años no tenía ni idea. Os lo cuento de verdad.»</template>
+  <style>
+    #s02-player .c2-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 520px 1fr; gap: 80px; align-items: center; }
+    #s02-player .c2-me { display: flex; flex-direction: column; align-items: center; }
+    #s02-player .c2-sp { width: 270px; position: relative; z-index: 1; margin-bottom: -30px; }
+    #s02-player .c2-pl { width: 470px; }
+    #s02-player .c2-card { padding: 44px 48px 40px; }
+    #s02-player .c2-rows { display: grid; grid-template-columns: 200px 1fr; row-gap: 20px; column-gap: 24px; align-items: baseline; }
+    #s02-player .c2-k { font-family: var(--pixel); font-size: 22px; color: var(--faint); text-transform: uppercase; }
+    #s02-player .c2-v { font-size: 30px; font-weight: 600; line-height: 1.3; }
+    #s02-player .c2-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 38px; padding-top: 30px; border-top: 4px dashed var(--line); }
+    #s02-player .c2-stat .pxt { font-size: 20px; color: var(--muted); }
+    #s02-player .c2-stat .c2-n { font-family: var(--font); font-weight: 700; font-size: 72px; letter-spacing: -0.03em; line-height: 1; margin-top: 8px; }
+    #s02-player .c2-stat .c2-u { font-size: 22px; color: var(--muted); margin-top: 6px; }
+    #s02-player .c2-life { display: flex; align-items: center; gap: 10px; }
+    #s02-player .c2-life [data-px] { width: 42px; }
+    #s02-player .c2-life .c2-coin { width: 36px; margin-left: 18px; }
+    #s02-player .c2-life .pxt { font-size: 24px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s02-player .c2-dlg { margin-top: 40px; }
+    #s02-player .c2-team { display: flex; align-items: center; gap: 22px; margin-top: 26px; }
+    #s02-player .c2-team .pxt { font-size: 18px; color: var(--muted); }
+    #s02-player .c2-lgs { display: flex; gap: 12px; }
+    #s02-player .c2-card { padding: 36px 44px 32px; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Player 1</span><div class="c2-life"><span data-px="heart"></span><span data-px="heart"></span><span data-px="heart"></span><span class="c2-coin" data-px="coin"></span><span class="pxt">× 0</span></div></div>
+    <div class="c2-grid">
+      <div class="c2-me"><span class="c2-sp shadow-px" data-px="jorge"></span><span class="c2-pl" data-px="cloud"></span></div>
+      <div>
+        <div class="panel c2-card">
+          <span class="tag">Ficha de personaje</span>
+          <div class="c2-rows">
+            <div class="c2-k">Nombre</div><div class="c2-v">Jorge Garcelán</div>
+            <div class="c2-k">Clase</div><div class="c2-v">AI Engineer · MediaRadar</div>
+            <div class="c2-k">Origen</div><div class="c2-v">Data Science UC3M → Máster en IA UC3M</div>
+            <div class="c2-k">Extra</div><div class="c2-v">Cofundador · Uniwords</div>
+          </div>
+          <div class="c2-stats">
+            <div class="c2-stat"><div class="pxt">Academia</div><div class="c2-n" style="color:var(--c-acad)">5</div><div class="c2-u">publicaciones</div></div>
+            <div class="c2-stat"><div class="pxt">Empresa</div><div class="c2-n" style="color:var(--c-emp)">4</div><div class="c2-u">empresas</div></div>
+            <div class="c2-stat"><div class="pxt">Emprender</div><div class="c2-n" style="color:var(--c-start)">1</div><div class="c2-u">startup</div></div>
+          </div>
+          <div class="c2-team"><span class="pxt">Mundos visitados</span><div class="c2-lgs"><span class="lg sm"><img src="assets/img/logos/uc3m.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/gatech.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/telefonica.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/aws.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/multiverse.png" alt=""></span><span class="lg sm"><img src="assets/img/logos/mediaradar.png" alt=""></span><span class="lg sm full"><img src="assets/img/logos/uniwords.jpg" alt=""></span></div></div>
+        </div>
+        <div class="dlg c2-dlg"><span class="dlg-name">Jorge</span><p>Hace cuatro años no tenía ni idea de qué quería hacer. Os lo cuento de verdad, no la versión bonita.</p><span class="dlg-next">▼</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s02-player", function (el, tl, h) {
+  h.rise(".c2-me", { at: 0, y: 60 });
+  h.pop(".c2-life > *", { at: 0.3, stagger: 0.06 });
+  h.rise(".c2-card", { at: 0.2, y: 30 });
+  h.fade(".c2-rows > div", { at: 0.4, stagger: 0.05 });
+  h.pop(".c2-stat", { at: 0.8, stagger: 0.12 });
+  h.pop(".c2-lgs .lg", { at: 1.0, stagger: 0.06 });
+  var t = h.step();
+  h.rise(".c2-dlg", { at: t, y: 24 });
+});
+</script>

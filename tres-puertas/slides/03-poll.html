@@ -1,0 +1,54 @@
+<section class="slide" id="s03-poll" data-title="Encuesta: dónde en 5 años" data-enter="fade">
+  <template class="notes">⏱ 50 s · empieza en 0:50
+💬 «Contestad en el chat: A, B, C o D.» (espera 20 s, lee 2-3)
+→ «Yo en 3º habría marcado la D… y he hecho A, B y C.»
+«Pero todos tenemos el mismo final boss delante.»</template>
+  <style>
+    #s03-poll .c3-wrap { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 760px; gap: 80px; align-items: center; }
+    #s03-poll .c3-hint { margin-top: 26px; }
+    #s03-poll .c3-q { display: block; width: 96px; margin-bottom: 26px; filter: drop-shadow(0 8px 0 rgba(16,52,110,.25)); }
+    #s03-poll .c3-menu { padding: 40px 44px; }
+    #s03-poll .c3-opt { display: grid; grid-template-columns: 50px 64px 1fr; align-items: center; gap: 18px; padding: 14px 0; }
+    #s03-poll .c3-cur { font-family: var(--pixel); font-size: 34px; color: var(--accent); opacity: 0; }
+    #s03-poll .c3-l { width: 60px; height: 60px; display: grid; place-items: center; font-family: var(--pixel); font-weight: 700; font-size: 30px; border: 4px solid var(--ink); background: var(--accent-soft); }
+    #s03-poll .c3-t { font-size: 32px; font-weight: 600; }
+    #s03-poll .c3-dlg { margin-top: 48px; }
+    #s03-poll .c3-opt { cursor: pointer; }
+    #s03-poll .c3-opt:hover .c3-t { color: var(--accent); }
+    #s03-poll .c3-opt.picked .c3-cur { opacity: 1 !important; }
+    #s03-poll .c3-opt.picked .c3-l { background: #fbbf24 !important; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Antes de empezar</span></div>
+    <div class="c3-wrap">
+      <div>
+        <span class="c3-q" data-px="qblock"></span>
+        <div class="h-sky c3-h">¿Dónde os veis dentro de 5 años?</div>
+        <div class="sub-sky c3-hint">Contestad en el chat: <b style="color:#fff">A, B, C o D</b></div>
+        <div class="dlg c3-dlg"><span class="dlg-name">Jorge</span><p>Yo en 3º habría marcado la D. Y he acabado haciendo A, B y C a la vez.</p></div>
+      </div>
+      <div class="panel c3-menu">
+        <span class="tag">Elige</span>
+        <div class="c3-opt" data-noclick><span class="c3-cur">▶</span><span class="c3-l">A</span><span class="c3-t">En una empresa</span></div>
+        <div class="c3-opt" data-noclick><span class="c3-cur">▶</span><span class="c3-l">B</span><span class="c3-t">Investigando o en un doctorado</span></div>
+        <div class="c3-opt" data-noclick><span class="c3-cur">▶</span><span class="c3-l">C</span><span class="c3-t">Montando algo propio</span></div>
+        <div class="c3-opt c3-d" data-noclick><span class="c3-cur">▶</span><span class="c3-l">D</span><span class="c3-t">Ni idea</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s03-poll", function (el, tl, h) {
+  h.pop(".c3-q", { at: 0 });
+  h.rise(".c3-h", { at: 0.1, y: 30 });
+  h.loop(function () { return gsap.to(el.querySelector(".c3-q"), { y: -14, duration: 0.5, repeat: -1, yoyo: true, ease: "steps(3)" }); });
+  h.fade(".c3-hint", { at: 0.3 });
+  h.rise(".c3-menu", { at: 0.2, y: 30 });
+  h.slideIn(".c3-opt", { at: 0.45, x: 40, stagger: 0.1 });
+  var t = h.step();
+  tl.fromTo(el.querySelector(".c3-d .c3-cur"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(el.querySelector(".c3-d .c3-l"), { backgroundColor: "#dbeafe" }, { backgroundColor: "#fbbf24", duration: 0.2, ease: "steps(2)" }, t + 0.1);
+  h.rise(".c3-dlg", { at: t + 0.3, y: 24 });
+  tl.call(Deck.sfx, ["select", tl], t + 0.05);
+});
+</script>

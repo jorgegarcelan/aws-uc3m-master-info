@@ -1,0 +1,49 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Regular.ttf'); font-weight: 400; }
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-500-normal.woff2'); font-weight: 500; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s2-wrap { position: absolute; inset: 0; background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 34%, #8fbef6 68%, #dcebfd 92%, #f6faff 100%); }
+    #s2-haze { position: absolute; inset: -100px; background: radial-gradient(ellipse 460px 150px at 16% 20%, rgba(255,255,255,.7), transparent 70%), radial-gradient(ellipse 560px 170px at 80% 12%, rgba(255,255,255,.55), transparent 70%), radial-gradient(ellipse 640px 190px at 66% 82%, rgba(255,255,255,.6), transparent 70%); filter: blur(22px); }
+    #s2-content { position: absolute; inset: 0; }
+    #s2-a { position: absolute; left: 0; right: 0; top: 200px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 170px; line-height: 1; color: #fff; text-shadow: 0 8px 0 #1667d6, 0 16px 0 rgba(11,13,16,.28); }
+    #s2-b { position: absolute; left: 0; right: 0; top: 440px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 118px; line-height: 1; color: #0b0d10; text-shadow: 0 7px 0 #fbbf24; }
+    .s2-cl { position: absolute; }
+    #s2-c1 { left: 120px; top: 70px; width: 300px; } #s2-c2 { left: 1500px; top: 60px; width: 280px; } #s2-c3 { left: 1500px; top: 820px; width: 240px; }
+    .s2-d { position: absolute; top: 645px; width: 130px; }
+    #s2-d1 { left: 695px; } #s2-d2 { left: 895px; } #s2-d3 { left: 1095px; }
+    #s2-me { position: absolute; left: 500px; top: 640px; width: 130px; }
+    #s2-sub { position: absolute; left: 0; right: 0; top: 870px; text-align: center; font-size: 54px; font-weight: 700; color: #0b0d10; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1920" data-height="1080">
+    <div id="s2-wrap">
+      <div id="s2-haze"></div>
+      <div id="s2-content">
+        <img id="s2-c1" class="s2-cl" src="assets/sprites/cloud.svg" alt=""><img id="s2-c2" class="s2-cl" src="assets/sprites/cloud.svg" alt=""><img id="s2-c3" class="s2-cl" src="assets/sprites/cloud.svg" alt="">
+        <div id="s2-a">MIS NUBES</div>
+        <div id="s2-b">+ UN VIDEOJUEGO</div>
+        <img id="s2-me" src="assets/sprites/jorge-idle.svg" alt="">
+        <img id="s2-d1" class="s2-d" src="assets/sprites/door-acad.svg" alt=""><img id="s2-d2" class="s2-d" src="assets/sprites/door-emp.svg" alt=""><img id="s2-d3" class="s2-d" src="assets/sprites/door-start.svg" alt="">
+        <div id="s2-sub">de puertas y mundos</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s2-wrap", { clipPath: "circle(0px at 960px 590px)" }, { clipPath: "circle(1250px at 960px 590px)", duration: 0.3, ease: "power2.in" }, 0); // beat-locked: 3.25s
+    tl.fromTo("#s2-c1", { opacity: 0, x: -520 }, { opacity: 1, x: 0, duration: 0.7, ease: "expo.out" }, 0.3);
+    tl.fromTo("#s2-c2", { opacity: 0, x: 520 }, { opacity: 1, x: 0, duration: 0.7, ease: "expo.out" }, 0.38);
+    tl.fromTo("#s2-c3", { opacity: 0, x: 520 }, { opacity: 1, x: 0, duration: 0.7, ease: "expo.out" }, 0.46);
+    tl.fromTo("#s2-a", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.in" }, 0.85);   // beat-locked: 3.98s
+    tl.fromTo("#s2-b", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.in" }, 1.57);   // beat-locked: 4.70s
+    tl.fromTo("#s2-content", { x: 0 }, { x: 10, duration: 0.04, repeat: 3, yoyo: true, ease: "none" }, 1.75);
+    tl.fromTo("#s2-me", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)" }, 2.5);
+    tl.fromTo("#s2-sub", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 2.55);
+    tl.fromTo(".s2-d", { opacity: 0, y: 110 }, { opacity: 1, y: 0, duration: 0.22, ease: "back.out(1.8)", stagger: 0.36 }, 2.52); // beat-grid 5.57 / 5.93 / 6.29
+    // zoom through the purple door into the workshop
+    tl.fromTo("#s2-content", { scale: 1, transformOrigin: "760px 733px" }, { scale: 16, duration: 0.42, ease: "power3.in", immediateRender: false }, 3.86);
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

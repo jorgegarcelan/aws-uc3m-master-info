@@ -1,0 +1,89 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b0d10; }
+    #s5-stage { position: absolute; inset: 0; background: #3f92f2; }
+    .s5-shot { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+    #s5-0 { opacity: 1; }
+    .s5-shot img { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: block; }
+    #s5-cur { position: absolute; left: 0; top: 0; width: 112px; height: 112px; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080">
+    <div id="s5-stage">
+        <div id="s5-0" class="s5-shot"><img src="assets/slides/01-start.jpg" alt=""></div>
+        <div id="s5-1" class="s5-shot"><img src="assets/slides/05-hub1.jpg" alt=""></div>
+        <div id="s5-2" class="s5-shot"><img src="assets/slides/06-w1-lab.jpg" alt=""></div>
+        <div id="s5-3" class="s5-shot"><img src="assets/slides/07-w1-loot.jpg" alt=""></div>
+        <div id="s5-4" class="s5-shot"><img src="assets/slides/08-boss.jpg" alt=""></div>
+        <div id="s5-5" class="s5-shot"><img src="assets/slides/09-hub2.jpg" alt=""></div>
+        <div id="s5-6" class="s5-shot"><img src="assets/slides/11-w2-path.jpg" alt=""></div>
+        <div id="s5-7" class="s5-shot"><img src="assets/slides/10b-w2-aws.jpg" alt=""></div>
+        <div id="s5-8" class="s5-shot"><img src="assets/slides/12b-w2-gameover.jpg" alt=""></div>
+        <div id="s5-9" class="s5-shot"><img src="assets/slides/13-hub3.jpg" alt=""></div>
+        <div id="s5-10" class="s5-shot"><img src="assets/slides/14-w3-uniwords.jpg" alt=""></div>
+        <div id="s5-11" class="s5-shot"><img src="assets/slides/14b-w3-stack.jpg" alt=""></div>
+        <div id="s5-12" class="s5-shot"><img src="assets/slides/16-quests.jpg" alt=""></div>
+        <div id="s5-13" class="s5-shot"><img src="assets/slides/17-end.jpg" alt=""></div>
+      <svg id="s5-cur" viewBox="0 0 12 12" shape-rendering="crispEdges" data-layout-ignore><path d="M1 0h1v1h1v1h1v1h1v1h1v1h1v1h1v1H6v1h1v2H5v-2H4v1H3v1H1z" fill="#fff" stroke="#0b0d10" stroke-width="1"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = function (i) { return "#s5-" + i; };
+    // click → the next screen comes in slightly large and settles
+    function settle(i, t, from) {
+      tl.set(S(i), { opacity: 1 }, t);
+      tl.fromTo(S(i), { scale: from || 1.12, transformOrigin: "960px 540px" }, { scale: 1, duration: 0.42, ease: "expo.out", immediateRender: false }, t);
+    }
+    // whip pan: the outgoing slide and the incoming one travel together
+    function whip(i, t, dx, dy) {
+      const d = 0.3;
+      tl.set(S(i), { opacity: 1 }, t - d / 2);
+      tl.fromTo(S(i), { x: dx, y: dy, scale: 1 }, { x: 0, y: 0, duration: d, ease: "power3.inOut", immediateRender: false }, t - d / 2);
+      tl.fromTo(S(i - 1), { x: 0, y: 0 }, { x: -dx, y: -dy, duration: d, ease: "power3.inOut", immediateRender: false }, t - d / 2);
+      tl.set(S(i - 1), { opacity: 0 }, t + d / 2);
+    }
+    // zoom through a door of the map: the door fills the frame, the world behind it takes over
+    function through(hub, i, t, ox, oy) {
+      tl.fromTo(S(hub), { scale: 1, transformOrigin: ox + "px " + oy + "px" }, { scale: 7, duration: 0.34, ease: "power3.in", immediateRender: false }, t - 0.34);
+      settle(i, t, 1.2);
+      tl.set(S(hub), { opacity: 0 }, t + 0.02);
+    }
+    // back out of a world: the map pops out of the door it was entered through
+    function back(i, t, ox, oy) {
+      tl.set(S(i), { opacity: 1 }, t);
+      tl.fromTo(S(i), { scale: 2.6, transformOrigin: ox + "px " + oy + "px" }, { scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, t);
+      tl.set(S(i - 1), { opacity: 0 }, t + 0.02);
+    }
+    function punch(i, t, s, ox, oy) {
+      tl.fromTo(S(i), { scale: 1, transformOrigin: ox + "px " + oy + "px" }, { scale: s, duration: 0.34, ease: "power2.inOut", immediateRender: false }, t);
+    }
+    function cut(i, t) { tl.set(S(i), { opacity: 1 }, t); tl.set(S(i - 1), { opacity: 0 }, t + 0.02); }
+
+    // cover: the cursor presses «Pulsa para empezar»                    click abs 20.62
+    tl.fromTo("#s5-cur", { x: 250, y: 320 }, { x: 990, y: 815, duration: 0.36, ease: "power3.out" }, 0.03);
+    tl.fromTo("#s5-cur", { scale: 1 }, { scale: 0.76, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 0.5);
+    settle(1, 0.746);                                                // the map
+    tl.set(S(0), { opacity: 0 }, 0.746 + 0.02);
+    tl.fromTo("#s5-cur", { x: 990, y: 815 }, { x: 560, y: 520, duration: 0.4, ease: "power3.out", immediateRender: false }, 0.746 + 0.12);
+    tl.fromTo("#s5-cur", { scale: 1 }, { scale: 0.76, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 1.819 - 0.42);
+    tl.set("#s5-cur", { opacity: 0 }, 1.819 - 0.28);
+    through(1, 2, 1.819, 540, 497);                                  // purple door → Academia
+    punch(2, 2.176 + 0.1, 1.45, 300, 600);
+    whip(3, 2.892, 1920, 0);
+    cut(4, 3.607); tl.fromTo(S(4), { scale: 1.5, transformOrigin: "560px 600px" }, { scale: 1, duration: 0.5, ease: "expo.out", immediateRender: false }, 3.607);
+    back(5, 4.322, 540, 497);                                        // world 1 done, back on the map
+    through(5, 6, 5.038, 960, 497);                                  // amber door → Empresa
+    whip(7, 5.753, 1920, 0);
+    punch(7, 5.753 + 0.25, 1.4, 1500, 560);
+    cut(8, 6.468);                                                   // game over
+    tl.fromTo(S(8), { x: 0 }, { x: 18, duration: 0.045, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, 6.468);
+    back(9, 7.183, 960, 497);
+    through(9, 10, 7.899, 1380, 497);                                // green door → Emprender
+    whip(11, 8.614, 1920, 0);
+    whip(12, 9.329, 0, 1080);
+    cut(13, 10.045); tl.fromTo(S(13), { scale: 1.12, transformOrigin: "960px 540px" }, { scale: 1, duration: 0.5, ease: "expo.out", immediateRender: false }, 10.045);
+    // game-style iris out, closing on the avatar                        abs 31.17 → 31.53
+    tl.fromTo("#s5-stage", { clipPath: "circle(2100px at 1700px 795px)" }, { clipPath: "circle(0px at 1700px 795px)", duration: 0.36, ease: "power2.in" }, 11.118);
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

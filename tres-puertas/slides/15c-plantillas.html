@@ -1,0 +1,49 @@
+<section class="slide" id="s15c-plantillas" data-title="Plantillas contra los enemigos" data-enter="push">
+  <template class="notes">⏱ OCULTA (solo para preguntas, desde la vista G)
+«¿Os acordáis de los enemigos del Game over? Aquí tenéis las armas.» Tres plantillas que podéis copiar tal cual; están todas en el QR del final.
+El mensaje de LinkedIn (ya visible): corto, concreto y pidiendo poco (15 minutos). Contra el enemigo «no escribir a nadie».
+→ El correo al profe: así empezó todo para mí en Georgia Tech.
+→ El checklist para publicar el reto: README, vídeo de un minuto y post. Eso ya es experiencia que contar.</template>
+  <style>
+    #s15c-plantillas .c15c-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin: auto 0; align-items: stretch; }
+    #s15c-plantillas .c15c-c { padding: 40px 26px 26px; display: flex; flex-direction: column; }
+    #s15c-plantillas .c15c-c .tag { background: var(--accent); }
+    #s15c-plantillas .c15c-top { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+    #s15c-plantillas .c15c-top [data-px] { width: 58px; flex: none; }
+    #s15c-plantillas .c15c-t { font-family: var(--pixel); font-size: 22px; text-transform: uppercase; line-height: 1.15; }
+    #s15c-plantillas .c15c-vs { font-size: 18px; color: var(--red); font-weight: 600; margin-top: 2px; }
+    #s15c-plantillas .c15c-tx { flex: 1; background: #f8fafc; border: 3px dashed #cbd5e1; padding: 16px 18px; font-size: 21px; line-height: 1.42; color: #1f2937; }
+    #s15c-plantillas .c15c-tx i { font-style: normal; background: #fef3c7; padding: 0 4px; }
+    #s15c-plantillas .c15c-tx ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    #s15c-plantillas .c15c-tx li { display: grid; grid-template-columns: 30px 1fr; }
+    #s15c-plantillas .c15c-tx li::before { content: "☐"; font-size: 22px; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Armas</span>
+      <div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15c-h">Tres plantillas para vencer a los enemigos</div>
+    <div class="c15c-grid">
+      <div class="panel c15c-c k1"><span class="tag">Arma 1</span>
+        <div class="c15c-top"><span data-px="bubble"></span><div><div class="c15c-t">Mensaje de LinkedIn</div><div class="c15c-vs">vs. «no escribo a nadie»</div></div></div>
+        <div class="c15c-tx">Hola <i>[nombre]</i>, soy <i>[tú]</i>, del Máster de Informática de la UC3M. He visto que trabajas en <i>[empresa]</i> y me interesa mucho <i>[tema concreto]</i>. ¿Te importaría que te hiciera un par de preguntas en 15 minutos? ¡Gracias!</div></div>
+      <div class="panel c15c-c k2"><span class="tag">Arma 2</span>
+        <div class="c15c-top"><span data-px="cap"></span><div><div class="c15c-t">Correo a un profe</div><div class="c15c-vs">vs. «no me siento preparado»</div></div></div>
+        <div class="c15c-tx">Hola <i>[profesor/a]</i>: soy <i>[tú]</i>, de su asignatura <i>[X]</i>. He leído <i>[paper o proyecto]</i> y me encantaría colaborar. Puedo dedicarle <i>[N]</i> h a la semana y sé <i>[habilidad]</i>. ¿Podríamos hablar 10 minutos?</div></div>
+      <div class="panel c15c-c k3"><span class="tag">Arma 3</span>
+        <div class="c15c-top"><span data-px="laptop"></span><div><div class="c15c-t">Publicar el reto</div><div class="c15c-vs">vs. «no tengo nada que enseñar»</div></div></div>
+        <div class="c15c-tx"><ul><li>Repo público en GitHub</li><li>README: problema, solución, arquitectura y cómo ejecutarlo</li><li>Vídeo de 1 minuto con la demo</li><li>Post en LinkedIn: problema → qué hice → resultado → qué aprendí</li></ul></div></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s15c-plantillas", function (el, tl, h) {
+  h.rise(".c15c-h", { at: 0, y: 30 });
+  h.rise(".c15c-c.k1", { at: 0.25, y: 40 });
+  tl.call(Deck.sfx, ["coin", tl], 0.4);
+  for (var i = 2; i <= 3; i++) {
+    var t = h.step();
+    h.rise(".c15c-c.k" + i, { at: t, y: 40 });
+    tl.call(Deck.sfx, ["coin", tl], t + 0.1);
+  }
+});
+</script>

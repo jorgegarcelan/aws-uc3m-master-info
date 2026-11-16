@@ -1,0 +1,68 @@
+/* slaas components — terminal, diagram, QR. Colors come from the theme's variables (--ink, --surface, --line,
+   --accent, --mono…); each component has its own variables to override in a theme or a slide. */
+
+/* ---------------- terminal ---------------- */
+.term {
+  --term-bg: #0E0E12; --term-bar: #18181E; --term-fg: #E6E4DE; --term-cmd: #FFFFFF; --term-dim: #8C8C98;
+  /* the theme's accent, lightened: the terminal is always dark and some accents (violet, blue) are too */
+  --term-prompt: color-mix(in srgb, var(--accent, #D4FF3A) 55%, #fff); --term-ok: #7EE787; --term-err: #FF7B72; --term-warn: #F2CC60; --term-info: #79C0FF;
+  --term-acc: var(--term-prompt); --term-caret: var(--term-prompt); --term-hl: rgba(255,255,255,.07);
+  --prompt: "$ "; --pw: 2ch;
+  position: relative; overflow: hidden; border-radius: 16px; background: var(--term-bg); color: var(--term-fg);
+  font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 22px; line-height: 1.6;
+  padding: 64px 30px 24px; box-shadow: 0 24px 60px -24px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.07); text-align: left;
+}
+.term::before {             /* title bar: three dots and data-title */
+  content: attr(data-title); position: absolute; left: 0; right: 0; top: 0; height: 44px; line-height: 44px; text-align: center;
+  font-size: 15px; letter-spacing: .02em; color: var(--term-dim); background: var(--term-bar);
+  background-image: radial-gradient(circle at 24px 22px, #FF5F57 6px, transparent 6.5px), radial-gradient(circle at 44px 22px, #FEBC2E 6px, transparent 6.5px), radial-gradient(circle at 64px 22px, #28C840 6px, transparent 6.5px);
+}
+.term.bare { padding-top: 24px; } .term.bare::before { display: none; }
+.term .t-scroll { position: relative; }
+.term .t-cmd, .term .t-out { position: relative; margin: 0; min-height: 1.6em; }
+.term .t-cmd { color: var(--term-cmd); white-space: nowrap; padding-left: var(--pw);
+  /* typing: --tc characters visible (set by h.terminal; everything without it) */
+  clip-path: inset(-.3em calc(100% - var(--pw) - var(--tc, 99999) * 1ch) -.3em -1ch); }
+.term .t-cmd::before { content: var(--prompt); position: absolute; left: 0; color: var(--term-prompt); }
+.term .t-cmd + .t-cmd, .term .t-out + .t-cmd { margin-top: .5em; }
+.term .t-out { white-space: pre-wrap; }
+.term .t-caret { position: absolute; left: calc(var(--lx, 0px) + var(--pw) + var(--tc, 0) * 1ch); top: calc(var(--ly, 0px) + .2em);
+  width: .62ch; height: 1.2em; background: var(--term-caret); opacity: 0; }
+.term .t-dim { color: var(--term-dim); } .term .t-ok { color: var(--term-ok); } .term .t-err { color: var(--term-err); }
+.term .t-warn { color: var(--term-warn); } .term .t-info { color: var(--term-info); } .term .t-acc { color: var(--term-acc); }
+.term .t-b { font-weight: 700; color: var(--term-cmd); }
+.term .t-hl { background: var(--term-hl); margin-left: -30px; margin-right: -30px; padding-left: 30px; padding-right: 30px; }
+.term .t-cmd.t-hl { padding-left: calc(30px + var(--pw)); }
+.term .t-cmd.t-hl::before { left: 30px; }
+
+/* ---------------- diagram ---------------- */
+.dg { --dg-line: var(--muted, #8A8A94); --dg-node: var(--surface, #fff); --dg-border: var(--line, rgba(0,0,0,.14)); --dg-ink: var(--ink, #111);
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: 72px; }
+.dg.down { flex-direction: column; }
+.dg .dg-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.dg.down .dg-col { flex-direction: row; }
+.dg .dg-n { position: relative; z-index: 1; padding: 16px 26px; border-radius: 14px; border: 2px solid var(--dg-border); background: var(--dg-node);
+  color: var(--dg-ink); font-size: 24px; font-weight: 600; line-height: 1.25; text-align: center; }
+.dg .dg-n small { display: block; margin-top: 4px; font-size: .7em; font-weight: 400; color: var(--muted, #777); }
+.dg .dg-n.accent { background: var(--accent); border-color: var(--accent); color: var(--ui-accent-ink, #fff); }
+.dg .dg-n.accent small { color: inherit; opacity: .75; }
+.dg .dg-n.soft { background: var(--accent-soft, var(--dg-node)); }
+.dg .dg-n.ghost { background: transparent; border-style: dashed; }
+.dg .dg-n.mono { font-family: var(--mono); font-weight: 500; font-size: 20px; }
+.dg .dg-svg { position: absolute; left: 0; top: 0; z-index: 0; overflow: visible; pointer-events: none; }
+.dg .dg-line { fill: none; stroke: var(--dg-line); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.dg .dg-e.dashed .dg-line { stroke-dasharray: 7 8; stroke-linecap: butt; }
+.dg .dg-head { fill: var(--dg-line); }
+.dg .dg-e.accent .dg-line { stroke: var(--accent); stroke-width: 3; } .dg .dg-e.accent .dg-head { fill: var(--accent); }
+.dg .dg-l { position: absolute; z-index: 2; transform: translate(-50%, -50%); white-space: nowrap; padding: 3px 10px; border-radius: 999px;
+  font: 500 16px/1.3 var(--mono, monospace); color: var(--muted, #777); background: var(--dg-node); border: 1px solid var(--dg-border); }
+
+/* ---------------- QR code ---------------- */
+.qr { display: inline-block; width: 260px; border-radius: 14px; overflow: hidden; background: #fff; line-height: 0; vertical-align: middle; }
+.qr svg { display: block; width: 100%; height: auto; }
+.qr .qr-bg { fill: #fff; }
+.qr .qr-f, .qr .qr-d { fill: #0C0C0F; }      /* always dark on white: inverted codes do not scan everywhere */
+
+/* editing in the browser (E): commands show whole (the typing clip would hide new characters), no caret */
+.editing .term .t-cmd { clip-path: none; }
+.editing .term .t-caret { display: none; }

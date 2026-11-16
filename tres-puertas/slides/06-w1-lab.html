@@ -1,0 +1,66 @@
+<section class="slide" id="s06-w1-lab" data-section="1" data-title="Academia: el lab de Georgia Tech" data-enter="edge">
+  <template class="notes">⏱ 90 s · empieza en 3:15
+(espera a que se abra el círculo)
+Lee el post con tono de «muy orgulloso…» 😄
+→ «La realidad: le escribí un correo al profe.»
+«En clase dijo que buscaba gente para su lab.»
+«Le dije: en España esto en 3º no pasa. Quiero aprender.»
+«No sabía investigar: pregunté a los de doctorado.»
+→ «Y justo salió GPT-4: nadie era experto.»
+💬 «¿Alguien ha escrito alguna vez a un profe?»</template>
+  <style>
+    #s06-w1-lab .c6-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; margin-top: 36px; }
+    #s06-w1-lab .c6-col .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s06-w1-lab .c6-dlg p { font-size: 29px; }
+    #s06-w1-lab .c6-luck { display: flex; align-items: center; gap: 22px; margin-top: 40px; background: #fff8e1; }
+    #s06-w1-lab .c6-luck [data-px] { width: 60px; flex: none; }
+    #s06-w1-lab .c6-luck .pxt { font-size: 22px; color: #b45309; }
+    #s06-w1-lab .c6-luck .c6-lt { font-size: 28px; font-weight: 600; margin-top: 4px; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-acad)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t">Mundo 1 · Academia</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-acad)">Mundo 1 · Academia</span>
+      <div class="inv"><span>Inventario</span><span class="slot empty"></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c6-h">Versión LinkedIn vs. versión real</div>
+    <div class="c6-grid">
+      <div class="c6-col c6-left">
+        <div class="pxt">Versión LinkedIn</div>
+        <div class="lpost">
+          <div class="lp-head"><span class="lp-av"><span data-px="jorge"></span></span><div><div class="lp-name">Jorge Garcelán <span>· 1.º</span></div><div class="lp-sub">Data Science @ UC3M · Exchange @ Georgia Tech</div><div class="lp-time">1 sem · 🌐</div></div><span class="lp-follow">+ Seguir</span></div>
+          <div class="lp-text">🎉 ¡Muy orgulloso de compartir que nuestro paper ha sido aceptado en AAAI! Gracias al Data Science &amp; Policy Lab de Georgia Tech por la oportunidad. <span class="lp-tags">#AI #Research #GPT4</span></div>
+          <div class="lp-img"><span data-px="atlanta" style="left:20px;bottom:26px;width:240px"></span><span data-px="jorge" style="left:330px;bottom:22px;width:96px"></span><span data-px="paper" style="left:440px;bottom:110px;width:70px;transform:rotate(-8deg)"></span><span data-px="cap" style="left:345px;top:14px;width:80px;transform:rotate(-12deg)"></span><span data-px="star" style="left:520px;top:40px;width:46px"></span><span class="lg" style="right:22px;top:20px"><img src="assets/img/logos/gatech.png" alt=""></span><span data-px="flask" style="right:60px;bottom:30px;width:56px"></span></div>
+          <div class="lp-react"><span>👍❤️👏</span> Tú y 248 personas más <span class="lp-com">32 comentarios</span></div>
+          <div class="lp-act"><span>👍 Recomendar</span><span>💬 Comentar</span><span>🔁 Compartir</span><span>➤ Enviar</span></div>
+        </div>
+      </div>
+      <div class="c6-col c6-right">
+        <div class="pxt">Versión real</div>
+        <div class="dlg c6-dlg"><span class="dlg-name">Jorge</span>
+          <p>Al acabar el semestre <b>le escribí un correo</b> al profe de una asignatura: había dicho en clase que buscaba gente para su lab.</p>
+          <p>Le conté que en España era raro que alguien de 3º pudiera investigar y publicar, y que quería aprender.</p>
+          <p><b>No sabía qué era investigar.</b> Pregunté a compañeros de máster y doctorado.</p>
+        </div>
+        <div class="panel c6-luck"><span data-px="star"></span><div><div class="pxt">¡Golpe de suerte!</div><div class="c6-lt">Justo salen ChatGPT y GPT-4: nadie era experto, todos partíamos del mismo nivel.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s06-w1-lab", function (el, tl, h) {
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+  h.rise(".c6-h", { at: o + 0, y: 30 });
+  h.rise(".c6-left > .pxt, .c6-left .lpost", { at: o + 0.25, y: 30, stagger: 0.1 });
+  var t = h.step();
+  h.fade(".c6-right > .pxt", { at: t });
+  h.rise(".c6-dlg", { at: t + 0.1, y: 24 });
+  h.rise(".c6-dlg p", { at: t + 0.3, y: 14, stagger: 0.25 });
+  var t2 = h.step();
+  h.pop(".c6-luck", { at: t2 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>

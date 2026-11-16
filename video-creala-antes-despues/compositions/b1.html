@@ -1,0 +1,101 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; background-color: #eef4fd; background-image: linear-gradient(#d5e4f9 2px, transparent 2px), linear-gradient(90deg, #d5e4f9 2px, transparent 2px); background-size: 40px 40px; }
+    #b1-word { position: absolute; left: 192px; top: 16px; width: 900px; height: 144px; overflow: hidden; }
+    #b1-roll div { height: 144px; line-height: 168px; font-family: "Pixel"; font-weight: 700; font-size: 84px; color: #0b0d10; white-space: nowrap; }
+    #b1-persp { position: absolute; inset: 0; perspective: 2600px; }
+    #b1-3d { position: absolute; left: 192px; top: 168px; width: 1536px; height: 864px; transform-style: preserve-3d; }
+    .b1-layer { position: absolute; left: 0; top: 0; width: 1536px; height: 864px; }
+    .b1-in { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform: scale(0.8); transform-origin: 0 0; }
+    .b1-edge { position: absolute; inset: 0; outline: 6px solid #0b0d10; background: rgba(255, 255, 255, 0.14); }
+    .b1-uedge { position: absolute; inset: 0; outline: 6px solid #0b0d10; }
+    #b1-L1 .b1-in { background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 34%, #8fbef6 68%, #dcebfd 92%, #f6faff 100%); }
+    #b1-L1 .b1-edge { background: none; }
+    #b1-U1 { opacity: 0; }
+    .b1-abs { position: absolute; }
+    #b1-title { left: 0; width: 1920px; top: 156px; text-align: center; font-size: 64px; font-weight: 700; letter-spacing: -0.03em; color: #fff; white-space: nowrap; }
+    #b1-hud { left: 96px; top: 76px; background: #0b0d10; color: #fff; font-family: "Pixel"; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; padding: 12px 24px; white-space: nowrap; }
+    #b1-foot { left: 0; top: 1020px; width: 1920px; height: 60px; background: #0b0d10; }
+    .b1-lab { top: 750px; width: 210px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; background: #fff; color: #0b0d10; border: 4px solid #0b0d10; box-shadow: 4px 4px 0 #0b0d10; padding: 8px 0; }
+    #b1-real { position: absolute; left: 0; top: 0; width: 1536px; height: 864px; opacity: 0; }
+    #b1-flat { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+    #b1-flat img { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: block; }
+    .ug { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #fff; font-family: Arial, sans-serif; color: #262626; }
+    .ug h2 { position: absolute; left: 120px; top: 96px; width: 1680px; font-size: 72px; line-height: 1.15; font-weight: 700; color: #1f3864; }
+    .ug hr { position: absolute; left: 120px; top: 276px; width: 1680px; height: 6px; border: 0; background: #4472c4; }
+    .ug ul { position: absolute; left: 150px; top: 328px; width: 1620px; list-style: disc; padding-left: 48px; font-size: 50px; line-height: 1.45; }
+    .ug li { margin-bottom: 12px; }
+    .ug .ug-f { position: absolute; left: 120px; bottom: 44px; font-size: 26px; color: #7f7f7f; }
+    .ug .ug-n { position: absolute; right: 120px; bottom: 44px; font-size: 26px; color: #7f7f7f; }
+    .ug.cover h2 { top: 352px; text-align: center; font-size: 76px; white-space: nowrap; }
+    .ug.cover hr { top: 472px; }
+    .ug.cover p { position: absolute; left: 120px; top: 520px; width: 1680px; text-align: center; font-size: 48px; color: #595959; }
+  </style>
+  <div id="root" data-composition-id="b1" data-width="1920" data-height="1080">
+    <div id="b1-word" data-layout-allow-overflow><div id="b1-roll"><div data-layout-allow-overlap>ANTES</div><div data-layout-allow-overlap>DESPUÉS</div></div></div>
+    <div id="b1-persp">
+      <div id="b1-3d">
+        <div id="b1-U0" class="b1-layer"><div class="b1-in"><div id="b1-ug0" class="ug cover" data-layout-ignore><h2>Créala: no esperes a tener experiencia</h2><hr><p>Tres puertas: academia, empresa y emprender</p><div class="ug-f">Jorge Garcelán · Máster de Informática · 2026</div><div class="ug-n">1 / 23</div></div></div><div class="b1-uedge"></div></div>
+        <div id="b1-U1" class="b1-layer"><div class="b1-in"><div id="b1-ug1" class="ug" data-layout-ignore><h2>Tres mundos. No hace falta elegir solo uno.</h2><hr><ul><li>Academia</li><li>Empresa</li><li>Emprender</li></ul><div class="ug-f">Jorge Garcelán · Máster de Informática · 2026</div><div class="ug-n">6 / 23</div></div></div><div class="b1-uedge"></div></div>
+        <div id="b1-L1" class="b1-layer"><div class="b1-in"></div><div class="b1-edge"></div></div>
+        <div id="b1-L2" class="b1-layer"><div class="b1-in">
+          <img class="b1-abs" src="assets/sprites/cloud.svg" alt="" style="left:390px;top:590px;width:300px">
+          <img class="b1-abs" src="assets/sprites/cloud.svg" alt="" style="left:810px;top:590px;width:300px">
+          <img class="b1-abs" src="assets/sprites/cloud.svg" alt="" style="left:1230px;top:590px;width:300px">
+        </div><div class="b1-edge"></div></div>
+        <div id="b1-L3" class="b1-layer"><div class="b1-in">
+          <img class="b1-abs" src="assets/sprites/door-acad.svg" alt="" style="left:445px;top:369px;width:190px">
+          <img class="b1-abs" src="assets/sprites/door-emp.svg" alt="" style="left:865px;top:369px;width:190px">
+          <img class="b1-abs" src="assets/sprites/door-start.svg" alt="" style="left:1285px;top:369px;width:190px">
+          <div class="b1-abs b1-lab" data-layout-ignore style="left:435px">ACADEMIA</div><div class="b1-abs b1-lab" data-layout-ignore style="left:855px">EMPRESA</div><div class="b1-abs b1-lab" data-layout-ignore style="left:1275px">EMPRENDER</div>
+        </div><div class="b1-edge"></div></div>
+        <div id="b1-L4" class="b1-layer"><div class="b1-in">
+          <img class="b1-abs" src="assets/sprites/jorge-idle.svg" alt="" style="left:144px;top:639px;width:140px">
+        </div><div class="b1-edge"></div></div>
+        <div id="b1-L5" class="b1-layer"><div class="b1-in">
+          <div id="b1-hud" class="b1-abs" data-layout-ignore>ELIGE UNA PUERTA</div>
+          <div id="b1-title" class="b1-abs" data-layout-ignore>Tres mundos. No hace falta elegir solo uno.</div>
+          <img class="b1-abs" src="assets/sprites/arrow.svg" alt="" style="left:518px;top:290px;width:44px">
+          <div id="b1-foot" class="b1-abs"></div>
+        </div><div class="b1-edge"></div></div>
+        <img id="b1-real" src="assets/slides/05-hub1.jpg" alt="">
+      </div>
+    </div>
+    <div id="b1-flat"><img src="assets/slides/05-hub1.jpg" alt=""></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const Z = [-200, -100, 0, 100, 200];
+    const L = ["#b1-L1", "#b1-L2", "#b1-L3", "#b1-L4", "#b1-L5"];
+    const U = ["#b1-U0", "#b1-U1"];
+    tl.set("#b1-3d", { transformOrigin: "768px 432px" }, 0);
+    // arrives from the right as the character sheet leaves
+    tl.fromTo(["#b1-word", "#b1-persp"], { x: 1920 }, { x: 0, duration: 0.34, ease: "power3.out" }, 0);
+    // antes: the cover, then the «tres mundos» slide as plain bullets     cut abs 1.48
+    tl.set("#b1-U1", { opacity: 1 }, 1.483);
+    tl.fromTo("#b1-3d", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "expo.out", immediateRender: false }, 1.483);
+    // the bullet slide tilts back and becomes the bottom of the stack     abs 2.91
+    tl.fromTo("#b1-3d", { rotationY: 0, rotationX: 0, scale: 1 }, { rotationY: -36, rotationX: 9, scale: 0.8, duration: 0.5, ease: "power2.inOut", immediateRender: false }, 2.913);
+    tl.fromTo(U, { z: 0 }, { z: -320, duration: 0.5, ease: "power2.inOut" }, 2.913);
+    // sky, clouds, doors, avatar and text land on it, one per half beat    abs 3.63 → 5.06
+    [3.629, 3.986, 4.344, 4.701, 5.059].forEach(function (t, i) {
+      tl.fromTo(L[i], { opacity: 0, x: 900, z: Z[i] + 500 }, { opacity: 1, x: 0, z: Z[i], duration: 0.34, ease: "power3.out" }, t - 0.34);
+    });
+    // the stack closes into the finished slide                              abs 5.77 → 6.13
+    L.forEach(function (l, i) { tl.fromTo(l, { z: Z[i] }, { z: 0, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 5.774); });
+    tl.fromTo(U, { z: -320 }, { z: 0, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 5.774);
+    tl.fromTo("#b1-3d", { rotationY: -36, rotationX: 9, scale: 0.8 }, { rotationY: 0, rotationX: 0, scale: 1, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 5.774);
+    tl.fromTo(".b1-edge", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "none" }, 5.934);
+    tl.set("#b1-real", { opacity: 1 }, 6.112);
+    // ANTES rolls to DESPUÉS as it lands
+    tl.fromTo("#b1-roll", { y: 0 }, { y: -144, duration: 0.3, ease: "power3.inOut" }, 5.932);
+    // push in until the finished slide fills the frame                      abs 7.21 → 7.56
+    tl.fromTo("#b1-3d", { scale: 1, y: 0 }, { scale: 1.25, y: -60, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 7.205);
+    tl.set("#b1-flat", { opacity: 1 }, 7.575);
+    tl.set("#b1-persp", { opacity: 0 }, 7.585);
+    tl.set({}, {}, 8.7);
+    window.__timelines["b1"] = tl;
+  </script>
+</template>

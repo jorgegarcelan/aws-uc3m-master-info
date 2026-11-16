@@ -1,0 +1,42 @@
+<section class="slide" id="s16-quests" data-title="Misiones para esta semana" data-enter="push">
+  <template class="notes">⏱ 45 s · empieza en 16:05
+«Las tres lecciones, en tres misiones:»
+«1. Escribid a un profe.»
+→ «2. Haced el reto, subidlo y contadlo.»
+→ «3. Apuntad un problema que os moleste.»
+💬 «¿Cuál vais a hacer esta semana?»</template>
+  <style>
+    #s16-quests .c16-log { margin-top: 48px; padding: 44px 48px 24px; }
+    #s16-quests .c16-q { display: grid; grid-template-columns: 56px 290px 1fr 210px; gap: 28px; align-items: center; padding: 22px 0; border-bottom: 4px dashed var(--line); }
+    #s16-quests .c16-q:last-child { border-bottom: 0; }
+    #s16-quests .c16-box { width: 48px; height: 48px; border: 5px solid var(--ink); background: #fff; }
+    #s16-quests .c16-q .tag { justify-self: start; color: #fff; }
+    #s16-quests .c16-t { font-size: 30px; line-height: 1.35; }
+    #s16-quests .c16-q { cursor: pointer; }
+    #s16-quests .c16-q.done .c16-box { background: var(--green) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 6' shape-rendering='crispEdges'><path fill='white' d='M5 0h2v2H6v1H5v1H4v1H3v1H2V5H1V4H0V3h2v1h1V3h1V2h1z'/></svg>") center/70% no-repeat; }
+    #s16-quests .c16-q.done .c16-t { color: var(--muted); }
+    #s16-quests .c16-tg { display: flex; align-items: center; gap: 14px; }
+    #s16-quests .c16-ic { width: 54px; flex: none; }
+    #s16-quests .c16-coin { width: 26px; display: inline-block; vertical-align: -3px; margin-right: 8px; }
+    #s16-quests .c16-xp { font-family: var(--pixel); font-weight: 700; font-size: 26px; color: var(--accent); text-align: right; white-space: nowrap; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Misiones</span></div>
+    <div class="h-sky c16-h">Tres misiones para esta semana</div>
+    <div class="panel c16-log">
+      <span class="tag">Diario de misiones</span>
+      <div class="c16-q" data-noclick><span class="c16-box"></span><span class="c16-tg"><span class="c16-ic" data-px="cap"></span><span class="tag" style="background:var(--c-acad)">Academia</span></span><div class="c16-t">Habla con un profe cuyo trabajo te guste. <b>A mí me cambió la carrera.</b></div><div class="c16-xp"><span class="c16-coin" data-px="coin"></span>+100 XP</div></div>
+      <div class="c16-q" data-noclick><span class="c16-box"></span><span class="c16-tg"><span class="c16-ic" data-px="briefcase"></span><span class="tag" style="background:var(--c-emp);color:var(--ink)">Empresa</span></span><div class="c16-t">Haz bien el reto de agentes, <b>súbelo a GitHub y cuéntalo en LinkedIn</b>. Eso ya es experiencia.</div><div class="c16-xp"><span class="c16-coin" data-px="coin"></span>+100 XP</div></div>
+      <div class="c16-q" data-noclick><span class="c16-box"></span><span class="c16-tg"><span class="c16-ic" data-px="rocket"></span><span class="tag" style="background:var(--c-start)">Emprender</span></span><div class="c16-t">Apunta un problema que te moleste de verdad. <b>Uniwords empezó así.</b></div><div class="c16-xp"><span class="c16-coin" data-px="coin"></span>+100 XP</div></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s16-quests", function (el, tl, h) {
+  h.rise(".c16-h", { at: 0, y: 30 });
+  h.rise(".c16-log", { at: 0.2, y: 30 });
+  var q = h.qa(".c16-q");
+  h.slideIn(q[0], { at: 0.5, x: 50 });
+  for (var i = 1; i < q.length; i++) h.slideIn(q[i], { at: h.step(), x: 50 });
+});
+</script>

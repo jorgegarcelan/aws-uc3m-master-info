@@ -1,0 +1,76 @@
+<section class="slide" id="s15a-entrevistas" data-title="Lo que podía contar en cada entrevista" data-enter="push">
+  <template class="notes">⏱ OCULTA (solo para preguntas, desde la vista G)
+ESCENA 7 · La bola de nieve. La prueba de «créala» en la práctica.
+«¿Sabéis qué contaba en mis entrevistas? Os lo enseño.»
+Entrevista 1, las prácticas de Telefónica: solo podía contar el paper de Georgia Tech. Era lo único que tenía, y fue suficiente.
+→ Entrevista 2, las siguientes prácticas: ya podía contar lo que había hecho en Telefónica.
+→ Entrevista 3, trabajo a jornada completa: ahí pedían más. Unas prácticas no bastaban, así que contaba Uniwords y mis proyectos personales.
+→ La frase: cada cosa que creas hoy es lo que cuentas en tu próxima entrevista. Y así fui: una cosa me llevaba a la siguiente.</template>
+  <style>
+    #s15a-entrevistas .c15a-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 36px; align-items: end; }
+    #s15a-entrevistas .c15a-col { display: flex; flex-direction: column; }
+    #s15a-entrevistas .c15a-q { position: relative; align-self: flex-start; background: #fff; border: 4px solid var(--ink); box-shadow: 5px 5px 0 rgba(11,13,16,.35); padding: 10px 16px; font-size: 22px; font-weight: 600; margin-bottom: 26px; }
+    #s15a-entrevistas .c15a-q::after { content: ""; position: absolute; left: 26px; bottom: -14px; width: 16px; height: 10px; background: var(--ink); clip-path: polygon(0 0, 100% 0, 30% 100%); }
+    #s15a-entrevistas .c15a-q.more { background: #fee2e2; }
+    #s15a-entrevistas .c15a-box { padding: 38px 26px 22px; }
+    #s15a-entrevistas .c15a-box .tag { background: var(--accent); }
+    #s15a-entrevistas .c15a-k { font-family: var(--pixel); font-size: 18px; color: var(--muted); text-transform: uppercase; }
+    #s15a-entrevistas .c15a-t { font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 4px 0 18px; }
+    #s15a-entrevistas .c15a-it { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; padding: 10px 0; border-top: 3px dashed var(--line); font-size: 23px; font-weight: 600; line-height: 1.25; }
+    #s15a-entrevistas .c15a-it > [data-px] { width: 48px; justify-self: center; }
+    #s15a-entrevistas .c15a-it .lg { width: 52px; height: 52px; border-width: 3px; box-shadow: none; }
+    #s15a-entrevistas .c15a-it.new { background: #fff8e1; margin: 0 -26px; padding-left: 26px; padding-right: 26px; }
+    #s15a-entrevistas .c15a-moral { margin-top: auto; background: var(--accent); color: #fff; display: flex; align-items: center; gap: 24px; }
+    #s15a-entrevistas .c15a-moral p { font-size: 30px; font-weight: 600; line-height: 1.3; }
+    #s15a-entrevistas .c15a-moral [data-px] { width: 70px; flex: none; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">La bola de nieve</span>
+      <div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15a-h">Lo que podía contar en cada entrevista</div>
+    <div class="c15a-cols">
+      <div class="c15a-col c1">
+        <div class="c15a-q">«¿Qué experiencia tienes?»</div>
+        <div class="panel c15a-box"><span class="tag">Entrevista 1</span><div class="c15a-k">Prácticas</div><div class="c15a-t">Telefónica</div>
+          <div class="c15a-it new"><span data-px="paper"></span><span>Paper en AAAI · Georgia Tech</span></div>
+        </div>
+      </div>
+      <div class="c15a-col c2">
+        <div class="c15a-q">«¿Qué has hecho desde entonces?»</div>
+        <div class="panel c15a-box"><span class="tag">Entrevista 2</span><div class="c15a-k">Siguientes prácticas</div><div class="c15a-t">+1 objeto</div>
+          <div class="c15a-it"><span data-px="paper"></span><span>Paper en AAAI · Georgia Tech</span></div>
+          <div class="c15a-it new"><span class="lg"><img src="assets/img/logos/telefonica.png" alt=""></span><span>Prácticas en Telefónica</span></div>
+        </div>
+      </div>
+      <div class="c15a-col c3">
+        <div class="c15a-q more">«Para este puesto pedimos más…»</div>
+        <div class="panel c15a-box"><span class="tag">Entrevista 3</span><div class="c15a-k">Trabajo a jornada completa</div><div class="c15a-t">+2 objetos</div>
+          <div class="c15a-it"><span data-px="paper"></span><span>Paper en AAAI · Georgia Tech</span></div>
+          <div class="c15a-it"><span class="lg"><img src="assets/img/logos/telefonica.png" alt=""></span><span>Prácticas en Telefónica</span></div>
+          <div class="c15a-it new"><span class="lg full"><img src="assets/img/logos/uniwords.jpg" alt=""></span><span>Uniwords</span></div>
+          <div class="c15a-it new"><span data-px="laptop"></span><span>Mis proyectos personales</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel c15a-moral"><span data-px="coin"></span><p>Cada cosa que creas hoy es lo que cuentas en tu próxima entrevista. <b>Y así fui.</b></p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s15a-entrevistas", function (el, tl, h) {
+  h.rise(".c15a-h", { at: 0, y: 30 });
+  h.pop(".c1 .c15a-q", { at: 0.3 });
+  h.rise(".c1 .c15a-box", { at: 0.45, y: 40 });
+  tl.call(Deck.sfx, ["coin", tl], 0.7);
+  var cols = [".c2", ".c3"];
+  for (var i = 0; i < cols.length; i++) {
+    var t = h.step();
+    h.pop(cols[i] + " .c15a-q", { at: t });
+    h.rise(cols[i] + " .c15a-box", { at: t + 0.15, y: 40 });
+    h.pop(cols[i] + " .c15a-it.new", { at: t + 0.45, stagger: 0.2 });
+    tl.call(Deck.sfx, ["coin", tl], t + 0.5);
+  }
+  var t2 = h.step();
+  h.rise(".c15a-moral", { at: t2, y: 24 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>

@@ -1,0 +1,37 @@
+<section class="slide" id="s05-hub1" data-title="Mapa: elige puerta" data-enter="zoom">
+  <template class="notes">⏱ 15 s · empieza en 3:00
+━━ ACTO 2 · LAS TRES PUERTAS ━━
+«De ahí se me abrieron tres puertas.»
+🖱 Clic en la puerta MORADA (Academia).</template>
+  <style>
+    #s05-hub1 .c5-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+    #s05-hub1 .c5-cl { display: block; width: 300px; margin-top: -34px; }
+    #s05-hub1 .door .px-door { width: 190px; position: relative; z-index: 1; }
+    #s05-hub1 .c5-me { position: absolute; left: 30px; bottom: 110px; width: 140px; }
+    #s05-hub1 .c5-hint { text-align: center; font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Elige una puerta</span>
+      <div class="inv"><span>Inventario</span><span class="slot empty"></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c5-h" style="text-align:center">Tres mundos. No hace falta elegir solo uno.</div>
+    <div class="c5-stage">
+      <div class="doors">
+        <button class="door acad" data-go="s06-w1-lab"><span class="arrow-down c5-arrow" data-px="arrow"></span><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c5-cl" data-px="cloud"></span><span class="door-label">Academia</span></button>
+        <button class="door emp" data-go="s11-w2-path"><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c5-cl" data-px="cloud"></span><span class="door-label">Empresa</span></button>
+        <button class="door start" data-go="s14-w3-uniwords"><span class="px-door shadow-px"><span class="door-in"><span class="eyes" data-px="eyes"></span></span><span class="door-leaf" data-px="door"></span></span><span class="c5-cl" data-px="cloud"></span><span class="door-label">Emprender</span></button>
+      </div>
+      <span class="c5-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="pxt c5-hint">Haz clic en una puerta · o pulsa →</div>
+  </div>
+</section>
+<script>
+Deck.slide("s05-hub1", function (el, tl, h) {
+  h.rise(".c5-h", { at: 0, y: 30 });
+  h.rise(".door", { at: 0.2, y: 80, stagger: 0.12 });
+  h.pop(".star", { at: 0.7 });
+  h.slideIn(".c5-me", { at: 0.6, x: -80 });
+  h.fade(".c5-hint", { at: 0.9 });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c5-arrow"), { y: 14, duration: 0.45, repeat: -1, yoyo: true, ease: "steps(2)" }); });
+});
+</script>

@@ -1,0 +1,56 @@
+<section class="slide" id="s14b-w3-stack" data-section="3" data-title="Emprender: de WordPress a plataforma propia" data-enter="push">
+  <template class="notes">⏱ 45 s · empieza en 13:35
+«Nivel 1: empezamos en WordPress.»
+→ «Nivel 2: de noche, proyectos propios. Supabase, GitHub, Vercel.»
+→ «Nivel 3: este año, plataforma propia con IA.»
+→ «Lo que hacía de noche me permitió rehacerlo.»</template>
+  <style>
+    #s14b-w3-stack .c14b-row { display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: stretch; margin: auto 0; }
+    #s14b-w3-stack .c14b-arr { display: grid; place-items: center; font-family: var(--pixel); font-size: 40px; color: #fff; text-shadow: 3px 3px 0 rgba(11,13,16,.4); }
+    #s14b-w3-stack .c14b-c { padding: 40px 28px 30px; display: flex; flex-direction: column; }
+    #s14b-w3-stack .c14b-c .tag { background: var(--c-start); }
+    #s14b-w3-stack .c14b-lv { font-family: var(--pixel); font-weight: 700; font-size: 22px; color: var(--c-start); }
+    #s14b-w3-stack .c14b-px { display: block; height: 84px; margin: 14px 0 18px; }
+    #s14b-w3-stack .c14b-px svg { width: auto; height: 84px; }
+    #s14b-w3-stack .c14b-t { font-size: 34px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+    #s14b-w3-stack .c14b-s { font-size: 24px; color: var(--muted); margin-top: 10px; line-height: 1.35; }
+    #s14b-w3-stack .c14b-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    #s14b-w3-stack .c14b-chips span { font-family: var(--pixel); font-size: 17px; text-transform: uppercase; background: var(--ink); color: #fff; padding: 6px 10px; }
+    #s14b-w3-stack .c14b-c.night { background: #1e1b4b; color: #fff; }
+    #s14b-w3-stack .c14b-c.night .tag { background: #a5b4fc; color: var(--ink); }
+    #s14b-w3-stack .c14b-c.night .c14b-s { color: #c7d2fe; }
+    #s14b-w3-stack .c14b-c.night .c14b-lv { color: #a5b4fc; }
+    #s14b-w3-stack .c14b-c.night .c14b-chips span { background: #a5b4fc; color: var(--ink); }
+    #s14b-w3-stack .c14b-c.top { background: #ecfdf5; }
+    #s14b-w3-stack .c14b-flash { position: absolute; inset: 0; background: #fff; pointer-events: none; opacity: 0; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-start)">Mundo 3 · Emprender</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c14b-h">De WordPress a plataforma propia, con IA</div>
+    <div class="c14b-row">
+      <div class="panel c14b-c s1"><span class="tag">Al principio</span><div class="c14b-lv">Nv. 1</div><span class="c14b-px" data-px="browser"></span><div class="c14b-t">WordPress</div><div class="c14b-s">Rápido, sin programar. Suficiente para arrancar.</div></div>
+      <div class="c14b-arr a1">▶</div>
+      <div class="panel c14b-c night s2"><span class="tag">De noche</span><div class="c14b-lv">Nv. 2</div><span class="c14b-px" data-px="laptop"></span><div class="c14b-t">Proyectos propios</div><div class="c14b-s">Experimentar, jugar e investigar un stack.</div><div class="c14b-chips"><span>Supabase</span><span>GitHub</span><span>Vercel</span></div></div>
+      <div class="c14b-arr a2">▶</div>
+      <div class="panel c14b-c top s3"><span class="tag">2026</span><div class="c14b-lv">Nv. 3</div><span class="c14b-px" data-px="rocket"></span><div class="c14b-t">Plataforma propia</div><div class="c14b-s">Migrada a desarrollo propio, con ayuda de la IA.</div><div class="c14b-chips"><span>Stack propio</span><span>+ IA</span></div><span class="c14b-flash"></span></div>
+    </div>
+    <div class="dlg c14b-dlg"><span class="dlg-name">Jorge</span><p>Lo que hacía de noche sin que nadie me lo pidiera es <b>lo que me permitió rehacer Uniwords</b>.</p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s14b-w3-stack", function (el, tl, h) {
+  h.rise(".c14b-h", { at: 0, y: 30 });
+  h.rise(".c14b-c.s1", { at: 0.25, y: 40 });
+  var t1 = h.step();
+  h.fade(".c14b-arr.a1", { at: t1 });
+  h.pop(".c14b-c.s2", { at: t1 + 0.15 });
+  tl.call(Deck.sfx, ["power", tl], t1 + 0.05);
+  var t2 = h.step();
+  h.fade(".c14b-arr.a2", { at: t2 });
+  h.pop(".c14b-c.s3", { at: t2 + 0.15 });
+  tl.fromTo(el.querySelector(".c14b-flash"), { opacity: 0.9 }, { opacity: 0, duration: 0.5, ease: "steps(5)" }, t2 + 0.3);
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.05);
+  var t3 = h.step();
+  h.rise(".c14b-dlg", { at: t3, y: 24 });
+});
+</script>

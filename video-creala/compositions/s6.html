@@ -1,0 +1,54 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s6-wrap { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 34%, #8fbef6 68%, #dcebfd 92%, #f6faff 100%); }
+    .s6-cl { position: absolute; }
+    #s6-c1 { left: 120px; top: 120px; width: 312px; } #s6-c2 { left: 1488px; top: 96px; width: 264px; } #s6-c3 { left: 1440px; top: 832px; width: 336px; }
+    #s6-k { position: absolute; left: 0; right: 0; top: 136px; text-align: center; font-size: 64px; font-weight: 700; letter-spacing: -0.02em; color: #fff; text-shadow: 0 4px 0 #1667d6; }
+    #s6-k span { display: inline-block; white-space: pre; }
+    #s6-t { position: absolute; left: 0; right: 0; top: 264px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 288px; line-height: 1; color: #fff; text-shadow: 0 12px 0 #1667d6; }
+    #s6-t span { display: inline-block; }
+    #s6-s { position: absolute; left: 0; right: 0; top: 632px; text-align: center; font-size: 60px; font-weight: 700; letter-spacing: -0.02em; color: #0b0d10; }
+    #s6-s span { display: inline-block; white-space: pre; }
+    #s6-h { position: absolute; left: 0; right: 0; top: 768px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 44px; letter-spacing: 0.06em; color: #0b0d10; }
+    #s6-me { position: absolute; left: 112px; top: 752px; width: 336px; height: 320px; }
+    .s6-j { position: absolute; left: 98px; top: 0; width: 140px; }
+    #s6-j0 { opacity: 0; }
+    #s6-pl { position: absolute; left: 0; top: 176px; width: 336px; }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1920" data-height="1080">
+    <div id="s6-wrap">
+      <img id="s6-c1" class="s6-cl" src="assets/sprites/cloud.svg" alt=""><img id="s6-c2" class="s6-cl" src="assets/sprites/cloud.svg" alt=""><img id="s6-c3" class="s6-cl" src="assets/sprites/cloud.svg" alt="">
+      <div id="s6-k">No esperes a tener experiencia:</div>
+      <div id="s6-t">CRÉALA</div>
+      <div id="s6-s">Mi charla del seminario AWS × UC3M, hecha videojuego</div>
+      <div id="s6-h">@JGARCELAN</div>
+      <div id="s6-me"><img id="s6-pl" src="assets/sprites/cloud.svg" alt=""><img id="s6-j1" class="s6-j" src="assets/sprites/jorge-cheer.svg" alt=""><img id="s6-j0" class="s6-j" src="assets/sprites/jorge-idle.svg" alt=""></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    function pieces(sel, byWord) {
+      const el = document.querySelector(sel);
+      const parts = byWord ? el.textContent.split(/(\s+)/) : Array.from(el.textContent);
+      el.textContent = "";
+      return parts.map(function (p) { const s = document.createElement("span"); s.textContent = p; el.appendChild(s); return s; });
+    }
+    const T = pieces("#s6-t", false);
+    const K = pieces("#s6-k", true).filter(function (s) { return s.textContent.trim(); });
+    const W = pieces("#s6-s", true).filter(function (s) { return s.textContent.trim(); });
+    // the iris opens again on the title                                 abs 31.53
+    tl.fromTo("#s6-wrap", { clipPath: "circle(0px at 960px 540px)" }, { clipPath: "circle(1250px at 960px 540px)", duration: 0.36, ease: "power2.out" }, 0.03);
+    tl.fromTo(K, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.05 }, 0.1);
+    tl.fromTo(T, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.3, ease: "steps(4)", stagger: 0.045 }, 0.42);
+    tl.fromTo(".s6-cl", { x: function (i) { return i ? 420 : -420; } }, { x: 0, duration: 0.8, ease: "expo.out", stagger: 0.08 }, 0.15);
+    tl.fromTo("#s6-me", { y: 420 }, { y: 0, duration: 0.55, ease: "expo.out" }, 0.45);
+    tl.fromTo(W, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, stagger: 0.06 }, 1.05);
+    tl.fromTo("#s6-h", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, 1.4);
+    [1.25, 2.4].forEach(function (t) { tl.set("#s6-j1", { opacity: 0 }, t); tl.set("#s6-j0", { opacity: 1 }, t); tl.set("#s6-j1", { opacity: 1 }, t + 0.55); tl.set("#s6-j0", { opacity: 0 }, t + 0.55); });
+    tl.set({}, {}, 3.5);
+    window.__timelines["s6"] = tl;
+  </script>
+</template>

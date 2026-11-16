@@ -1,0 +1,61 @@
+<section class="slide" id="s15a2-pitch" data-title="Cómo contar un proyecto en 60 segundos" data-enter="push">
+  <template class="notes">⏱ 60 s · empieza en 9:10
+«Os regalo la estructura: 60 segundos.»
+→ «Problema: qué pasaba.»
+→ «Qué hice yo. Yo, no el equipo.»
+→ «Resultado, con una cifra.»
+→ «Qué aprendí.»
+→ «El lunes, presentad vuestro agente así.»</template>
+  <style>
+    #s15a2-pitch .c15p-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; background: var(--ink); margin-top: 30px; }
+    #s15a2-pitch .c15p-bar i { display: block; height: 22px; background: #334155; position: relative; overflow: hidden; }
+    #s15a2-pitch .c15p-bar i b { position: absolute; inset: 0; background: #4ade80; transform-origin: 0 50%; }
+    #s15a2-pitch .c15p-marks { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 8px; font-family: var(--pixel); font-size: 18px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+    #s15a2-pitch .c15p-marks span { text-align: right; padding-right: 6px; }
+    #s15a2-pitch .c15p-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 30px; }
+    #s15a2-pitch .c15p-c { padding: 38px 26px 28px; display: flex; flex-direction: column; }
+    #s15a2-pitch .c15p-c .tag { background: var(--accent); }
+    #s15a2-pitch .c15p-n { font-family: var(--pixel); font-weight: 700; font-size: 44px; color: var(--accent); line-height: 1; }
+    #s15a2-pitch .c15p-k { font-family: var(--pixel); font-size: 22px; text-transform: uppercase; margin-top: 12px; }
+    #s15a2-pitch .c15p-hint { font-size: 21px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+    #s15a2-pitch .c15p-ex { margin-top: 18px; padding-top: 16px; border-top: 3px dashed var(--line); font-size: 24px; line-height: 1.35; font-weight: 500; }
+    #s15a2-pitch .c15p-ex .pxt { display: block; font-size: 15px; color: var(--faint); margin-bottom: 6px; }
+    #s15a2-pitch .c15p-moral { margin-top: auto; display: flex; align-items: center; gap: 22px; background: var(--accent); color: #fff; }
+    #s15a2-pitch .c15p-moral [data-px] { width: 64px; flex: none; }
+    #s15a2-pitch .c15p-moral p { font-size: 29px; font-weight: 600; line-height: 1.3; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Tutorial</span>
+      <div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15p-h">Cómo contar un proyecto en 60 segundos</div>
+    <div class="c15p-bar"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    <div class="c15p-marks"><span>0:15</span><span>0:30</span><span>0:45</span><span>1:00</span></div>
+    <div class="c15p-grid">
+      <div class="panel c15p-c k1"><span class="tag">Paso 1</span><div class="c15p-n">1</div><div class="c15p-k">Problema</div><div class="c15p-hint">Qué pasaba y a quién le importaba</div>
+        <div class="c15p-ex"><span class="pxt">Ejemplo</span>Entender qué opinaba la gente sobre una ley de plásticos de California (SB-54)</div></div>
+      <div class="panel c15p-c k2"><span class="tag">Paso 2</span><div class="c15p-n">2</div><div class="c15p-k">Qué hice yo</div><div class="c15p-hint">Tú, no «el equipo»</div>
+        <div class="c15p-ex"><span class="pxt">Ejemplo</span>Usé GPT-4 con chain-of-thought para clasificarlas, cuando casi nadie lo hacía</div></div>
+      <div class="panel c15p-c k3"><span class="tag">Paso 3</span><div class="c15p-n">3</div><div class="c15p-k">Resultado</div><div class="c15p-hint">Con una cifra si puedes</div>
+        <div class="c15p-ex"><span class="pxt">Ejemplo</span>F1 por encima de 0,90 y un paper en AAAI</div></div>
+      <div class="panel c15p-c k4"><span class="tag">Paso 4</span><div class="c15p-n">4</div><div class="c15p-k">Qué aprendí</div><div class="c15p-hint">Lo que te llevas al siguiente sitio</div>
+        <div class="c15p-ex"><span class="pxt">Ejemplo</span>Herramienta nueva + problema real = algo que contar</div></div>
+    </div>
+    <div class="panel c15p-moral"><span data-px="mic"></span><p>El lunes, presentad vuestro agente así. Y en la próxima entrevista, también.</p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s15a2-pitch", function (el, tl, h) {
+  h.rise(".c15p-h", { at: 0, y: 30 });
+  h.fade(".c15p-bar, .c15p-marks", { at: 0.2 });
+  var bars = h.qa(".c15p-bar i b");
+  for (var i = 0; i < 4; i++) {
+    var t = h.step();
+    h.pop(".c15p-c.k" + (i + 1), { at: t });
+    tl.fromTo(bars[i], { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "steps(6)" }, t + 0.1);
+    tl.call(Deck.sfx, ["select", tl], t + 0.03);
+  }
+  var t2 = h.step();
+  h.rise(".c15p-moral", { at: t2, y: 24 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>

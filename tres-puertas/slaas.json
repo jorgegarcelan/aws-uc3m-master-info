@@ -1,0 +1,143 @@
+{
+  "title": "Créala",
+  "lang": "es",
+  "theme": "minimal",
+  "sections": [
+    {
+      "name": "Academia",
+      "color": "#6366f1",
+      "dark": true
+    },
+    {
+      "name": "Empresa",
+      "color": "#f59e0b"
+    },
+    {
+      "name": "Emprender",
+      "color": "#10b981",
+      "dark": true
+    }
+  ],
+  "accent": "#1f7ff5",
+  "footer": {
+    "title": "Créala",
+    "subtitle": "Jorge Garcelán · Máster de Informática · UC3M",
+    "logos": [
+      {
+        "src": "assets/img/logos/uc3m.png",
+        "alt": "UC3M",
+        "style": "height:36px"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "file": "01-start.html",
+      "hidden": false
+    },
+    {
+      "file": "02-player.html",
+      "hidden": false
+    },
+    {
+      "file": "03-poll.html",
+      "hidden": false
+    },
+    {
+      "file": "03b-rueda.html",
+      "hidden": false
+    },
+    {
+      "file": "04-gt.html",
+      "hidden": false
+    },
+    {
+      "file": "05-hub1.html",
+      "hidden": false
+    },
+    {
+      "file": "06-w1-lab.html",
+      "hidden": false
+    },
+    {
+      "file": "07-w1-loot.html",
+      "hidden": false
+    },
+    {
+      "file": "08-boss.html",
+      "hidden": false
+    },
+    {
+      "file": "09-hub2.html",
+      "hidden": false
+    },
+    {
+      "file": "11-w2-path.html",
+      "hidden": false
+    },
+    {
+      "file": "10b-w2-aws.html",
+      "hidden": false
+    },
+    {
+      "file": "15a2-pitch.html",
+      "hidden": false
+    },
+    {
+      "file": "12-w2-compare.html",
+      "hidden": true
+    },
+    {
+      "file": "12b-w2-gameover.html",
+      "hidden": false
+    },
+    {
+      "file": "13-hub3.html",
+      "hidden": false
+    },
+    {
+      "file": "14-w3-uniwords.html",
+      "hidden": false
+    },
+    {
+      "file": "14b-w3-stack.html",
+      "hidden": false
+    },
+    {
+      "file": "14c-w3-skills.html",
+      "hidden": false
+    },
+    {
+      "file": "15-reveal.html",
+      "hidden": false
+    },
+    {
+      "file": "15b-cuentala.html",
+      "hidden": false
+    },
+    {
+      "file": "16-quests.html",
+      "hidden": false
+    },
+    {
+      "file": "02b-casualidad.html",
+      "hidden": false
+    },
+    {
+      "file": "17-end.html",
+      "hidden": false
+    },
+    {
+      "file": "10-w2-roles.html",
+      "hidden": true
+    },
+    {
+      "file": "15a-entrevistas.html",
+      "hidden": true
+    },
+    {
+      "file": "15c-plantillas.html",
+      "hidden": true
+    }
+  ]
+}

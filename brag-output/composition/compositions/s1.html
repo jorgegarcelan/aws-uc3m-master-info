@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Regular.ttf'); font-weight: 400; }
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-500-normal.woff2'); font-weight: 500; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; background: #e9ebef; font-family: "InterT", sans-serif; color: #0b0d10; overflow: hidden; }
+    #s1-h { position: absolute; left: 0; right: 0; top: 110px; text-align: center; font-size: 72px; font-weight: 700; letter-spacing: -0.02em; }
+    #s1-grp { position: absolute; left: 460px; top: 280px; width: 1000px; height: 620px; }
+    #s1-card { position: absolute; inset: 0; background: #fff; border: 2px solid #d1d5db; box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); padding: 70px 80px; font-family: Arial, sans-serif; }
+    #s1-card h2 { font-size: 66px; font-weight: 700; color: #4b5563; }
+    #s1-card hr { border: 0; height: 4px; background: #d1d5db; margin: 26px 0 40px; }
+    .s1-b { font-size: 44px; color: #6b7280; margin-bottom: 26px; opacity: 0; }
+    #s1-foot { position: absolute; left: 80px; bottom: 36px; font-size: 26px; color: #9ca3af; }
+    #s1-stamp { position: absolute; left: 60px; top: 220px; width: 880px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 84px; color: #ef4444; border: 10px solid #ef4444; padding: 14px 10px; background: rgba(255,255,255,.92); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1920" data-height="1080">
+    <div id="s1-h">Tenía que dar una charla en un seminario</div>
+    <div id="s1-grp">
+      <div id="s1-card">
+        <h2>Mi experiencia</h2><hr>
+        <div class="s1-b" data-layout-allow-overlap>• Mundo académico</div><div class="s1-b" data-layout-allow-overlap>• Mundo de la empresa</div><div class="s1-b" data-layout-allow-overlap>• Emprender</div>
+        <div id="s1-foot" data-layout-ignore>Diapositiva 1 de 40</div>
+      </div>
+      <div id="s1-stamp" data-layout-allow-overlap data-layout-allow-occlusion>¿OTRO POWERPOINT?</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(".s1-b", { opacity: 0 }, { opacity: 1, duration: 0.1, stagger: 0.36 }, 0.4);            // beat-grid 0.40 / 0.76 / 1.11
+    tl.fromTo("#s1-stamp", { opacity: 0, scale: 2.4, rotation: -7 }, { opacity: 1, scale: 1, rotation: -7, duration: 0.16, ease: "power4.in" }, 1.66); // beat-locked: 1.82s
+    tl.fromTo("#s1-grp", { x: 0 }, { x: 14, duration: 0.05, repeat: 5, yoyo: true, ease: "none" }, 1.82);
+    tl.fromTo("#s1-grp", { y: 0, rotation: 0, opacity: 1 }, { y: 1000, rotation: 14, opacity: 1, duration: 0.42, ease: "power3.in", immediateRender: false }, 2.54);
+    tl.fromTo("#s1-h", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(12px)", duration: 0.2, immediateRender: false }, 2.7);
+    window.__timelines["s1"] = tl;
+  </script>
+</template>

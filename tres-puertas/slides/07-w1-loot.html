@@ -1,0 +1,46 @@
+<section class="slide" id="s07-w1-loot" data-section="1" data-title="Academia: lo que vino después" data-enter="push">
+  <template class="notes">⏱ 40 s · empieza en 4:45
+«El TFG me abrió un contrato de investigación.»
+«Papers en Iberspeech, womENcourage y AVI.»
+→ LECCIÓN 1: «Escribid a un profe. El TFM puede ser un paper.»</template>
+  <style>
+    #s07-w1-loot .c7-path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 44px; margin: auto 0; position: relative; }
+    #s07-w1-loot .c7-n { position: relative; padding: 30px 26px 26px; }
+    #s07-w1-loot .c7-n .tag { background: var(--c-acad); }
+    #s07-w1-loot .c7-n { padding-bottom: 86px; }
+    #s07-w1-loot .c7-ic { position: absolute; right: 18px; bottom: 16px; height: 56px; }
+    #s07-w1-loot .c7-ic svg { width: auto; height: 56px; }
+    #s07-w1-loot .c7-lg { position: absolute; top: -30px; right: 16px; }
+    #s07-w1-loot .c7-n .c7-t { font-size: 30px; font-weight: 600; line-height: 1.3; }
+    #s07-w1-loot .c7-n:not(:last-child)::after { content: ""; position: absolute; right: -44px; top: 50%; width: 44px; height: 8px; margin-top: -4px; background: repeating-linear-gradient(90deg, #fff 0 10px, transparent 10px 18px); }
+    #s07-w1-loot .c7-bottom { display: grid; grid-template-columns: 560px 1fr; gap: 48px; align-items: stretch; }
+    #s07-w1-loot .c7-tip .tag { background: var(--gold); color: var(--ink); }
+    #s07-w1-loot .c7-tip p { font-size: 29px; line-height: 1.4; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-acad)">Mundo 1 · Academia</span>
+      <div class="inv"><span>Inventario</span><span class="slot c7-slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c7-h">Investigar no es solo para quien va a hacer un doctorado</div>
+    <div class="c7-path">
+      <div class="panel c7-n"><span class="tag">Georgia Tech</span><span class="lg sm c7-lg"><img src="assets/img/logos/gatech.png" alt=""></span><div class="c7-t">Primer paper, en AAAI (2023)</div><span class="c7-ic" data-px="flask"></span></div>
+      <div class="panel c7-n"><span class="tag">TFG</span><span class="lg sm c7-lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div class="c7-t">Me abre un contrato de investigación</div><span class="c7-ic" data-px="cap"></span></div>
+      <div class="panel c7-n"><span class="tag">Máster + IRIS</span><span class="lg sm c7-lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div class="c7-t">Sesgo de género en medios</div><span class="c7-ic" data-px="laptop"></span></div>
+      <div class="panel c7-n"><span class="tag">Papers</span><div class="c7-t">Iberspeech · womENcourage · AVI (Venecia)</div><span class="c7-ic" data-px="trophy"></span></div>
+    </div>
+    <div class="c7-bottom">
+      <div class="panel item-get c7-get"><span data-px="paper"></span><div><div class="pxt">¡Has conseguido!</div><div class="it-name">Un paper</div></div></div>
+      <div class="panel c7-tip"><span class="tag">Tip</span><p>Habla con un profe cuyo trabajo te guste. <b>El TFM puede ser un paper.</b></p></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s07-w1-loot", function (el, tl, h) {
+  h.rise(".c7-h", { at: 0, y: 30 });
+  h.rise(".c7-n", { at: 0.3, y: 40, stagger: 0.18 });
+  var t = h.step();
+  h.pop(".c7-get", { at: t });
+  tl.call(Deck.sfx, ["coin", tl], t + 0.1);
+  h.pop(".c7-slot [data-px]", { at: t + 0.35 });
+  h.rise(".c7-tip", { at: t + 0.5, y: 24 });
+});
+</script>

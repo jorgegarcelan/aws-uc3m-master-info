@@ -1,0 +1,59 @@
+<section class="slide" id="s10-w2-roles" data-section="2" data-title="Empresa: roles que no conocía" data-enter="edge">
+  <template class="notes">⏱ OCULTA (solo para preguntas, desde la vista G)
+Mundo 2, Empresa. Enganche con Dani.
+«Hice Ciencia de Datos, así que pensaba que mis opciones eran ML Engineer, Data Engineer o Data Analyst.»
+→ (siguiente): se desbloquean los roles que no sabía que existían. «Los roles de los que os acaba de hablar Dani, yo no sabía que existían.»
+→ (siguiente): el diálogo. «En las prácticas del máster quise probar algo nuevo y distinto: Solutions Architect en AWS.»</template>
+  <style>
+    #s10-w2-roles .c10-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 44px; align-items: start; }
+    #s10-w2-roles .c10-col > .pxt { font-size: 22px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.45); margin-bottom: 22px; }
+    #s10-w2-roles .c10-lbl { display: flex; align-items: center; gap: 14px; }
+    #s10-w2-roles .c10-key { width: 64px; }
+    #s10-w2-roles .c10-chip { display: flex; align-items: center; gap: 18px; font-size: 32px; font-weight: 600; padding: 18px 26px; margin-bottom: 22px; }
+    #s10-w2-roles .c10-chip .pxt { font-size: 20px; color: var(--faint); width: 34px; }
+    #s10-w2-roles .c10-new { background: #fff8e1; }
+    #s10-w2-roles .c10-new .c10-name { font-family: var(--font); }
+    #s10-w2-roles .c10-dlg { margin-top: auto; }
+    #s10-w2-roles .c10-dlg p { font-size: 29px; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-emp)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t">Mundo 2 · Empresa</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)">Mundo 2 · Empresa</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot empty"></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c10-h">Hice Ciencia de Datos. Creía que había tres caminos.</div>
+    <div class="c10-grid">
+      <div class="c10-col">
+        <div class="pxt">Los que conocía</div>
+        <div class="panel c10-chip c10-old"><span class="pxt">01</span>ML Engineer</div>
+        <div class="panel c10-chip c10-old"><span class="pxt">02</span>Data Engineer</div>
+        <div class="panel c10-chip c10-old"><span class="pxt">03</span>Data Analyst</div>
+      </div>
+      <div class="c10-col">
+        <div class="pxt c10-lbl"><span class="c10-key" data-px="key"></span>Desbloqueados: no sabía que existían</div>
+        <div class="panel c10-chip c10-new"><span class="pxt">04</span><span class="c10-name">Solutions Architect</span></div>
+        <div class="panel c10-chip c10-new"><span class="pxt">05</span><span class="c10-name">Preventa técnica</span></div>
+        <div class="panel c10-chip c10-new"><span class="pxt">06</span><span class="c10-name">Technical Account Manager</span></div>
+      </div>
+    </div>
+    <div class="dlg c10-dlg"><span class="dlg-name">Jorge</span><p>En las prácticas del máster quise probar algo distinto: <b>Solutions Architect en AWS</b>.</p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s10-w2-roles", function (el, tl, h) {
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+  h.rise(".c10-h", { at: o + 0, y: 30 });
+  h.fade(".c10-col:first-child > .pxt", { at: o + 0.2 });
+  h.slideIn(".c10-old", { at: o + 0.3, x: -50, stagger: 0.12 });
+  var t = h.step();
+  h.fade(".c10-lbl", { at: t });
+  tl.call(Deck.sfx, ["power", tl], t + 0.03);
+  h.pop(".c10-new", { at: t + 0.1, stagger: 0.15 });
+  h.qa(".c10-name").forEach(function (n, i) { h.decode(n, { at: t + 0.2 + i * 0.15, dur: 0.8 }); });
+  var t2 = h.step();
+  h.rise(".c10-dlg", { at: t2, y: 24 });
+});
+</script>

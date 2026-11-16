@@ -1,0 +1,16 @@
+{
+  "name": "tres-puertas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node slaas/cli.mjs dev --open",
+    "build": "node slaas/cli.mjs build",
+    "check": "node slaas/cli.mjs check",
+    "thumbs": "node slaas/cli.mjs thumbs",
+    "pdf": "node slaas/cli.mjs pdf",
+    "dist": "node slaas/cli.mjs dist"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

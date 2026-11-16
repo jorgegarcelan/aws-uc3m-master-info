@@ -1,0 +1,92 @@
+<section class="slide" id="s04-gt" data-title="Nivel 0: Madrid → Atlanta" data-enter="wipe">
+  <template class="notes">⏱ 40 s · empieza en 2:20
+«3º de carrera: me voy de movilidad a Georgia Tech.»
+«7.000 km, otro idioma… y ningún plan.»
+→ «Solo quería vivir la experiencia.»</template>
+  <style>
+    #s04-gt .c4-map { position: relative; flex: 1; min-height: 0; margin-top: 10px; }
+    #s04-gt .c4-svg { position: absolute; left: 0; top: 0; width: 1728px; height: 560px; overflow: visible; }
+    #s04-gt .c4-isle { position: absolute; top: 200px; width: 400px; }
+    #s04-gt .c4-isle.mad { left: 60px; } #s04-gt .c4-isle.atl { left: 1268px; }
+    #s04-gt .c4-sky { display: block; width: 300px; margin: 0 auto; position: relative; z-index: 1; }
+    #s04-gt .c4-isle.atl .c4-sky { margin: 0 0 0 30px; }
+    #s04-gt .c4-land { display: block; width: 400px; margin-top: -6px; }
+    #s04-gt .c4-lbl { position: absolute; top: 420px; display: flex; align-items: center; gap: 16px; }
+    #s04-gt .c4-lbl.mad { left: 90px; } #s04-gt .c4-lbl.atl { left: 1300px; }
+    #s04-gt .c4-lbl .tag { font-size: 24px; }
+    #s04-gt .c4-lbl .c4-s { font-size: 22px; color: #fff; font-weight: 600; margin-top: 6px; text-shadow: 0 2px 10px rgba(16,52,110,.45); }
+    #s04-gt .c4-plane { position: absolute; left: 0; top: 0; width: 110px; margin: -27px 0 0 -55px; z-index: 3; }
+    #s04-gt .c4-me { position: absolute; left: 1600px; top: 268px; width: 66px; z-index: 2; }
+    #s04-gt .c4-stats { position: absolute; left: 600px; top: 180px; width: 528px; padding: 30px 32px 22px; }
+    #s04-gt .c4-row { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 20px; padding: 8px 0; border-bottom: 3px dashed var(--line); }
+    #s04-gt .c4-row:last-child { border-bottom: 0; }
+    #s04-gt .c4-k { font-family: var(--pixel); font-size: 18px; color: var(--muted); text-transform: uppercase; }
+    #s04-gt .c4-v { font-size: 30px; font-weight: 700; }
+    #s04-gt .c4-v.no { color: var(--red); }
+    #s04-gt .c4-cl { position: absolute; width: 200px; opacity: .9; }
+    #s04-gt .c4-cl.a { left: 420px; top: 470px; } #s04-gt .c4-cl.b { left: 1080px; top: 500px; width: 160px; }
+    #s04-gt .c4-dlg { margin-top: auto; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Nivel 0 · 3º de carrera</span></div>
+    <div class="h-sky c4-h">Una decisión que no tenía nada que ver con mi carrera</div>
+    <div class="c4-map">
+      <span class="c4-cl a pcloud" data-px="cloud"></span>
+      <span class="c4-cl b pcloud" data-px="cloud"></span>
+      <svg class="c4-svg" viewBox="0 0 1728 560" aria-hidden="true"><g class="c4-dots"></g></svg>
+      <div class="c4-isle mad"><span class="c4-sky" data-px="madrid"></span><span class="c4-land" data-px="land"></span></div>
+      <div class="c4-isle atl"><span class="c4-sky" data-px="atlanta"></span><span class="c4-land" data-px="land"></span></div>
+      <div class="c4-lbl mad"><span class="lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div><span class="tag">Madrid</span><div class="c4-s">UC3M · Data Science</div></div></div>
+      <div class="c4-lbl atl"><span class="lg"><img src="assets/img/logos/gatech.png" alt=""></span><div><span class="tag">Atlanta</span><div class="c4-s">Georgia Tech</div></div></div>
+      <div class="panel c4-stats"><span class="tag">Datos del vuelo</span>
+        <div class="c4-row"><span class="c4-k">Distancia</span><span class="c4-v"><span class="c4-km">6.943</span> km</span></div>
+        <div class="c4-row"><span class="c4-k">Diferencia horaria</span><span class="c4-v">−6 h</span></div>
+        <div class="c4-row"><span class="c4-k">Idioma</span><span class="c4-v">Inglés</span></div>
+        <div class="c4-row"><span class="c4-k">Plan</span><span class="c4-v no">Ninguno</span></div>
+      </div>
+      <span class="c4-plane shadow-px" data-px="plane"></span>
+      <span class="c4-me shadow-px" data-px="jorge" data-anim="cheer"></span>
+    </div>
+    <div class="dlg c4-dlg"><span class="dlg-name">Jorge</span><p>Me voy de movilidad a Georgia Tech. ¿El plan? Ninguno: vivir la experiencia.</p><span class="dlg-next">▼</span></div>
+  </div>
+</section>
+<script>
+Deck.slide("s04-gt", function (el, tl, h) {
+  /* arco del vuelo: curva cuadrática de Madrid a Atlanta, con puntos en pixel */
+  var P0 = [260, 200], C = [864, -120], P2 = [1468, 200], N = 30;
+  function pt(t) { var a = (1 - t) * (1 - t), b = 2 * (1 - t) * t, c = t * t; return [a * P0[0] + b * C[0] + c * P2[0], a * P0[1] + b * C[1] + c * P2[1]]; }
+  var g = el.querySelector(".c4-dots"), dots = [];
+  for (var i = 1; i < N; i++) {
+    var q = pt(i / N), r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    r.setAttribute("x", (q[0] - 6).toFixed(1)); r.setAttribute("y", (q[1] - 6).toFixed(1));
+    r.setAttribute("width", 12); r.setAttribute("height", 12); r.setAttribute("fill", "#fff");
+    r.setAttribute("stroke", "rgba(11,13,16,.35)"); r.setAttribute("stroke-width", 2);
+    g.appendChild(r); dots.push(r);
+  }
+  var plane = el.querySelector(".c4-plane"), proxy = { p: 0 };
+  function place() {
+    var p = proxy.p, q = pt(p), q2 = pt(Math.min(1, p + 0.01)), q1 = pt(Math.max(0, p - 0.01));
+    var ang = Math.atan2(q2[1] - q1[1], q2[0] - q1[0]) * 180 / Math.PI;
+    gsap.set(plane, { x: q[0], y: q[1], rotation: ang, opacity: p > 0.01 && p < 0.995 ? 1 : 0 });
+    dots.forEach(function (d, j) { d.style.opacity = (j + 1) / N <= p ? 1 : 0; });
+  }
+  place();
+
+  h.rise(".c4-h", { at: 0, y: 30 });
+  h.rise(".c4-isle", { at: 0.1, y: 80, stagger: 0.15 });
+  h.fade(".c4-cl", { at: 0.2 });
+  h.pop(".c4-lbl.mad", { at: 0.35 });
+  tl.call(Deck.sfx, ["fly", tl], 0.6);
+  tl.fromTo(proxy, { p: 0 }, { p: 1, duration: 1.8, ease: "power1.inOut", onUpdate: place }, 0.6);
+  h.rise(".c4-stats", { at: 0.8, y: 30 });
+  h.count(".c4-km", { to: 6943, at: 0.9, dur: 1.5 });
+  h.fade(".c4-row", { at: 1.0, stagger: 0.25 });
+  h.pop(".c4-lbl.atl", { at: 2.35 });
+  h.pop(".c4-me", { at: 2.45 });
+  tl.call(Deck.sfx, ["coin", tl], 2.45);
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c4-isle"), { y: -10, duration: 2.2, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.6 }); });
+  h.loop(function () { return gsap.to(el.querySelectorAll(".c4-cl"), { x: function (i) { return i ? -50 : 50; }, duration: 7, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
+  var t = h.step();
+  h.rise(".c4-dlg", { at: t, y: 24 });
+});
+</script>

@@ -1,0 +1,89 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s2-sky { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 34%, #8fbef6 68%, #dcebfd 92%, #f6faff 100%); }
+    #s2-zoom, #s2-cam { position: absolute; inset: 0; }
+    .s2-cl { position: absolute; }
+    #s2-c1 { left: 96px; top: 96px; width: 312px; } #s2-c2 { left: 1512px; top: 80px; width: 288px; } #s2-c3 { left: 1560px; top: 856px; width: 240px; }
+    #s2-a { position: absolute; left: 0; right: 0; top: 336px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 184px; line-height: 1; color: #fff; text-shadow: 0 8px 0 #1667d6; }
+    #s2-a span { display: inline-block; white-space: pre; }
+    #s2-b { position: absolute; left: 0; right: 0; top: 592px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 120px; line-height: 1; color: #0b0d10; text-shadow: 0 8px 0 #fbbf24; }
+    #s2-line { position: absolute; left: 0; right: 0; top: 216px; text-align: center; font-size: 96px; font-weight: 700; letter-spacing: -0.02em; color: #fff; text-shadow: 0 4px 0 #1667d6; }
+    #s2-line span { display: inline-block; white-space: pre; }
+    .s2-pl { position: absolute; top: 736px; width: 336px; }
+    #s2-p1 { left: 624px; } #s2-p2 { left: 984px; } #s2-p3 { left: 1344px; }
+    .s2-d { position: absolute; top: 472px; width: 208px; }
+    #s2-d1 { left: 688px; } #s2-d2 { left: 1048px; } #s2-d3 { left: 1408px; }
+    .s2-l { position: absolute; top: 888px; width: 256px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 28px; letter-spacing: 0.08em; background: #fff; color: #0b0d10; border: 4px solid #0b0d10; box-shadow: 6px 6px 0 #0b0d10; padding: 8px 0; }
+    #s2-l1 { left: 664px; } #s2-l2 { left: 1024px; } #s2-l3 { left: 1384px; }
+    #s2-ride { position: absolute; left: 216px; top: 544px; width: 336px; height: 320px; }
+    #s2-ride .s2-me { position: absolute; left: 98px; top: 0; width: 140px; }
+    #s2-ride #s2-mc { position: absolute; left: 0; top: 176px; width: 336px; }
+    #s2-me1, #s2-me2 { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1920" data-height="1080">
+    <div id="s2-sky">
+      <div id="s2-zoom"><div id="s2-cam">
+        <img id="s2-c1" class="s2-cl" src="assets/sprites/cloud.svg" alt=""><img id="s2-c2" class="s2-cl" src="assets/sprites/cloud.svg" alt=""><img id="s2-c3" class="s2-cl" src="assets/sprites/cloud.svg" alt="">
+        <div id="s2-a">MIS NUBES</div>
+        <div id="s2-b">+ UN VIDEOJUEGO</div>
+        <div id="s2-line" data-layout-allow-overlap>de puertas y mundos</div>
+        <img id="s2-p1" class="s2-pl" src="assets/sprites/cloud.svg" alt=""><img id="s2-p2" class="s2-pl" src="assets/sprites/cloud.svg" alt=""><img id="s2-p3" class="s2-pl" src="assets/sprites/cloud.svg" alt="">
+        <img id="s2-d1" class="s2-d" src="assets/sprites/door-acad.svg" alt=""><img id="s2-d2" class="s2-d" src="assets/sprites/door-emp.svg" alt=""><img id="s2-d3" class="s2-d" src="assets/sprites/door-start.svg" alt="">
+        <div id="s2-l1" class="s2-l">ACADEMIA</div><div id="s2-l2" class="s2-l">EMPRESA</div><div id="s2-l3" class="s2-l">EMPRENDER</div>
+        <div id="s2-ride">
+          <img id="s2-mc" src="assets/sprites/cloud.svg" alt="">
+          <img id="s2-me0" class="s2-me" src="assets/sprites/jorge-idle.svg" alt=""><img id="s2-me1" class="s2-me" src="assets/sprites/jorge-wave1.svg" alt=""><img id="s2-me2" class="s2-me" src="assets/sprites/jorge-wave2.svg" alt="">
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    function split(sel) {
+      const el = document.querySelector(sel);
+      const parts = el.textContent.split(/(\s+)/);
+      el.textContent = "";
+      return parts.map(function (p) { const s = document.createElement("span"); s.textContent = p; el.appendChild(s); return s; });
+    }
+    function letters(sel) {
+      const el = document.querySelector(sel);
+      const cs = Array.from(el.textContent);
+      el.textContent = "";
+      return cs.map(function (c) { const s = document.createElement("span"); s.textContent = c; el.appendChild(s); return s; });
+    }
+    const A = letters("#s2-a");
+    const W = split("#s2-line").filter(function (s) { return s.textContent.trim(); });
+
+    // the sky floods down over the blank slide, row by row            abs 2.91
+    tl.fromTo("#s2-sky", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.42, ease: "steps(14)" }, 0.013);
+    tl.fromTo("#s2-c1", { x: -620 }, { x: 0, duration: 0.8, ease: "expo.out" }, 0.25);
+    tl.fromTo("#s2-c2", { x: 620 }, { x: 0, duration: 0.8, ease: "expo.out" }, 0.33);
+    tl.fromTo("#s2-c3", { x: 620 }, { x: 0, duration: 0.8, ease: "expo.out" }, 0.41);
+    // MIS NUBES rises letter by letter, in pixel steps                 lands 3.63
+    tl.fromTo(A, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.28, ease: "steps(4)", stagger: 0.035 }, 0.45);
+    // + UN VIDEOJUEGO slams in                                         abs 4.34
+    tl.fromTo("#s2-b", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in" }, 1.284);
+    tl.fromTo("#s2-cam", { y: 0 }, { y: 12, duration: 0.05, repeat: 3, yoyo: true, ease: "none" }, 1.444);
+    // bar change: the words leave, the three doors drop onto clouds    abs 5.77 / 6.13 / 6.49
+    tl.fromTo(["#s2-a", "#s2-b"], { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power2.in", immediateRender: false }, 2.66);
+    tl.fromTo(W, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, stagger: 0.07 }, 2.86);
+    tl.fromTo(".s2-pl", { opacity: 0, x: 240 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out", stagger: 0.06 }, 2.62);
+    [["#s2-d1", "#s2-l1", 2.874], ["#s2-d2", "#s2-l2", 3.232], ["#s2-d3", "#s2-l3", 3.59]].forEach(function (d) {
+      tl.fromTo(d[0], { opacity: 0, y: -640 }, { opacity: 1, y: 0, duration: 0.26, ease: "power3.in" }, d[2] - 0.26);
+      tl.fromTo(d[0], { scaleY: 0.8, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.3, ease: "elastic.out(1, 0.5)", immediateRender: false }, d[2]);
+      tl.fromTo("#s2-cam", { y: 0 }, { y: 10, duration: 0.05, repeat: 1, yoyo: true, ease: "none", immediateRender: false }, d[2]);
+      tl.fromTo(d[1], { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" }, d[2] + 0.1);
+    });
+    // the avatar rides in on his cloud and waves                       abs 6.85 → 7.56
+    tl.fromTo("#s2-ride", { x: -620 }, { x: 0, duration: 0.7, ease: "expo.out" }, 3.947);
+    [[4.5, 1], [4.68, 2], [4.86, 1], [5.04, 2], [5.22, 0]].forEach(function (p) {
+      tl.set("#s2-me0", { opacity: p[1] === 0 ? 1 : 0 }, p[0]); tl.set("#s2-me1", { opacity: p[1] === 1 ? 1 : 0 }, p[0]); tl.set("#s2-me2", { opacity: p[1] === 2 ? 1 : 0 }, p[0]);
+    });
+    // the camera dives into the avatar                                 abs 8.20 → 8.64
+    tl.fromTo("#s2-zoom", { scale: 1, transformOrigin: "384px 640px" }, { scale: 9, transformOrigin: "384px 640px", duration: 0.45, ease: "power3.in" }, 5.29);
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

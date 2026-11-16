@@ -1,0 +1,52 @@
+<section class="slide" id="s12-w2-compare" data-section="2" data-title="Empresa: tres escuelas" data-enter="push">
+  <template class="notes">⏱ 40 s · empieza en 10:10
+«AWS: la mejor entrada al mundo tech. Menos cercanía.»
+«Multiverse: clientes y ritmo de scale-up. Poca dirección.»
+«MediaRadar: construir y probar. Menos cliente.»
+→ «La pregunta: ¿qué quiero aprender ahora?»</template>
+  <style>
+    #s12-w2-compare .c12-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; margin-top: 56px; }
+    #s12-w2-compare .c12-c { padding: 38px 32px 30px; }
+    #s12-w2-compare .c12-c .tag { background: var(--c-emp); color: var(--ink); }
+    #s12-w2-compare .c12-c { position: relative; }
+    #s12-w2-compare .c12-lg { position: absolute; top: 26px; right: 26px; }
+    #s12-w2-compare .c12-co { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; }
+    #s12-w2-compare .c12-role { font-size: 24px; color: var(--muted); margin-top: 4px; }
+    #s12-w2-compare .c12-k { font-family: var(--pixel); font-size: 18px; margin-top: 24px; text-transform: uppercase; }
+    #s12-w2-compare .c12-k.plus { color: var(--green); } #s12-w2-compare .c12-k.minus { color: var(--red); }
+    #s12-w2-compare .c12-v { font-size: 24px; line-height: 1.35; margin-top: 6px; }
+    #s12-w2-compare .c12-row { display: grid; grid-template-columns: auto 1fr; gap: 30px; margin-top: 56px; align-items: stretch; }
+    #s12-w2-compare .c12-moral { background: var(--accent); color: #fff; font-size: 30px; font-weight: 600; line-height: 1.3; display: flex; align-items: center; }
+    #s12-w2-compare .c12-moral b { color: #fff; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)">Mundo 2 · Empresa</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot c12-slot"><span data-px="bubble"></span></span><span class="slot empty"></span></div></div>
+    <div class="h-sky c12-h">Tres empresas, tres escuelas distintas</div>
+    <div class="c12-grid">
+      <div class="panel c12-c"><span class="tag">Big tech</span><span class="lg c12-lg"><img src="assets/img/logos/aws.png" alt=""></span><div class="c12-co">AWS</div><div class="c12-role">Solutions Architect (prácticas)</div>
+        <div class="c12-k plus">+ Me dio</div><div class="c12-v">La mejor entrada al mundo tech, en el mayor proveedor cloud del mundo: ver cómo usan cloud e IA muchas industrias, conocer roles nuevos y aprender de compañeros increíbles.</div>
+        <div class="c12-k minus">− Lo menos bonito</div><div class="c12-v">En una empresa tan grande hay menos cercanía entre equipos y con el liderazgo.</div></div>
+      <div class="panel c12-c"><span class="tag">Scale-up deep tech</span><span class="lg c12-lg"><img src="assets/img/logos/multiverse.png" alt=""></span><div class="c12-co">Multiverse</div><div class="c12-role">Pre-sales Engineer</div>
+        <div class="c12-k plus">+ Me dio</div><div class="c12-v">Mi primer trabajo a jornada completa. Desarrollar el trato con cliente, con clientes importantes en España, y vivir cómo se trabaja en una scale-up.</div>
+        <div class="c12-k minus">− Lo menos bonito</div><div class="c12-v">Scale-up: todo va muy rápido y sin una estrategia muy clara. Toca adaptarse continuamente.</div></div>
+      <div class="panel c12-c"><span class="tag">Producto</span><span class="lg c12-lg"><img src="assets/img/logos/mediaradar.png" alt=""></span><div class="c12-co">MediaRadar</div><div class="c12-role">AI Engineer</div>
+        <div class="c12-k plus">+ Me dio</div><div class="c12-v">Construir distintos proyectos y probar cosas nuevas, en un producto que toca publicidad, marketing y anuncios.</div>
+        <div class="c12-k minus">− Lo menos bonito</div><div class="c12-v">Menos trato con cliente: ahora estoy en el carril de construir.</div></div>
+    </div>
+    <div class="c12-row">
+      <div class="panel item-get c12-get"><span data-px="bubble"></span><div><div class="pxt">¡Has conseguido!</div><div class="it-name">Hablar con clientes</div></div></div>
+      <div class="panel c12-moral"><p>La pregunta no es «¿qué empresa es mejor?», sino <b>«¿qué quiero aprender ahora?»</b></p></div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s12-w2-compare", function (el, tl, h) {
+  h.rise(".c12-h", { at: 0, y: 30 });
+  h.rise(".c12-c", { at: 0.25, y: 40, stagger: 0.15 });
+  var t = h.step();
+  h.pop(".c12-get", { at: t });
+  h.rise(".c12-moral", { at: t + 0.3, y: 20 });
+  tl.call(Deck.sfx, ["coin", tl], t + 0.1);
+  h.pop(".c12-slot [data-px]", { at: t + 0.35 });
+});
+</script>

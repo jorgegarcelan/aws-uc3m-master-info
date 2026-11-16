@@ -1,0 +1,47 @@
+<section class="slide" id="s14c-w3-skills" data-section="3" data-title="Emprender: lo que me ha dado Uniwords" data-enter="push">
+  <template class="notes">⏱ 45 s · empieza en 14:20
+«Uniwords me dio: producto, go-to-market, inversores, clientes, marca y plataforma.»
+→ «Sin dejarlo todo: unas horas a la semana, con IA.»
+→ LECCIÓN 3: «Un proyecto propio también es experiencia.»</template>
+  <style>
+    #s14c-w3-skills .c14c-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: auto 0; }
+    #s14c-w3-skills .c14c-it { display: grid; grid-template-columns: 90px 1fr; gap: 22px; align-items: center; padding: 32px 28px; }
+    #s14c-w3-skills .c14c-it [data-px] { width: 70px; justify-self: center; }
+    #s14c-w3-skills .c14c-n { font-family: var(--pixel); font-size: 24px; text-transform: uppercase; line-height: 1.15; }
+    #s14c-w3-skills .c14c-d { font-size: 23px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+    #s14c-w3-skills .c14c-bot { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: stretch; }
+    #s14c-w3-skills .c14c-ia { display: flex; gap: 22px; align-items: center; background: #ecfdf5; }
+    #s14c-w3-skills .c14c-ia .tag { background: var(--c-start); }
+    #s14c-w3-skills .c14c-ia [data-px] { width: 76px; flex: none; }
+    #s14c-w3-skills .c14c-ia p { font-size: 26px; line-height: 1.35; }
+    #s14c-w3-skills .c14c-moral { background: var(--accent); color: #fff; font-size: 32px; font-weight: 700; line-height: 1.25; display: flex; align-items: center; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-start)">Mundo 3 · Emprender</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c14c-h">Emprender también es crear experiencia</div>
+    <div class="c14c-grid">
+      <div class="panel c14c-it"><span data-px="rocket"></span><div><div class="c14c-n">Producto</div><div class="c14c-d">Qué construir y por qué</div></div></div>
+      <div class="panel c14c-it"><span data-px="megaphone"></span><div><div class="c14c-n">Go-to-market</div><div class="c14c-d">Cómo llegar a los usuarios</div></div></div>
+      <div class="panel c14c-it"><span data-px="coin"></span><div><div class="c14c-n">Inversores</div><div class="c14c-d">Contar y defender una idea</div></div></div>
+      <div class="panel c14c-it"><span data-px="people"></span><div><div class="c14c-n">Clientes</div><div class="c14c-d">Universidades y partners</div></div></div>
+      <div class="panel c14c-it"><span data-px="star"></span><div><div class="c14c-n">Diseño y marca</div><div class="c14c-d">Cómo se ve y cómo suena</div></div></div>
+      <div class="panel c14c-it"><span data-px="laptop"></span><div><div class="c14c-n">Plataforma</div><div class="c14c-d">Del diseño al desarrollo</div></div></div>
+    </div>
+    <div class="c14c-bot">
+      <div class="panel c14c-ia"><span class="tag">Sin dejarlo todo</span><span data-px="key"></span><p>Unas horas a la semana, compaginado con todo lo demás. <b>La IA es lo que hoy lo hace posible.</b></p></div>
+      <div class="panel c14c-moral">Un proyecto propio también es experiencia que puedes contar.</div>
+    </div>
+  </div>
+</section>
+<script>
+Deck.slide("s14c-w3-skills", function (el, tl, h) {
+  h.rise(".c14c-h", { at: 0, y: 30 });
+  h.pop(".c14c-it", { at: 0.3, stagger: 0.12 });
+  tl.call(Deck.sfx, ["coin", tl], 0.3);
+  var t = h.step();
+  h.rise(".c14c-ia", { at: t, y: 24 });
+  var t2 = h.step();
+  h.pop(".c14c-moral", { at: t2 });
+  tl.call(Deck.sfx, ["power", tl], t2 + 0.03);
+});
+</script>

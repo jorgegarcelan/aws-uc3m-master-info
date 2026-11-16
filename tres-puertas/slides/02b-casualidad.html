@@ -1,0 +1,35 @@
+<section class="slide" id="s02b-casualidad" data-title="Esta charla ya es una puerta" data-enter="push">
+  <template class="notes">⏱ 30 s · empieza en 16:50
+«Una última cosa: esta charla.»
+«Prácticas en AWS → conocí a Dani → me invitó.»
+→ «Escribidme por LinkedIn: puede ser vuestra próxima puerta.»</template>
+  <style>
+    #s02b-casualidad .c2b-path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 52px; margin: auto 0; }
+    #s02b-casualidad .c2b-n { position: relative; padding: 34px 28px 30px; min-height: 190px; }
+    #s02b-casualidad .c2b-n .tag { background: var(--accent); }
+    #s02b-casualidad .c2b-n .c2b-t { font-size: 32px; font-weight: 600; line-height: 1.25; }
+    #s02b-casualidad .c2b-n .c2b-s { font-size: 22px; color: var(--muted); margin-top: 10px; line-height: 1.35; }
+    #s02b-casualidad .c2b-n:not(:last-child)::after { content: "▶"; position: absolute; right: -44px; top: 50%; margin-top: -18px; font-family: var(--pixel); font-size: 30px; color: #fff; text-shadow: 3px 3px 0 rgba(11,13,16,.4); }
+    #s02b-casualidad .c2b-lg { position: absolute; top: -30px; right: 16px; }
+    #s02b-casualidad .c2b-n.last { background: #fff8e1; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Una última cosa</span></div>
+    <div class="h-sky c2b-h">Esta charla también es una puerta que no planeé</div>
+    <div class="c2b-path">
+      <div class="panel c2b-n"><span class="tag">2025</span><span class="lg sm c2b-lg"><img src="assets/img/logos/aws.png" alt=""></span><div class="c2b-t">Prácticas en AWS</div><div class="c2b-s">Solutions Architect</div></div>
+      <div class="panel c2b-n"><span class="tag">Allí</span><div class="c2b-t">Coincido con Dani</div><div class="c2b-s">Él ya trabajaba allí</div></div>
+      <div class="panel c2b-n"><span class="tag">Después</span><div class="c2b-t">Me invita a contarlo</div><div class="c2b-s">Le digo que sí</div></div>
+      <div class="panel c2b-n last"><span class="tag">Hoy</span><span class="lg sm c2b-lg"><img src="assets/img/logos/uc3m.png" alt=""></span><div class="c2b-t">Aquí, con vosotros</div><div class="c2b-s">Máster de Informática</div></div>
+    </div>
+    <div class="dlg c2b-dlg"><span class="dlg-name">Jorge</span><p>Nada de esto lo planeé: dije que sí a lo anterior. <b>Escribidme por LinkedIn: puede ser vuestra próxima puerta.</b></p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s02b-casualidad", function (el, tl, h) {
+  h.rise(".c2b-h", { at: 0, y: 30 });
+  h.rise(".c2b-n", { at: 0.3, y: 40, stagger: 0.25 });
+  var t = h.step();
+  h.rise(".c2b-dlg", { at: t, y: 24 });
+});
+</script>

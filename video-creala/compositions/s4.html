@@ -1,0 +1,137 @@
+<template>
+  <style>
+    @font-face { font-family: "Pixel"; src: url('assets/fonts/Silkscreen-Bold.ttf'); font-weight: 700; }
+    @font-face { font-family: "InterT"; src: url('assets/fonts/inter-tight-latin-700-normal.woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "InterT", sans-serif; }
+    #s4-wrap { position: absolute; inset: 0; background-color: #eef4fd; background-image: linear-gradient(#d5e4f9 2px, transparent 2px), linear-gradient(90deg, #d5e4f9 2px, transparent 2px); background-size: 40px 40px; }
+    #s4-persp { position: absolute; inset: 0; perspective: 2600px; }
+    #s4-3d { position: absolute; left: 320px; top: 180px; width: 1280px; height: 720px; transform-style: preserve-3d; }
+    .s4-layer { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; }
+    .s4-in { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform: scale(0.66667); transform-origin: 0 0; }
+    .s4-edge { position: absolute; inset: 0; outline: 6px solid #0b0d10; background: rgba(255, 255, 255, 0.14); }
+    #s4-L1 .s4-in { background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 34%, #8fbef6 68%, #dcebfd 92%, #f6faff 100%); }
+    #s4-L1 .s4-edge { background: none; }
+    .s4-abs { position: absolute; }
+    #s4-title { left: 0; width: 1920px; top: 156px; text-align: center; font-size: 64px; font-weight: 700; letter-spacing: -0.03em; color: #fff; white-space: nowrap; }
+    #s4-hud { left: 96px; top: 76px; background: #0b0d10; color: #fff; font-family: "Pixel"; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; padding: 12px 24px; white-space: nowrap; }
+    #s4-foot { left: 0; top: 1020px; width: 1920px; height: 60px; background: #0b0d10; }
+    .s4-lab { top: 750px; width: 210px; text-align: center; font-family: "Pixel"; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; background: #fff; color: #0b0d10; border: 4px solid #0b0d10; box-shadow: 4px 4px 0 #0b0d10; padding: 8px 0; }
+    #s4-real { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; opacity: 0; }
+    #s4-flat { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+    #s4-flat img, #s4-first img { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: block; }
+    #s4-grid { position: absolute; inset: 0; }
+    #s4-h { position: absolute; left: 96px; top: 84px; font-size: 96px; font-weight: 700; letter-spacing: -0.02em; color: #0b0d10; line-height: 1; white-space: nowrap; opacity: 0; }
+    .s4-th { position: absolute; width: 268px; height: 151px; outline: 4px solid #0b0d10; box-shadow: 8px 8px 0 #0b0d10; opacity: 0; }
+    .s4-cell { position: absolute; width: 268px; height: 151px; outline: 4px solid #0b0d10; box-shadow: 8px 8px 0 #0b0d10; opacity: 0; }
+    #s4-first { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+    #s4-cur { position: absolute; left: 0; top: 0; width: 112px; height: 112px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1920" data-height="1080">
+    <div id="s4-wrap">
+      <div id="s4-grid">
+        <div id="s4-h"><span id="s4-n">2</span> slides</div>
+        <div id="s4-cell0" class="s4-cell" style="left:96px;top:232px"></div>
+        <img id="s4-th1" class="s4-th" src="assets/thumbs/02-player.jpg" alt="" style="left:388px;top:232px">
+        <img id="s4-th2" class="s4-th" src="assets/thumbs/03-poll.jpg" alt="" style="left:680px;top:232px">
+        <img id="s4-th3" class="s4-th" src="assets/thumbs/03b-rueda.jpg" alt="" style="left:972px;top:232px">
+        <img id="s4-th4" class="s4-th" src="assets/thumbs/04-gt.jpg" alt="" style="left:1264px;top:232px">
+        <div id="s4-cell5" class="s4-cell" style="left:1556px;top:232px"></div>
+        <img id="s4-th6" class="s4-th" src="assets/thumbs/06-w1-lab.jpg" alt="" style="left:96px;top:408px">
+        <img id="s4-th7" class="s4-th" src="assets/thumbs/07-w1-loot.jpg" alt="" style="left:388px;top:408px">
+        <img id="s4-th8" class="s4-th" src="assets/thumbs/08-boss.jpg" alt="" style="left:680px;top:408px">
+        <img id="s4-th9" class="s4-th" src="assets/thumbs/09-hub2.jpg" alt="" style="left:972px;top:408px">
+        <img id="s4-th10" class="s4-th" src="assets/thumbs/11-w2-path.jpg" alt="" style="left:1264px;top:408px">
+        <img id="s4-th11" class="s4-th" src="assets/thumbs/10b-w2-aws.jpg" alt="" style="left:1556px;top:408px">
+        <img id="s4-th12" class="s4-th" src="assets/thumbs/15a2-pitch.jpg" alt="" style="left:96px;top:584px">
+        <img id="s4-th13" class="s4-th" src="assets/thumbs/12b-w2-gameover.jpg" alt="" style="left:388px;top:584px">
+        <img id="s4-th14" class="s4-th" src="assets/thumbs/13-hub3.jpg" alt="" style="left:680px;top:584px">
+        <img id="s4-th15" class="s4-th" src="assets/thumbs/14-w3-uniwords.jpg" alt="" style="left:972px;top:584px">
+        <img id="s4-th16" class="s4-th" src="assets/thumbs/14b-w3-stack.jpg" alt="" style="left:1264px;top:584px">
+        <img id="s4-th17" class="s4-th" src="assets/thumbs/14c-w3-skills.jpg" alt="" style="left:1556px;top:584px">
+        <img id="s4-th18" class="s4-th" src="assets/thumbs/15-reveal.jpg" alt="" style="left:96px;top:760px">
+        <img id="s4-th19" class="s4-th" src="assets/thumbs/15b-cuentala.jpg" alt="" style="left:388px;top:760px">
+        <img id="s4-th20" class="s4-th" src="assets/thumbs/16-quests.jpg" alt="" style="left:680px;top:760px">
+        <img id="s4-th21" class="s4-th" src="assets/thumbs/02b-casualidad.jpg" alt="" style="left:972px;top:760px">
+        <img id="s4-th22" class="s4-th" src="assets/thumbs/17-end.jpg" alt="" style="left:1264px;top:760px">
+      </div>
+      <div id="s4-persp">
+        <div id="s4-3d">
+          <div id="s4-L1" class="s4-layer"><div class="s4-in"></div><div class="s4-edge"></div></div>
+          <div id="s4-L2" class="s4-layer"><div class="s4-in">
+            <img class="s4-abs" src="assets/sprites/cloud.svg" alt="" style="left:390px;top:590px;width:300px">
+            <img class="s4-abs" src="assets/sprites/cloud.svg" alt="" style="left:810px;top:590px;width:300px">
+            <img class="s4-abs" src="assets/sprites/cloud.svg" alt="" style="left:1230px;top:590px;width:300px">
+          </div><div class="s4-edge"></div></div>
+          <div id="s4-L3" class="s4-layer"><div class="s4-in">
+            <img class="s4-abs" src="assets/sprites/door-acad.svg" alt="" style="left:445px;top:369px;width:190px">
+            <img class="s4-abs" src="assets/sprites/door-emp.svg" alt="" style="left:865px;top:369px;width:190px">
+            <img class="s4-abs" src="assets/sprites/door-start.svg" alt="" style="left:1285px;top:369px;width:190px">
+            <div class="s4-abs s4-lab" data-layout-ignore style="left:435px">ACADEMIA</div><div class="s4-abs s4-lab" data-layout-ignore style="left:855px">EMPRESA</div><div class="s4-abs s4-lab" data-layout-ignore style="left:1275px">EMPRENDER</div>
+          </div><div class="s4-edge"></div></div>
+          <div id="s4-L4" class="s4-layer"><div class="s4-in">
+            <img class="s4-abs" src="assets/sprites/jorge-idle.svg" alt="" style="left:144px;top:639px;width:140px">
+          </div><div class="s4-edge"></div></div>
+          <div id="s4-L5" class="s4-layer"><div class="s4-in">
+            <div id="s4-hud" class="s4-abs" data-layout-ignore>ELIGE UNA PUERTA</div>
+            <div id="s4-title" class="s4-abs" data-layout-ignore>Tres mundos. No hace falta elegir solo uno.</div>
+            <img class="s4-abs" src="assets/sprites/arrow.svg" alt="" style="left:518px;top:290px;width:44px">
+            <div id="s4-foot" class="s4-abs"></div>
+          </div><div class="s4-edge"></div></div>
+          <img id="s4-real" src="assets/slides/05-hub1.jpg" alt="">
+        </div>
+      </div>
+      <div id="s4-flat"><img src="assets/slides/05-hub1.jpg" alt=""></div>
+      <div id="s4-first"><img src="assets/slides/01-start.jpg" alt=""></div>
+      <svg id="s4-cur" viewBox="0 0 12 12" shape-rendering="crispEdges" data-layout-ignore><path d="M1 0h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1H6v1h1v2H5v-2H4v1H3v1H1z" fill="#fff" stroke="#0b0d10" stroke-width="1"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const Z = [-280, -140, 0, 140, 280];
+    const L = ["#s4-L1", "#s4-L2", "#s4-L3", "#s4-L4", "#s4-L5"];
+    const CELL = 268 / 1920;
+    // whip pan in, matched to the workshop leaving                      abs 13.25 → 13.75
+    tl.fromTo("#s4-wrap", { x: 1920 }, { x: 0, duration: 0.5, ease: "power3.inOut" }, 0);
+    // one slide, pulled apart into its layers
+    tl.set("#s4-3d", { rotationY: -36, rotationX: 9, transformOrigin: "640px 360px" }, 0);
+    tl.set("#s4-L1", { z: Z[0] }, 0);
+    // layers land on the half beats                                     abs 14.00 / 14.36 / 14.72 / 15.07
+    [0.75, 1.108, 1.466, 1.823].forEach(function (t, i) {
+      tl.fromTo(L[i + 1], { opacity: 0, x: 900, z: Z[i + 1] + 500 }, { opacity: 1, x: 0, z: Z[i + 1], duration: 0.34, ease: "power3.out" }, t - 0.34);
+    });
+    // they close into one flat slide, then the camera pushes to full frame   abs 15.79 → 16.50
+    L.forEach(function (l, i) { tl.fromTo(l, { z: Z[i] }, { z: 0, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 2.539); });
+    tl.fromTo("#s4-3d", { rotationY: -36, rotationX: 9 }, { rotationY: 0, rotationX: 0, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 2.539);
+    tl.fromTo(".s4-edge", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "none" }, 2.7);
+    tl.fromTo("#s4-3d", { scale: 1 }, { scale: 1.5, duration: 0.36, ease: "power2.inOut", immediateRender: false }, 2.897);
+    tl.set("#s4-real", { opacity: 1 }, 3.07);          // the real capture takes over at the fastest frame
+    tl.set("#s4-flat", { opacity: 1 }, 3.26);          // and a flat full-resolution copy once it has landed
+    tl.set("#s4-persp", { opacity: 0 }, 3.27);
+    // the slide shrinks into its place in the deck                      abs 17.22 → 17.77
+    tl.fromTo("#s4-flat", { x: 0, y: 0, scale: 1, transformOrigin: "0 0" }, { x: 1556, y: 232, scale: CELL, duration: 0.55, ease: "power2.inOut", immediateRender: false }, 3.969);
+    tl.set("#s4-cell5", { opacity: 1 }, 4.5);
+    tl.fromTo("#s4-h", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16 }, 4.2);
+    // the other 22 arrive, one every 48 ms, while the counter runs      abs 17.55 → 18.61
+    const order = [0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+    order.forEach(function (i, k) {
+      const t = 4.3 + k * 0.048;
+      if (i === 0) {
+        tl.set("#s4-first", { x: 96, y: 232, scale: CELL, transformOrigin: "0 0" }, 0);
+        tl.fromTo("#s4-first", { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, t);
+        tl.set("#s4-cell0", { opacity: 1 }, t + 0.08);
+      } else {
+        tl.fromTo("#s4-th" + i, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.6)" }, t);
+      }
+    });
+    const count = { v: 2 };
+    tl.fromTo(count, { v: 2 }, { v: 23, duration: 1.06, ease: "none", onUpdate: function () { document.querySelector("#s4-n").textContent = String(Math.round(count.v)); } }, 4.3);
+    // the cursor comes in and presses the first slide                   click abs 19.37
+    tl.set("#s4-cur", { opacity: 1 }, 5.4);
+    tl.fromTo("#s4-cur", { x: 1500, y: 1120 }, { x: 250, y: 320, duration: 0.5, ease: "power3.out" }, 5.4);
+    tl.fromTo("#s4-cur", { scale: 1 }, { scale: 0.76, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 6.085);
+    // that thumbnail becomes the whole frame                            abs 19.43 → 20.08
+    tl.set("#s4-cell0", { opacity: 0 }, 6.18);
+    tl.fromTo("#s4-first", { x: 96, y: 232, scale: CELL }, { x: 0, y: 0, scale: 1, duration: 0.65, ease: "power3.in", immediateRender: false }, 6.18);
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

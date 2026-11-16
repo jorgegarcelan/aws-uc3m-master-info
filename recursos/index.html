@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créala · Kit para el Máster de Informática UC3M</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0b0d10; --muted:#374151; --accent:#1f7ff5; --gold:#fbbf24; --green:#10b981; --indigo:#6366f1; --amber:#f59e0b; --red:#ef4444; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter Tight", -apple-system, system-ui, sans-serif; color: var(--ink); background: linear-gradient(180deg, #3f92f2 0%, #5aa2f4 30%, #8fbef6 65%, #dcebfd 100%) fixed; min-height: 100vh; line-height: 1.5; }
+  .px { font-family: "Silkscreen", monospace; text-transform: uppercase; letter-spacing: .02em; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 18px 64px; }
+  header { text-align: center; color: #fff; padding: 18px 0 30px; }
+  header .me { width: 92px; margin: 0 auto 12px; filter: drop-shadow(0 8px 0 rgba(16,52,110,.25)); }
+  header .kick { font-size: 18px; font-weight: 600; text-shadow: 0 2px 12px rgba(16,52,110,.35); }
+  header h1 { font-family: "Silkscreen", monospace; font-weight: 700; font-size: clamp(56px, 16vw, 96px); line-height: 1; margin: 8px 0 10px; text-shadow: 0 6px 0 #1667d6, 0 12px 0 rgba(11,13,16,.25); }
+  header p { font-size: 18px; opacity: .95; text-shadow: 0 2px 12px rgba(16,52,110,.35); }
+  nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
+  nav a { font-family: "Silkscreen", monospace; font-size: 13px; text-transform: uppercase; text-decoration: none; color: var(--ink); background: #fff; border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); padding: 6px 10px; }
+  section { position: relative; background: #fff; border: 4px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); padding: 30px 22px 22px; margin-top: 40px; }
+  .tag { position: absolute; top: -18px; left: 16px; font-family: "Silkscreen", monospace; font-size: 15px; text-transform: uppercase; color: #fff; background: var(--ink); padding: 4px 10px; }
+  h2 { font-size: 26px; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 16px; margin-bottom: 16px; }
+  .steps { display: grid; gap: 12px; }
+  .step { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; border-top: 3px dashed #e5e7eb; padding-top: 12px; }
+  .step .n { font-family: "Silkscreen", monospace; font-weight: 700; font-size: 26px; color: var(--accent); }
+  .step b { display: block; font-size: 17px; }
+  .step .ex { font-size: 15px; color: var(--muted); margin-top: 2px; }
+  .tpl { margin-top: 18px; }
+  .tpl h3 { font-family: "Silkscreen", monospace; font-size: 15px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .tpl h3 small { font-family: "Inter Tight", sans-serif; text-transform: none; color: var(--red); font-size: 13px; font-weight: 600; }
+  .box { margin-top: 8px; background: #f8fafc; border: 3px dashed #cbd5e1; padding: 14px; font-size: 16px; white-space: pre-wrap; }
+  .copy { font-family: "Silkscreen", monospace; font-size: 13px; text-transform: uppercase; background: var(--gold); color: var(--ink); border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); padding: 6px 10px; cursor: pointer; margin-top: 10px; }
+  .copy:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+  ul.check { list-style: none; display: grid; gap: 8px; margin-top: 8px; }
+  ul.check label { display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: start; font-size: 16px; cursor: pointer; }
+  ul.check input { width: 22px; height: 22px; accent-color: var(--green); margin-top: 2px; }
+  .quest { display: grid; grid-template-columns: 100px 1fr; gap: 12px; align-items: start; border-top: 3px dashed #e5e7eb; padding: 12px 0; }
+  .quest:first-of-type { border-top: 0; }
+  .pill { font-family: "Silkscreen", monospace; font-size: 12px; text-transform: uppercase; color: #fff; padding: 4px 8px; text-align: center; }
+  .enemy { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border-top: 3px dashed #e5e7eb; padding: 10px 0; font-size: 15px; }
+  .enemy:first-of-type { border-top: 0; }
+  .enemy .e { color: var(--red); font-weight: 600; }
+  .enemy .a { color: var(--green); font-weight: 600; }
+  .big { font-size: 22px; font-weight: 700; line-height: 1.3; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 40px; }
+  a { color: var(--accent); }
+  .links { display: grid; gap: 10px; }
+  .lk { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 17px; background: #f8fafc; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); padding: 10px 14px; }
+  .lk span { display: inline-grid; place-items: center; width: 34px; height: 34px; background: var(--ink); color: #fff; font-weight: 700; }
+  .lk.li span { background: #0a66c2; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; font-family: "Silkscreen", monospace; font-size: 14px; padding: 10px 16px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.on { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="me"><svg viewBox="0 0 30 42" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true"><rect x="10" y="0" width="2" height="1" fill="#2a1a12"/><rect x="13" y="0" width="4" height="1" fill="#2a1a12"/><rect x="18" y="0" width="2" height="1" fill="#2a1a12"/><rect x="8" y="1" width="2" height="1" fill="#2a1a12"/><rect x="10" y="1" width="1" height="1" fill="#3b2417"/><rect x="11" y="1" width="1" height="1" fill="#6b4429"/><rect x="12" y="1" width="1" height="1" fill="#2a1a12"/><rect x="13" y="1" width="1" height="1" fill="#3b2417"/><rect x="14" y="1" width="2" height="1" fill="#6b4429"/><rect x="16" y="1" width="1" height="1" fill="#3b2417"/><rect x="17" y="1" width="1" height="1" fill="#2a1a12"/><rect x="18" y="1" width="1" height="1" fill="#3b2417"/><rect x="19" y="1" width="1" height="1" fill="#6b4429"/><rect x="20" y="1" width="2" height="1" fill="#2a1a12"/><rect x="7" y="2" width="1" height="1" fill="#2a1a12"/><rect x="8" y="2" width="1" height="1" fill="#3b2417"/><rect x="9" y="2" width="1" height="1" fill="#6b4429"/><rect x="10" y="2" width="1" height="1" fill="#8c5b36"/><rect x="11" y="2" width="2" height="1" fill="#3b2417"/><rect x="13" y="2" width="1" height="1" fill="#6b4429"/><rect x="14" y="2" width="1" height="1" fill="#8c5b36"/><rect x="15" y="2" width="2" height="1" fill="#3b2417"/><rect x="17" y="2" width="1" height="1" fill="#1f120a"/><rect x="18" y="2" width="1" height="1" fill="#3b2417"/><rect x="19" y="2" width="1" height="1" fill="#6b4429"/><rect x="20" y="2" width="1" height="1" fill="#8c5b36"/><rect x="21" y="2" width="1" height="1" fill="#3b2417"/><rect x="22" y="2" width="1" height="1" fill="#2a1a12"/><rect x="6" y="3" width="1" height="1" fill="#2a1a12"/><rect x="7" y="3" width="1" height="1" fill="#3b2417"/><rect x="8" y="3" width="1" height="1" fill="#1f120a"/><rect x="9" y="3" width="1" height="1" fill="#6b4429"/><rect x="10" y="3" width="2" height="1" fill="#3b2417"/><rect x="12" y="3" width="1" height="1" fill="#1f120a"/><rect x="13" y="3" width="1" height="1" fill="#6b4429"/><rect x="14" y="3" width="1" height="1" fill="#3b2417"/><rect x="15" y="3" width="1" height="1" fill="#6b4429"/><rect x="16" y="3" width="1" height="1" fill="#3b2417"/><rect x="17" y="3" width="1" height="1" fill="#1f120a"/><rect x="18" y="3" width="1" height="1" fill="#6b4429"/><rect x="19" y="3" width="2" height="1" fill="#3b2417"/><rect x="21" y="3" width="1" height="1" fill="#1f120a"/><rect x="22" y="3" width="1" height="1" fill="#3b2417"/><rect x="23" y="3" width="1" height="1" fill="#2a1a12"/><rect x="5" y="4" width="1" height="1" fill="#2a1a12"/><rect x="6" y="4" width="1" height="1" fill="#6b4429"/><rect x="7" y="4" width="1" height="1" fill="#3b2417"/><rect x="8" y="4" width="1" height="1" fill="#6b4429"/><rect x="9" y="4" width="1" height="1" fill="#8c5b36"/><rect x="10" y="4" width="1" height="1" fill="#3b2417"/><rect x="11" y="4" width="1" height="1" fill="#1f120a"/><rect x="12" y="4" width="1" height="1" fill="#3b2417"/><rect x="13" y="4" width="1" height="1" fill="#6b4429"/><rect x="14" y="4" width="1" height="1" fill="#8c5b36"/><rect x="15" y="4" width="1" height="1" fill="#3b2417"/><rect x="16" y="4" width="1" height="1" fill="#1f120a"/><rect x="17" y="4" width="1" height="1" fill="#3b2417"/><rect x="18" y="4" width="1" height="1" fill="#6b4429"/><rect x="19" y="4" width="1" height="1" fill="#8c5b36"/><rect x="20" y="4" width="1" height="1" fill="#3b2417"/><rect x="21" y="4" width="1" height="1" fill="#1f120a"/><rect x="22" y="4" width="1" height="1" fill="#3b2417"/><rect x="23" y="4" width="1" height="1" fill="#6b4429"/><rect x="24" y="4" width="1" height="1" fill="#2a1a12"/><rect x="5" y="5" width="1" height="1" fill="#2a1a12"/><rect x="6" y="5" width="1" height="1" fill="#3b2417"/><rect x="7" y="5" width="1" height="1" fill="#1f120a"/><rect x="8" y="5" width="1" height="1" fill="#3b2417"/><rect x="9" y="5" width="1" height="1" fill="#6b4429"/><rect x="10" y="5" width="2" height="1" fill="#3b2417"/><rect x="12" y="5" width="1" height="1" fill="#8c5b36"/><rect x="13" y="5" width="1" height="1" fill="#6b4429"/><rect x="14" y="5" width="1" height="1" fill="#3b2417"/><rect x="15" y="5" width="1" height="1" fill="#1f120a"/><rect x="16" y="5" width="2" height="1" fill="#3b2417"/><rect x="18" y="5" width="1" height="1" fill="#6b4429"/><rect x="19" y="5" width="1" height="1" fill="#8c5b36"/><rect x="20" y="5" width="2" height="1" fill="#3b2417"/><rect x="22" y="5" width="1" height="1" fill="#1f120a"/><rect x="23" y="5" width="1" height="1" fill="#3b2417"/><rect x="24" y="5" width="1" height="1" fill="#2a1a12"/><rect x="5" y="6" width="1" height="1" fill="#2a1a12"/><rect x="6" y="6" width="1" height="1" fill="#3b2417"/><rect x="7" y="6" width="1" height="1" fill="#6b4429"/><rect x="8" y="6" width="1" height="1" fill="#1f120a"/><rect x="9" y="6" width="1" height="1" fill="#6b4429"/><rect x="10" y="6" width="1" height="1" fill="#3b2417"/><rect x="11" y="6" width="1" height="1" fill="#8c5b36"/><rect x="12" y="6" width="1" height="1" fill="#6b4429"/><rect x="13" y="6" width="2" height="1" fill="#3b2417"/><rect x="15" y="6" width="1" height="1" fill="#1f120a"/><rect x="16" y="6" width="1" height="1" fill="#3b2417"/><rect x="17" y="6" width="1" height="1" fill="#6b4429"/><rect x="18" y="6" width="1" height="1" fill="#8c5b36"/><rect x="19" y="6" width="2" height="1" fill="#3b2417"/><rect x="21" y="6" width="1" height="1" fill="#1f120a"/><rect x="22" y="6" width="1" height="1" fill="#6b4429"/><rect x="23" y="6" width="1" height="1" fill="#3b2417"/><rect x="24" y="6" width="1" height="1" fill="#2a1a12"/><rect x="5" y="7" width="1" height="1" fill="#2a1a12"/><rect x="6" y="7" width="1" height="1" fill="#3b2417"/><rect x="7" y="7" width="1" height="1" fill="#1f120a"/><rect x="8" y="7" width="1" height="1" fill="#6b4429"/><rect x="9" y="7" width="1" height="1" fill="#ecb894"/><rect x="10" y="7" width="1" height="1" fill="#3b2417"/><rect x="11" y="7" width="6" height="1" fill="#ecb894"/><rect x="17" y="7" width="1" height="1" fill="#6b4429"/><rect x="18" y="7" width="1" height="1" fill="#ecb894"/><rect x="19" y="7" width="1" height="1" fill="#3b2417"/><rect x="20" y="7" width="1" height="1" fill="#ecb894"/><rect x="21" y="7" width="1" height="1" fill="#6b4429"/><rect x="22" y="7" width="1" height="1" fill="#1f120a"/><rect x="23" y="7" width="1" height="1" fill="#3b2417"/><rect x="24" y="7" width="1" height="1" fill="#2a1a12"/><rect x="5" y="8" width="1" height="1" fill="#2a1a12"/><rect x="6" y="8" width="2" height="1" fill="#3b2417"/><rect x="8" y="8" width="14" height="1" fill="#ecb894"/><rect x="22" y="8" width="2" height="1" fill="#3b2417"/><rect x="24" y="8" width="1" height="1" fill="#2a1a12"/><rect x="3" y="9" width="2" height="1" fill="#2a1a12"/><rect x="6" y="9" width="1" height="1" fill="#3b2417"/><rect x="7" y="9" width="2" height="1" fill="#ecb894"/><rect x="9" y="9" width="3" height="1" fill="#1f120a"/><rect x="12" y="9" width="6" height="1" fill="#ecb894"/><rect x="18" y="9" width="3" height="1" fill="#1f120a"/><rect x="21" y="9" width="2" height="1" fill="#ecb894"/><rect x="23" y="9" width="1" height="1" fill="#3b2417"/><rect x="24" y="9" width="1" height="1" fill="#2a1a12"/><rect x="2" y="10" width="1" height="1" fill="#2a1a12"/><rect x="3" y="10" width="2" height="1" fill="#ecb894"/><rect x="5" y="10" width="1" height="1" fill="#2a1a12"/><rect x="6" y="10" width="1" height="1" fill="#d29a77"/><rect x="7" y="10" width="2" height="1" fill="#ecb894"/><rect x="9" y="10" width="2" height="1" fill="#1f120a"/><rect x="11" y="10" width="8" height="1" fill="#ecb894"/><rect x="19" y="10" width="2" height="1" fill="#1f120a"/><rect x="21" y="10" width="2" height="1" fill="#ecb894"/><rect x="23" y="10" width="1" height="1" fill="#d29a77"/><rect x="24" y="10" width="1" height="1" fill="#2a1a12"/><rect x="2" y="11" width="1" height="1" fill="#2a1a12"/><rect x="3" y="11" width="2" height="1" fill="#ecb894"/><rect x="5" y="11" width="1" height="1" fill="#2a1a12"/><rect x="6" y="11" width="1" height="1" fill="#d29a77"/><rect x="7" y="11" width="3" height="1" fill="#ecb894"/><rect x="10" y="11" width="1" height="1" fill="#ffffff"/><rect x="11" y="11" width="1" height="1" fill="#16110e"/><rect x="12" y="11" width="6" height="1" fill="#ecb894"/><rect x="18" y="11" width="1" height="1" fill="#ffffff"/><rect x="19" y="11" width="1" height="1" fill="#16110e"/><rect x="20" y="11" width="3" height="1" fill="#ecb894"/><rect x="23" y="11" width="1" height="1" fill="#d29a77"/><rect x="24" y="11" width="1" height="1" fill="#2a1a12"/><rect x="2" y="12" width="1" height="1" fill="#2a1a12"/><rect x="3" y="12" width="2" height="1" fill="#ecb894"/><rect x="5" y="12" width="1" height="1" fill="#2a1a12"/><rect x="6" y="12" width="1" height="1" fill="#d29a77"/><rect x="7" y="12" width="3" height="1" fill="#ecb894"/><rect x="10" y="12" width="2" height="1" fill="#16110e"/><rect x="12" y="12" width="6" height="1" fill="#ecb894"/><rect x="18" y="12" width="2" height="1" fill="#16110e"/><rect x="20" y="12" width="3" height="1" fill="#ecb894"/><rect x="23" y="12" width="1" height="1" fill="#d29a77"/><rect x="24" y="12" width="1" height="1" fill="#2a1a12"/><rect x="2" y="13" width="1" height="1" fill="#2a1a12"/><rect x="3" y="13" width="2" height="1" fill="#d29a77"/><rect x="5" y="13" width="1" height="1" fill="#2a1a12"/><rect x="6" y="13" width="8" height="1" fill="#ecb894"/><rect x="14" y="13" width="2" height="1" fill="#d29a77"/><rect x="16" y="13" width="8" height="1" fill="#ecb894"/><rect x="24" y="13" width="1" height="1" fill="#2a1a12"/><rect x="2" y="14" width="1" height="1" fill="#2a1a12"/><rect x="3" y="14" width="2" height="1" fill="#a77f57"/><rect x="5" y="14" width="2" height="1" fill="#2a1a12"/><rect x="7" y="14" width="1" height="1" fill="#3d2618"/><rect x="8" y="14" width="4" height="1" fill="#ecb894"/><rect x="12" y="14" width="6" height="1" fill="#3d2618"/><rect x="18" y="14" width="4" height="1" fill="#ecb894"/><rect x="22" y="14" width="1" height="1" fill="#3d2618"/><rect x="23" y="14" width="1" height="1" fill="#2a1a12"/><rect x="2" y="15" width="1" height="1" fill="#2a1a12"/><rect x="3" y="15" width="2" height="1" fill="#cfa67a"/><rect x="5" y="15" width="2" height="1" fill="#2a1a12"/><rect x="7" y="15" width="2" height="1" fill="#3d2618"/><rect x="9" y="15" width="2" height="1" fill="#ecb894"/><rect x="11" y="15" width="2" height="1" fill="#3d2618"/><rect x="13" y="15" width="4" height="1" fill="#b8624c"/><rect x="17" y="15" width="2" height="1" fill="#3d2618"/><rect x="19" y="15" width="2" height="1" fill="#ecb894"/><rect x="21" y="15" width="2" height="1" fill="#3d2618"/><rect x="23" y="15" width="1" height="1" fill="#2a1a12"/><rect x="2" y="16" width="1" height="1" fill="#2a1a12"/><rect x="3" y="16" width="2" height="1" fill="#cfa67a"/><rect x="5" y="16" width="2" height="1" fill="#2a1a12"/><rect x="7" y="16" width="16" height="1" fill="#3d2618"/><rect x="23" y="16" width="1" height="1" fill="#2a1a12"/><rect x="2" y="17" width="1" height="1" fill="#2a1a12"/><rect x="3" y="17" width="2" height="1" fill="#cfa67a"/><rect x="5" y="17" width="1" height="1" fill="#2a1a12"/><rect x="8" y="17" width="2" height="1" fill="#2a1a12"/><rect x="10" y="17" width="10" height="1" fill="#3d2618"/><rect x="20" y="17" width="2" height="1" fill="#2a1a12"/><rect x="2" y="18" width="1" height="1" fill="#2a1a12"/><rect x="3" y="18" width="2" height="1" fill="#cfa67a"/><rect x="5" y="18" width="1" height="1" fill="#2a1a12"/><rect x="11" y="18" width="1" height="1" fill="#2a1a12"/><rect x="12" y="18" width="6" height="1" fill="#d29a77"/><rect x="18" y="18" width="1" height="1" fill="#2a1a12"/><rect x="2" y="19" width="1" height="1" fill="#2a1a12"/><rect x="3" y="19" width="2" height="1" fill="#cfa67a"/><rect x="5" y="19" width="2" height="1" fill="#2a1a12"/><rect x="7" y="19" width="4" height="1" fill="#cfa67a"/><rect x="11" y="19" width="1" height="1" fill="#a77f57"/><rect x="12" y="19" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="19" width="1" height="1" fill="#a77f57"/><rect x="19" y="19" width="4" height="1" fill="#cfa67a"/><rect x="23" y="19" width="2" height="1" fill="#2a1a12"/><rect x="2" y="20" width="1" height="1" fill="#2a1a12"/><rect x="3" y="20" width="2" height="1" fill="#cfa67a"/><rect x="5" y="20" width="1" height="1" fill="#2a1a12"/><rect x="6" y="20" width="1" height="1" fill="#cfa67a"/><rect x="7" y="20" width="1" height="1" fill="#e3c39c"/><rect x="8" y="20" width="3" height="1" fill="#cfa67a"/><rect x="11" y="20" width="1" height="1" fill="#a77f57"/><rect x="12" y="20" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="20" width="1" height="1" fill="#a77f57"/><rect x="19" y="20" width="3" height="1" fill="#cfa67a"/><rect x="22" y="20" width="1" height="1" fill="#e3c39c"/><rect x="23" y="20" width="2" height="1" fill="#cfa67a"/><rect x="25" y="20" width="1" height="1" fill="#2a1a12"/><rect x="7" y="21" width="1" height="1" fill="#2a1a12"/><rect x="8" y="21" width="3" height="1" fill="#cfa67a"/><rect x="11" y="21" width="1" height="1" fill="#a77f57"/><rect x="12" y="21" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="21" width="1" height="1" fill="#a77f57"/><rect x="19" y="21" width="6" height="1" fill="#cfa67a"/><rect x="25" y="21" width="1" height="1" fill="#2a1a12"/><rect x="7" y="22" width="1" height="1" fill="#2a1a12"/><rect x="8" y="22" width="3" height="1" fill="#cfa67a"/><rect x="11" y="22" width="1" height="1" fill="#a77f57"/><rect x="12" y="22" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="22" width="5" height="1" fill="#a77f57"/><rect x="23" y="22" width="2" height="1" fill="#cfa67a"/><rect x="25" y="22" width="1" height="1" fill="#2a1a12"/><rect x="7" y="23" width="1" height="1" fill="#2a1a12"/><rect x="8" y="23" width="3" height="1" fill="#cfa67a"/><rect x="11" y="23" width="1" height="1" fill="#a77f57"/><rect x="12" y="23" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="23" width="1" height="1" fill="#a77f57"/><rect x="19" y="23" width="1" height="1" fill="#cfa67a"/><rect x="20" y="23" width="1" height="1" fill="#a77f57"/><rect x="21" y="23" width="1" height="1" fill="#cfa67a"/><rect x="22" y="23" width="1" height="1" fill="#a77f57"/><rect x="23" y="23" width="2" height="1" fill="#cfa67a"/><rect x="25" y="23" width="1" height="1" fill="#2a1a12"/><rect x="7" y="24" width="1" height="1" fill="#2a1a12"/><rect x="8" y="24" width="3" height="1" fill="#cfa67a"/><rect x="11" y="24" width="1" height="1" fill="#a77f57"/><rect x="12" y="24" width="3" height="1" fill="#f8f8f6"/><rect x="15" y="24" width="1" height="1" fill="#dcdcd6"/><rect x="16" y="24" width="2" height="1" fill="#f8f8f6"/><rect x="18" y="24" width="5" height="1" fill="#a77f57"/><rect x="23" y="24" width="1" height="1" fill="#2a1a12"/><rect x="24" y="24" width="1" height="1" fill="#cfa67a"/><rect x="25" y="24" width="1" height="1" fill="#2a1a12"/><rect x="7" y="25" width="1" height="1" fill="#2a1a12"/><rect x="8" y="25" width="3" height="1" fill="#cfa67a"/><rect x="11" y="25" width="1" height="1" fill="#a77f57"/><rect x="12" y="25" width="3" height="1" fill="#f8f8f6"/><rect x="15" y="25" width="1" height="1" fill="#dcdcd6"/><rect x="16" y="25" width="2" height="1" fill="#f8f8f6"/><rect x="18" y="25" width="1" height="1" fill="#a77f57"/><rect x="19" y="25" width="4" height="1" fill="#cfa67a"/><rect x="23" y="25" width="1" height="1" fill="#2a1a12"/><rect x="24" y="25" width="1" height="1" fill="#cfa67a"/><rect x="25" y="25" width="1" height="1" fill="#2a1a12"/><rect x="7" y="26" width="1" height="1" fill="#2a1a12"/><rect x="8" y="26" width="3" height="1" fill="#cfa67a"/><rect x="11" y="26" width="1" height="1" fill="#a77f57"/><rect x="12" y="26" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="26" width="1" height="1" fill="#a77f57"/><rect x="19" y="26" width="4" height="1" fill="#cfa67a"/><rect x="23" y="26" width="1" height="1" fill="#2a1a12"/><rect x="24" y="26" width="1" height="1" fill="#cfa67a"/><rect x="25" y="26" width="1" height="1" fill="#2a1a12"/><rect x="7" y="27" width="1" height="1" fill="#2a1a12"/><rect x="8" y="27" width="3" height="1" fill="#cfa67a"/><rect x="11" y="27" width="1" height="1" fill="#a77f57"/><rect x="12" y="27" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="27" width="1" height="1" fill="#a77f57"/><rect x="19" y="27" width="4" height="1" fill="#cfa67a"/><rect x="23" y="27" width="1" height="1" fill="#2a1a12"/><rect x="24" y="27" width="1" height="1" fill="#cfa67a"/><rect x="25" y="27" width="1" height="1" fill="#2a1a12"/><rect x="7" y="28" width="1" height="1" fill="#2a1a12"/><rect x="8" y="28" width="3" height="1" fill="#cfa67a"/><rect x="11" y="28" width="1" height="1" fill="#a77f57"/><rect x="12" y="28" width="6" height="1" fill="#f8f8f6"/><rect x="18" y="28" width="1" height="1" fill="#a77f57"/><rect x="19" y="28" width="4" height="1" fill="#cfa67a"/><rect x="23" y="28" width="1" height="1" fill="#2a1a12"/><rect x="24" y="28" width="1" height="1" fill="#cfa67a"/><rect x="25" y="28" width="1" height="1" fill="#2a1a12"/><rect x="7" y="29" width="1" height="1" fill="#2a1a12"/><rect x="8" y="29" width="14" height="1" fill="#a77f57"/><rect x="22" y="29" width="1" height="1" fill="#2a1a12"/><rect x="23" y="29" width="2" height="1" fill="#1c1c1e"/><rect x="25" y="29" width="1" height="1" fill="#2a1a12"/><rect x="7" y="30" width="2" height="1" fill="#2a1a12"/><rect x="9" y="30" width="12" height="1" fill="#6c94c7"/><rect x="21" y="30" width="2" height="1" fill="#2a1a12"/><rect x="23" y="30" width="2" height="1" fill="#ecb894"/><rect x="25" y="30" width="1" height="1" fill="#2a1a12"/><rect x="7" y="31" width="2" height="1" fill="#2a1a12"/><rect x="9" y="31" width="2" height="1" fill="#8fb4e0"/><rect x="11" y="31" width="1" height="1" fill="#b6d0ef"/><rect x="12" y="31" width="2" height="1" fill="#8fb4e0"/><rect x="14" y="31" width="2" height="1" fill="#6c94c7"/><rect x="16" y="31" width="2" height="1" fill="#8fb4e0"/><rect x="18" y="31" width="1" height="1" fill="#b6d0ef"/><rect x="19" y="31" width="2" height="1" fill="#8fb4e0"/><rect x="21" y="31" width="2" height="1" fill="#2a1a12"/><rect x="23" y="31" width="2" height="1" fill="#d29a77"/><rect x="25" y="31" width="1" height="1" fill="#2a1a12"/><rect x="7" y="32" width="2" height="1" fill="#2a1a12"/><rect x="9" y="32" width="1" height="1" fill="#8fb4e0"/><rect x="10" y="32" width="1" height="1" fill="#b6d0ef"/><rect x="11" y="32" width="3" height="1" fill="#8fb4e0"/><rect x="14" y="32" width="2" height="1" fill="#2a1a12"/><rect x="16" y="32" width="3" height="1" fill="#8fb4e0"/><rect x="19" y="32" width="1" height="1" fill="#b6d0ef"/><rect x="20" y="32" width="1" height="1" fill="#8fb4e0"/><rect x="21" y="32" width="1" height="1" fill="#2a1a12"/><rect x="23" y="32" width="2" height="1" fill="#2a1a12"/><rect x="8" y="33" width="1" height="1" fill="#2a1a12"/><rect x="9" y="33" width="1" height="1" fill="#8fb4e0"/><rect x="10" y="33" width="1" height="1" fill="#b6d0ef"/><rect x="11" y="33" width="3" height="1" fill="#8fb4e0"/><rect x="14" y="33" width="2" height="1" fill="#2a1a12"/><rect x="16" y="33" width="3" height="1" fill="#8fb4e0"/><rect x="19" y="33" width="1" height="1" fill="#b6d0ef"/><rect x="20" y="33" width="1" height="1" fill="#8fb4e0"/><rect x="21" y="33" width="1" height="1" fill="#2a1a12"/><rect x="8" y="34" width="1" height="1" fill="#2a1a12"/><rect x="9" y="34" width="1" height="1" fill="#8fb4e0"/><rect x="10" y="34" width="1" height="1" fill="#b6d0ef"/><rect x="11" y="34" width="3" height="1" fill="#8fb4e0"/><rect x="14" y="34" width="2" height="1" fill="#2a1a12"/><rect x="16" y="34" width="3" height="1" fill="#8fb4e0"/><rect x="19" y="34" width="1" height="1" fill="#b6d0ef"/><rect x="20" y="34" width="1" height="1" fill="#8fb4e0"/><rect x="21" y="34" width="1" height="1" fill="#2a1a12"/><rect x="8" y="35" width="1" height="1" fill="#2a1a12"/><rect x="9" y="35" width="1" height="1" fill="#8fb4e0"/><rect x="10" y="35" width="1" height="1" fill="#b6d0ef"/><rect x="11" y="35" width="3" height="1" fill="#8fb4e0"/><rect x="14" y="35" width="2" height="1" fill="#2a1a12"/><rect x="16" y="35" width="3" height="1" fill="#8fb4e0"/><rect x="19" y="35" width="1" height="1" fill="#b6d0ef"/><rect x="20" y="35" width="1" height="1" fill="#8fb4e0"/><rect x="21" y="35" width="1" height="1" fill="#2a1a12"/><rect x="7" y="36" width="1" height="1" fill="#2a1a12"/><rect x="8" y="36" width="1" height="1" fill="#8fb4e0"/><rect x="9" y="36" width="1" height="1" fill="#b6d0ef"/><rect x="10" y="36" width="4" height="1" fill="#8fb4e0"/><rect x="14" y="36" width="1" height="1" fill="#2a1a12"/><rect x="15" y="36" width="4" height="1" fill="#8fb4e0"/><rect x="19" y="36" width="1" height="1" fill="#b6d0ef"/><rect x="20" y="36" width="1" height="1" fill="#8fb4e0"/><rect x="21" y="36" width="1" height="1" fill="#2a1a12"/><rect x="7" y="37" width="1" height="1" fill="#2a1a12"/><rect x="8" y="37" width="6" height="1" fill="#6c94c7"/><rect x="14" y="37" width="2" height="1" fill="#2a1a12"/><rect x="16" y="37" width="6" height="1" fill="#6c94c7"/><rect x="22" y="37" width="1" height="1" fill="#2a1a12"/><rect x="7" y="38" width="1" height="1" fill="#2a1a12"/><rect x="8" y="38" width="3" height="1" fill="#ffffff"/><rect x="11" y="38" width="2" height="1" fill="#d6b98f"/><rect x="13" y="38" width="1" height="1" fill="#ffffff"/><rect x="14" y="38" width="2" height="1" fill="#2a1a12"/><rect x="16" y="38" width="1" height="1" fill="#ffffff"/><rect x="17" y="38" width="2" height="1" fill="#d6b98f"/><rect x="19" y="38" width="3" height="1" fill="#ffffff"/><rect x="22" y="38" width="1" height="1" fill="#2a1a12"/><rect x="6" y="39" width="1" height="1" fill="#2a1a12"/><rect x="7" y="39" width="2" height="1" fill="#ffffff"/><rect x="9" y="39" width="2" height="1" fill="#d6b98f"/><rect x="11" y="39" width="3" height="1" fill="#ffffff"/><rect x="14" y="39" width="2" height="1" fill="#2a1a12"/><rect x="16" y="39" width="3" height="1" fill="#ffffff"/><rect x="19" y="39" width="2" height="1" fill="#d6b98f"/><rect x="21" y="39" width="2" height="1" fill="#ffffff"/><rect x="23" y="39" width="1" height="1" fill="#2a1a12"/><rect x="6" y="40" width="1" height="1" fill="#2a1a12"/><rect x="7" y="40" width="8" height="1" fill="#e6dccb"/><rect x="15" y="40" width="1" height="1" fill="#2a1a12"/><rect x="16" y="40" width="8" height="1" fill="#e6dccb"/><rect x="24" y="40" width="1" height="1" fill="#2a1a12"/><rect x="6" y="41" width="18" height="1" fill="#2a1a12"/></svg></div>
+    <div class="kick">👋 Hey, soy Jorge · Máster de Informática UC3M</div>
+    <h1>Créala</h1>
+    <p>No esperes a tener experiencia. Aquí tienes el kit de la charla.</p>
+    <nav><a href="#conecta">Conecta</a><a href="#pitch">60 segundos</a><a href="#plantillas">Plantillas</a><a href="#reto">Reto</a><a href="#misiones">Misiones</a><a href="#enemigos">Enemigos</a></nav>
+  </header>
+
+  <section id="pitch">
+    <span class="tag">Tutorial</span>
+    <h2>Cómo contar un proyecto en 60 segundos</h2>
+    <p class="sub">Para presentar vuestro agente el lunes y para cualquier entrevista. Unos 15 segundos por paso.</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><b>Problema</b>Qué pasaba y a quién le importaba.<div class="ex">Ej.: entender qué opinaba la gente sobre una ley de plásticos de California (SB-54).</div></div></div>
+      <div class="step"><span class="n">2</span><div><b>Qué hice yo</b>Tú, no «el equipo».<div class="ex">Ej.: usé GPT-4 con chain-of-thought para clasificar esas opiniones.</div></div></div>
+      <div class="step"><span class="n">3</span><div><b>Resultado</b>Con una cifra si puedes.<div class="ex">Ej.: F1 por encima de 0,90 y un paper en AAAI.</div></div></div>
+      <div class="step"><span class="n">4</span><div><b>Qué aprendí</b>Lo que te llevas al siguiente sitio.<div class="ex">Ej.: herramienta nueva + problema real = algo que contar.</div></div></div>
+    </div>
+  </section>
+
+  <section id="plantillas">
+    <span class="tag">Armas</span>
+    <h2>Plantillas para copiar</h2>
+    <p class="sub">Cambia lo que está entre corchetes. Corto, concreto y pidiendo poco.</p>
+    <div class="tpl">
+      <h3>Mensaje de LinkedIn <small>vs. «no escribo a nadie»</small></h3>
+      <div class="box" id="t-li">Hola [nombre], soy [tú], del Máster de Informática de la UC3M. He visto que trabajas en [empresa] y me interesa mucho [tema concreto]. ¿Te importaría que te hiciera un par de preguntas en 15 minutos? ¡Gracias!</div>
+      <button class="copy" data-copy="t-li">Copiar</button>
+    </div>
+    <div class="tpl">
+      <h3>Correo a un profe <small>vs. «no me siento preparado»</small></h3>
+      <div class="box" id="t-prof">Asunto: Colaborar en [proyecto o línea]
+
+Hola [profesor/a]:
+
+Soy [tú], de su asignatura [X]. He leído [paper o proyecto] y me encantaría colaborar. Puedo dedicarle [N] horas a la semana y sé [habilidad].
+
+¿Podríamos hablar 10 minutos?
+
+Gracias,
+[tú]</div>
+      <button class="copy" data-copy="t-prof">Copiar</button>
+    </div>
+    <div class="tpl">
+      <h3>Post para contar tu proyecto <small>vs. «lo que no se ve no existe»</small></h3>
+      <div class="box" id="t-post">[Problema] Quería resolver [problema] porque [a quién le importa].
+[Qué hice] He construido [proyecto] con [tecnologías].
+[Resultado] [Cifra o demo]. Aquí el vídeo de 1 minuto 👇
+[Qué aprendí] Lo que más me ha enseñado: [aprendizaje].
+Código: [enlace a GitHub]</div>
+      <button class="copy" data-copy="t-post">Copiar</button>
+    </div>
+  </section>
+
+  <section id="reto">
+    <span class="tag">Checklist</span>
+    <h2>Publicar el reto de agentes</h2>
+    <p class="sub">Si lo publicas, ya es experiencia que contar en tu próxima entrevista.</p>
+    <ul class="check">
+      <li><label><input type="checkbox" data-k="c1"><span>Repo público en GitHub.</span></label></li>
+      <li><label><input type="checkbox" data-k="c2"><span>README: problema, solución, arquitectura (un diagrama) y cómo ejecutarlo.</span></label></li>
+      <li><label><input type="checkbox" data-k="c3"><span>Vídeo de 1 minuto con la demo.</span></label></li>
+      <li><label><input type="checkbox" data-k="c4"><span>Post en LinkedIn: problema → qué hice → resultado → qué aprendí.</span></label></li>
+    </ul>
+  </section>
+
+  <section id="misiones">
+    <span class="tag">Misiones</span>
+    <h2>Tres misiones para esta semana</h2>
+    <div class="quest"><span class="pill" style="background:var(--indigo)">Academia</span><div>Habla con un profe cuyo trabajo te guste.</div></div>
+    <div class="quest"><span class="pill" style="background:var(--amber);color:var(--ink)">Empresa</span><div>Haz bien el reto de agentes, súbelo a GitHub y cuéntalo en LinkedIn.</div></div>
+    <div class="quest"><span class="pill" style="background:var(--green)">Emprender</span><div>Apunta un problema que te moleste de verdad.</div></div>
+  </section>
+
+  <section id="enemigos">
+    <span class="tag">Game over?</span>
+    <h2>Los enemigos y cómo vencerlos</h2>
+    <p class="sub">Los que me encontré yo. Seguramente te suenen.</p>
+    <div class="enemy"><span class="e">No aplicar porque no te sientes preparado</span><span class="a">Aplica aunque no cumplas todo</span></div>
+    <div class="enemy"><span class="e">Síndrome del impostor</span><span class="a">Cuenta lo que has hecho, con datos</span></div>
+    <div class="enemy"><span class="e">No hacer proyectos propios</span><span class="a">Uno pequeño, este finde</span></div>
+    <div class="enemy"><span class="e">No escribir a nadie</span><span class="a">Usa la plantilla de LinkedIn</span></div>
+    <div class="enemy"><span class="e">Muchos «no» al aplicar</span><span class="a">Cada «no» es una vida, no la partida</span></div>
+  </section>
+
+  <section>
+    <span class="tag">Continue?</span>
+    <p class="big">Cada cosa que creas hoy es lo que cuentas en tu próxima entrevista.</p>
+  </section>
+
+  <section id="conecta">
+    <span class="tag">Conecta</span>
+    <h2>¿Hablamos?</h2>
+    <p class="sub">Escríbeme: es la primera misión que puedes cumplir hoy.</p>
+    <div class="links">
+      <a class="lk li" href="https://linkedin.com/in/jgarcelan"><span>in</span>LinkedIn · jgarcelan</a>
+      <a class="lk x" href="https://x.com/jgarcelan"><span>𝕏</span>X · @jgarcelan</a>
+      <a class="lk" href="https://jorgegarcelan.com"><span>🌐</span>jorgegarcelan.com</a>
+      <a class="lk" href="https://thecorporatelayer.substack.com/"><span>✍</span>The Corporate Layer (Substack)</a>
+    </div>
+  </section>
+
+  <footer>Jorge Garcelán · Seminario AWS × Máster de Informática UC3M · 2026</footer>
+</div>
+<div class="toast" id="toast">¡Copiado!</div>
+<script>
+  var toast = document.getElementById("toast");
+  function flash(t) { toast.textContent = t; toast.classList.add("on"); setTimeout(function () { toast.classList.remove("on"); }, 1400); }
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var el = document.getElementById(b.getAttribute("data-copy")), text = el.innerText;
+      try {
+        navigator.clipboard.writeText(text).then(function () { flash("¡Copiado!"); }, function () { select(el); });
+      } catch (e) { select(el); }
+    });
+  });
+  function select(el) { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); flash("Seleccionado: cópialo"); }
+  document.querySelectorAll("input[data-k]").forEach(function (c) {
+    try { c.checked = localStorage.getItem("creala-" + c.dataset.k) === "1"; } catch (e) {}
+    c.addEventListener("change", function () { try { localStorage.setItem("creala-" + c.dataset.k, c.checked ? "1" : "0"); } catch (e) {} if (c.checked) flash("+100 XP"); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<section class="slide" id="s11-w2-path" data-section="2" data-title="Empresa: el péndulo" data-enter="push">
+  <template class="notes">⏱ 60 s · empieza en 7:10
+(espera a que se abra el círculo)
+«Arriba, construir. Abajo, hablar con clientes.»
+«Empiezo en Telefónica: construir.»
+→ «AWS: bajo a clientes.»
+→ «Multiverse: Pre-sales Engineer.»
+→ «De noche: proyectos propios.»
+→ «MediaRadar: vuelvo a construir, con mirada de cliente.»
+→ «Probar algo distinto no es perder el tiempo.»</template>
+  <style>
+    #s11-w2-path .c11-hud { display: flex; flex-direction: column; gap: 8px; }
+    #s11-w2-path .c11-bar { display: flex; align-items: center; gap: 12px; }
+    #s11-w2-path .c11-bar .pxt { width: 200px; text-align: right; font-size: 17px; color: #fff; text-shadow: 2px 2px 0 rgba(11,13,16,.5); }
+    #s11-w2-path .c11-cells { display: flex; gap: 4px; padding: 4px; background: var(--ink); }
+    #s11-w2-path .c11-cells i { width: 22px; height: 18px; background: #334155; display: block; }
+    #s11-w2-path .c11-map { position: relative; width: 1728px; height: 604px; margin-top: 4px; }
+    #s11-w2-path .c11-lane { position: absolute; left: 0; right: 0; border: 3px dashed rgba(255,255,255,.45); background: rgba(255,255,255,.1); }
+    #s11-w2-path .c11-lane.top { top: 0; height: 300px; } #s11-w2-path .c11-lane.bot { top: 316px; height: 288px; }
+    #s11-w2-path .c11-ll { position: absolute; left: 16px; top: 12px; display: flex; align-items: center; gap: 12px; font-family: var(--pixel); font-size: 20px; color: #fff; text-transform: uppercase; text-shadow: 2px 2px 0 rgba(11,13,16,.45); }
+    #s11-w2-path .c11-ll [data-px] { width: 42px; }
+    #s11-w2-path .c11-lane.bot .c11-ll { top: auto; bottom: 12px; }
+    #s11-w2-path .c11-svg { position: absolute; inset: 0; width: 1728px; height: 604px; overflow: visible; }
+    #s11-w2-path .c11-pl { position: absolute; height: 30px; border: 4px solid var(--ink); box-shadow: 6px 6px 0 rgba(11,13,16,.35);
+      background: repeating-linear-gradient(90deg, #c2410c 0 34px, #0b0d10 34px 37px), #c2410c; }
+    #s11-w2-path .c11-pl::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #4ade80; border-bottom: 3px solid var(--ink); }
+    #s11-w2-path .c11-pl.night { background: repeating-linear-gradient(90deg, #312e81 0 34px, #0b0d10 34px 37px), #312e81; }
+    #s11-w2-path .c11-pl.night::before { background: #a5b4fc; }
+    #s11-w2-path .c11-card { position: absolute; width: 300px; padding: 26px 20px 16px; }
+    #s11-w2-path .c11-card .tag { background: var(--c-emp); color: var(--ink); }
+    #s11-w2-path .c11-card .c11-r { font-size: 24px; font-weight: 600; line-height: 1.25; }
+    #s11-w2-path .c11-card .c11-y { font-family: var(--pixel); font-size: 16px; color: var(--faint); margin-top: 6px; }
+    #s11-w2-path .c11-card .lg { position: absolute; top: -28px; right: 14px; }
+    #s11-w2-path .c11-card.night { background: #1e1b4b; color: #fff; }
+    #s11-w2-path .c11-card.night .tag { background: #a5b4fc; }
+    #s11-w2-path .c11-card.night .c11-y { color: #c7d2fe; }
+    #s11-w2-path .c11-moon { position: absolute; left: 1110px; top: 30px; width: 54px; height: 54px; border-radius: 50%; background: #fde68a; box-shadow: 14px -6px 0 0 #1e1b4b inset, 0 0 24px #fde68a; }
+    #s11-w2-path .c11-me { position: absolute; left: 0; top: 0; width: 70px; z-index: 5; }
+    #s11-w2-path .c11-moral { margin-top: 12px; padding-top: 20px; padding-bottom: 20px; background: var(--accent); color: #fff; font-size: 30px; font-weight: 600; line-height: 1.35; }
+  </style>
+  <div class="iris" aria-hidden="true" data-qa="ignore" style="--glow: var(--c-emp)"><span class="iris-eyes" data-px="eyes"></span><div class="iris-t">Mundo 2 · Empresa</div></div>
+  <div class="frame">
+    <div class="hud"><span class="hud-world" style="--sec:var(--c-emp)">Mundo 2 · Empresa</span>
+      <div class="c11-hud">
+        <div class="c11-bar"><span class="pxt">Construir</span><span class="c11-cells b"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="c11-bar"><span class="pxt">Clientes</span><span class="c11-cells c"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      </div></div>
+    <div class="h-sky c11-h">Mi camino no es una línea: es un péndulo</div>
+    <div class="c11-map">
+      <div class="c11-lane top"><span class="c11-ll"><span data-px="laptop"></span>▲ Construir</span></div>
+      <div class="c11-lane bot"><span class="c11-ll"><span data-px="bubble"></span>▼ Hablar con clientes</span></div>
+      <svg class="c11-svg" viewBox="0 0 1728 604" aria-hidden="true"><g class="c11-dots"></g></svg>
+      <span class="c11-moon"></span>
+      <div class="c11-pl" style="left:160px;top:120px;width:280px"></div>
+      <div class="c11-pl" style="left:500px;top:420px;width:280px"></div>
+      <div class="c11-pl" style="left:880px;top:420px;width:280px"></div>
+      <div class="c11-pl night" style="left:1190px;top:120px;width:180px"></div>
+      <div class="c11-pl" style="left:1430px;top:120px;width:280px"></div>
+      <div class="panel c11-card s1" style="left:150px;top:168px"><span class="tag">Telefónica</span><span class="lg sm"><img src="assets/img/logos/telefonica.png" alt=""></span><div class="c11-r">Prácticas · IA en auditoría</div><div class="c11-y">2023–24</div></div>
+      <div class="panel c11-card s2" style="left:490px;top:468px"><span class="tag">AWS</span><span class="lg sm"><img src="assets/img/logos/aws.png" alt=""></span><div class="c11-r">Solutions Architect (prácticas)</div><div class="c11-y">2025</div></div>
+      <div class="panel c11-card s3" style="left:870px;top:468px"><span class="tag">Multiverse</span><span class="lg sm"><img src="assets/img/logos/multiverse.png" alt=""></span><div class="c11-r">Pre-sales Engineer</div><div class="c11-y">2026</div></div>
+      <div class="panel c11-card night s4" style="left:1150px;top:168px;width:250px"><span class="tag">Nivel secreto</span><div class="c11-r">De noche: proyectos propios</div><div class="c11-y">Siempre</div></div>
+      <div class="panel c11-card s5" style="left:1420px;top:168px"><span class="tag">MediaRadar</span><span class="lg sm"><img src="assets/img/logos/mediaradar.png" alt=""></span><div class="c11-r">AI Engineer</div><div class="c11-y">Hoy</div></div>
+      <span class="c11-me shadow-px" data-px="jorge"></span>
+    </div>
+    <div class="panel c11-moral">Probar algo distinto no es perder el tiempo: vuelves con algo que los demás no tienen.</div>
+  </div>
+</section>
+<script>
+Deck.slide("s11-w2-path", function (el, tl, h) {
+  /* paradas: centro de cada plataforma (los pies de Jorge) y nivel de las barras al llegar */
+  var P = [[300, 120], [640, 420], [1020, 420], [1280, 120], [1570, 120]];
+  var LV = [[3, 0], [3, 3], [3, 6], [6, 6], [8, 7]];
+  var JUMP = 130, W = 70, HGT = 98, N = 14;
+  var me = el.querySelector(".c11-me"), g = el.querySelector(".c11-dots");
+  var cb = h.qa(".c11-cells.b i"), cc = h.qa(".c11-cells.c i"), dots = [];
+  function at(i, f) {
+    var a = P[i], b = P[i + 1];
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f - Math.sin(Math.PI * f) * JUMP - (Math.min(a[1], b[1]) < a[1] ? 0 : 0)];
+  }
+  for (var i = 0; i < P.length - 1; i++) {
+    dots.push([]);
+    for (var k = 1; k < N; k++) {
+      var q = at(i, k / N), r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      r.setAttribute("x", (q[0] - 5).toFixed(1)); r.setAttribute("y", (q[1] - 50).toFixed(1));
+      r.setAttribute("width", 10); r.setAttribute("height", 10); r.setAttribute("fill", "#fff");
+      r.setAttribute("stroke", "rgba(11,13,16,.35)"); r.setAttribute("stroke-width", 2);
+      g.appendChild(r); dots[i].push(r);
+    }
+  }
+  var pr = { s: 0 };
+  function place() {
+    var s = pr.s, i = Math.min(P.length - 2, Math.floor(s)), f = s - i, q = at(i, f);
+    gsap.set(me, { x: q[0] - W / 2, y: q[1] - HGT });
+    dots.forEach(function (row, j) { row.forEach(function (d, k) { d.style.opacity = j < i || (j === i && (k + 1) / N <= f) ? 1 : 0; }); });
+    var lv = LV[Math.min(LV.length - 1, Math.floor(s + 0.02))];
+    cb.forEach(function (c, j) { c.style.background = j < lv[0] ? "#4ade80" : ""; });
+    cc.forEach(function (c, j) { c.style.background = j < lv[1] ? "#f59e0b" : ""; });
+  }
+  place();
+
+  /* entrada: oscuridad, ojos que parpadean y un iris que se abre */
+  var o = 0.9, iris = el.querySelector(".iris"), ie = el.querySelector(".iris-eyes");
+  tl.fromTo(ie, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, repeat: 3, yoyo: true, ease: "none" }, 0.15);
+  tl.call(Deck.sfx, ["portal", tl], 0.45);
+  tl.fromTo(iris, { "--r": "0px" }, { "--r": "1300px", duration: 0.75, ease: "steps(12)" }, 0.45);
+  tl.fromTo(iris, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.05, immediateRender: false }, 1.2);
+
+  h.rise(".c11-h", { at: o + 0, y: 30 });
+  h.fade(".c11-lane", { at: o + 0.1, stagger: 0.1 });
+  h.rise(".c11-pl", { at: o + 0.25, y: 40, stagger: 0.08 });
+  h.fade(".c11-moon", { at: o + 0.5 });
+  h.pop(".c11-card.s1", { at: o + 0.5 });
+  h.pop(".c11-me", { at: o + 0.6 });
+  h.fade(".c11-hud", { at: o + 0.7 });
+  var cards = [".c11-card.s2", ".c11-card.s3", ".c11-card.s4", ".c11-card.s5"], sfx = ["jump", "jump", "coin", "power"];
+  for (var j = 0; j < 4; j++) {
+    var t = h.step();
+    tl.call(Deck.sfx, ["jump", tl], t + 0.03);
+    tl.fromTo(pr, { s: j }, { s: j + 1, duration: 0.7, ease: "power1.inOut", onUpdate: place, immediateRender: j === 0 }, t);
+    h.pop(cards[j], { at: t + 0.55 });
+    if (sfx[j] !== "jump") tl.call(Deck.sfx, [sfx[j], tl], t + 0.7);
+  }
+  var t2 = h.step();
+  h.rise(".c11-moral", { at: t2, y: 24 });
+});
+</script>

@@ -1,0 +1,53 @@
+<section class="slide" id="s15-reveal" data-title="Mapa completo: todo salió de Georgia Tech" data-enter="zoom">
+  <template class="notes">⏱ 30 s · empieza en 15:05
+━━ ACTO 3 · VUESTRO TURNO ━━
+«¿Os acordáis del nivel 0? Todo salió de ahí.»
+→ «No sabía que abría tres puertas. Solo salí de lo cómodo.»</template>
+  <style>
+    #s15-reveal .c15-map { position: relative; width: 1728px; height: 610px; margin-top: 20px; }
+    #s15-reveal .c15-svg { position: absolute; inset: 0; width: 1728px; height: 610px; }
+    #s15-reveal .c15-root { position: absolute; left: 454px; top: 0; width: 820px; text-align: center; padding: 20px 24px; background: #fff8e1; }
+    #s15-reveal .c15-root { display: flex; align-items: center; justify-content: center; gap: 20px; }
+    #s15-reveal .c15-root .pxt { font-size: 24px; font-weight: 700; }
+    #s15-reveal .c15-col { position: absolute; top: 200px; width: 480px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    #s15-reveal .c15-col.a { left: 48px; color: var(--c-acad); } #s15-reveal .c15-col.e { left: 624px; color: var(--c-emp); } #s15-reveal .c15-col.s { left: 1200px; color: var(--c-start); }
+    #s15-reveal .c15-door { width: 70px; }
+    #s15-reveal .c15-col .door-label { font-size: 24px; margin-bottom: 8px; }
+    #s15-reveal .c15-chip { font-size: 23px; font-weight: 600; color: var(--ink); background: #fff; border: 3px solid var(--ink); padding: 8px 16px; }
+    #s15-reveal .c15-chest { position: absolute; left: 1560px; top: 470px; width: 120px; }
+    #s15-reveal .c15-dlg { margin-top: auto; }
+  </style>
+  <div class="frame">
+    <div class="hud"><span class="hud-world">Mapa completo</span><div class="inv"><span>Inventario</span><span class="slot"><span data-px="paper"></span></span><span class="slot"><span data-px="bubble"></span></span><span class="slot"><span data-px="rocket"></span></span></div></div>
+    <div class="h-sky c15-h" style="text-align:center">Las tres puertas salieron de la misma decisión</div>
+    <div class="c15-map">
+      <svg class="c15-svg" viewBox="0 0 1728 610" aria-hidden="true">
+        <path class="c15-l" d="M 864 76 L 864 120 L 288 120 L 288 196" fill="none" stroke="#fff" stroke-width="8"/>
+        <path class="c15-l" d="M 864 76 L 864 196" fill="none" stroke="#fff" stroke-width="8"/>
+        <path class="c15-l" d="M 864 76 L 864 120 L 1440 120 L 1440 196" fill="none" stroke="#fff" stroke-width="8"/>
+      </svg>
+      <div class="panel c15-root"><span class="lg sm"><img src="assets/img/logos/gatech.png" alt=""></span><div class="pxt">Movilidad en Georgia Tech · 3º</div></div>
+      <div class="c15-col a"><span class="c15-door shadow-px" data-px="door"></span><span class="door-label">Academia</span>
+        <span class="c15-chip">Lab → paper en AAAI</span><span class="c15-chip">TFG → contrato de investigación</span><span class="c15-chip">Máster + IRIS</span></div>
+      <div class="c15-col e"><span class="c15-door shadow-px" data-px="door"></span><span class="door-label">Empresa</span>
+        <span class="c15-chip">Paper → Telefónica</span><span class="c15-chip">AWS → Multiverse</span><span class="c15-chip">MediaRadar</span></div>
+      <span class="c15-chest" data-px="chest"></span>
+      <div class="c15-col s"><span class="c15-door shadow-px" data-px="door"></span><span class="door-label">Emprender</span>
+        <span class="c15-chip">Problema vivido</span><span class="c15-chip">Uniwords</span></div>
+    </div>
+    <div class="dlg c15-dlg"><span class="dlg-name">Jorge</span><p>No sabía que estaba abriendo tres puertas. <b>Solo salí de lo cómodo.</b></p></div>
+  </div>
+</section>
+<script>
+Deck.slide("s15-reveal", function (el, tl, h) {
+  h.rise(".c15-h", { at: 0, y: 30 });
+  h.pop(".c15-root", { at: 0.3 });
+  h.draw(".c15-l", { at: 0.6, dur: 0.8, stagger: 0.1 });
+  tl.call(Deck.sfx, ["reveal", tl], 0.6);
+  h.rise(".c15-col", { at: 1.1, y: 40, stagger: 0.15 });
+  h.fade(".c15-chip", { at: 1.4, stagger: 0.07 });
+  h.pop(".c15-chest", { at: 1.9 });
+  var t = h.step();
+  h.rise(".c15-dlg", { at: t, y: 24 });
+});
+</script>
